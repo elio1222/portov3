@@ -1,0 +1,92 @@
+.techy {
+    margin-top: 14px;
+    display: flex;
+    max-width: 100%;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+    flex-wrap: wrap;
+}
+.techs-icons {
+    padding: 5px 5px 5px 5px;
+    font-family: "Geist";
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 200;
+}
+.techs-icons > img {
+    height: 40px;
+    width: 40px;
+    object-fit: contain;
+    object-position: center;
+}
+
+.techs-icons {
+    opacity: 0;
+    animation: appear 0.7s ease-in forwards;
+    transition: transform 0.3s ease;
+}
+.techy .techs-icons:nth-child(1) {animation-delay: 0.1s;}
+.techy .techs-icons:nth-child(2) {animation-delay: 0.2s;}
+.techy .techs-icons:nth-child(3) {animation-delay: 0.3s;}
+.techy .techs-icons:nth-child(4) {animation-delay: 0.4s;}
+.techy .techs-icons:nth-child(5) {animation-delay: 0.5s;}
+.techy .techs-icons:nth-child(6) {animation-delay: 0.6s;}
+.techy .techs-icons:nth-child(7) {animation-delay: 0.7s;}
+.techy .techs-icons:nth-child(8) {animation-delay: 0.8s;}
+.techy .techs-icons:nth-child(9) {animation-delay: 0.9s;}
+.techy .techs-icons:nth-child(10) {animation-delay: 1s;}
+
+.techs-icons:hover {
+    transform: translateY(-5px);
+}
+.testing-tech {
+    font-family: "Geist";
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 200;
+    transition: transform 0.3s ease;
+}
+.testing-tech > img{
+    height: 40px;
+    width: 40px;
+    object-fit: contain;
+    object-position: center;
+}
+.testing-tech:hover {
+    transform: translateY(-5px);
+}
+
+@media (max-width: 600px) {
+    #tech {
+        margin-top: 10px
+    }
+    .techs-icons {
+        padding: 5px 5px 5px 5px;
+        font-family: "Geist";
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        font-size: 14px;
+        font-weight: 200;
+    }
+    .techs-icons > img {
+        height: 35px;
+        width: 35px;
+        object-fit: contain;
+        object-position: center;
+    }
+}

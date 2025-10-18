@@ -1,0 +1,84 @@
+.descript {
+    font-family: "Geist";
+    color: white;
+    padding: 7px 0px 20px 7px;
+}
+.descript-header {
+    font-weight:600;
+    font-size: 22px;
+}
+.cua-color {
+    text-shadow: 0 0 #B21F2C, 0 0 #0A3255;
+    transform: all 200ms;
+}
+.cua-color:hover {
+    text-shadow: 2px 2px 2px #B21F2C, 2px 2px 2px #0A3255;
+    transform: translate(-2px, -2px);
+}
+.bowie-color {
+    text-shadow: 0 0 0 #800020, 0 0 0 #000080;
+    transform: all 200ms;
+}
+.bowie-color:hover {
+    text-shadow: 2px 2px 2px #800020, 2px 2px 2px #000080;
+    transform: translate(-2px, -2px);
+}
+.descript-text {
+    font-weight: 400;
+    font-size: 14px;
+    color: darkgrey
+}
+
+.college, .highschool {
+    color: white;
+    display: flex;
+    column-gap: 20px;
+    margin-bottom: 20px;
+}
+.education-container {
+    padding-top: 14px;
+    padding-left: 30px;
+}
+.school-logox {
+    max-height: 100%;
+    max-width: 100%;
+    object-position: center;
+    object-fit: contain;
+    aspect-ratio: 16 / 9;
+    transition: transform 1s;
+}
+.school-logox:hover {
+    transform: translateY(-5px)
+}
+.school-logo {
+    max-width: 100px;
+    display: flex;
+}
+.school-text {
+    opacity: 0;
+    animation: appear2 2s ease forwards;
+}
+
+@media (max-width: 600px) {
+    #edu {
+        margin-top: 10px;
+    }
+    .school-logox {
+        max-height: 80%;
+        max-width: 80%;
+        object-position: center;
+        object-fit: contain;
+        aspect-ratio: 16 / 9;
+        transition: transform 1s;
+    }
+    .descript-header {
+        font-weight: 600;
+        font-size: 20px;
+    }
+    .descript-text {
+        font-weight: 400;
+        font-size: 14px;
+        color: darkgrey
+    }
+
+}

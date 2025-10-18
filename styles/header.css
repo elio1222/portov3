@@ -1,0 +1,15 @@
+.header {
+    padding-top: 14px;
+    color: white;
+    justify-content: space-between;
+    animation: headerappear 1s ease forwards;
+}
+.hashtags {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    column-gap: 20px;
+}
+.hashtags:active {
+    -webkit-tap-highlight-color: transparent;
+}

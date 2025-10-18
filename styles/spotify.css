@@ -1,0 +1,31 @@
+.spotify {
+    height: 100px;
+    max-width: 100%;   
+}
+.spotify {
+    margin-top: 14px;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+}
+.spotify-image-div {
+    padding: 5px 5px 5px 20px;
+    max-width: 70px;
+}
+.spotify-image {
+    padding: 5px 5px 5px 30px;
+    height: 70px;
+    width: 70px;
+    object-fit: contain;
+    object-position: center;
+    animation: slideInFromRight 3s;
+}
+.spotify-text {
+    padding-left: 9px;
+    text-align: start;
+    display: flex;
+    flex-direction: column;
+    animation: slideInFromRight 3s;
+}
