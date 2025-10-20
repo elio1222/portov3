@@ -51,7 +51,7 @@
     transform: translateY(-5px)
 }
 .school-logo {
-    max-width: 100px;
+    width: 100px;
     display: flex;
 }
 .school-text {
