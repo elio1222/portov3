@@ -55,6 +55,7 @@
     display: flex;
 }
 .school-text {
+    width: 100%;
     opacity: 0;
     animation: appear2 2s ease forwards;
 }
@@ -63,13 +64,23 @@
     #edu {
         margin-top: 10px;
     }
+
     .school-logox {
         max-height: 80%;
-        max-width: 80%;
+        width: 100%;
         object-position: center;
         object-fit: contain;
-        aspect-ratio: 16 / 9;
         transition: transform 1s;
+    }
+    .education-container {
+        padding-top: 14px;
+        padding-left: 5px;
+    }
+    .school-logo {
+        width: 100px;
+        display: flex;
+        justify-content: start;
+        aspect-ratio: 16 / 9;
     }
     .descript-header {
         font-weight: 600;

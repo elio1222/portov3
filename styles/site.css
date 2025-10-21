@@ -163,9 +163,9 @@ html {
         transition: opacity 0.8s;
         cursor: pointer;
     }
-    body::-webkit-scrollbar {
-      -webkit-appearance: none;
-    }
+    /* body::-webkit-scrollbar {
+      -webkit-appearance: auto;
+    } */
 }
 
 .hide-for-now {
