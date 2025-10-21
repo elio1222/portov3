@@ -53,6 +53,14 @@
     column-gap: 16px;
     margin-bottom: 15px;
 }
+.linkz > div:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+.linkz > div:active {
+    cursor: pointer;
+    opacity: 0.5;
+}
 .linkz:active {
     -webkit-tap-highlight-color: transparent;
 }

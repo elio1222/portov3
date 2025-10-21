@@ -35,6 +35,9 @@
 .hover-links:hover {
     opacity: 0.5;
 }
+.hover-links:active {
+    opacity: 0.3;
+}
 .icons {
     height: 25px;
     object-fit: cover;

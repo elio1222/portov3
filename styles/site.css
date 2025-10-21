@@ -92,11 +92,11 @@ html {
     transition: opacity 1s, transform 0.7s;
     background: linear-gradient(315deg, rgb(12, 11, 27) 3%, rgb(12, 11, 27) 38%, rgb(80, 80, 90) 68%, rgb(12, 11, 27) 98%);
     animation: gradient 5s linear forwards;
-    cursor: pointer;
+
     background-attachment: fixed;
 }
 .project:hover {
-    opacity: 0.7;
+    opacity: 0.9;
 }
 .project:active {
     -webkit-tap-highlight-color: transparent;
@@ -142,7 +142,32 @@ html {
 #tech, #edu, #cont, #proj, #song, #git{
     font-weight: 600;
 }
+.descript {
+    position: relative;
+}
 
+/* .window {
+    position: absolute;
+    right: 7px;
+    top: 12px;
+    z-index: 3;
+} */
+ .window {
+    padding-left: 4px;
+ }
+.window:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+.window:active {
+    opacity: 0.4;
+}
+.icons3 {
+    height: 18px;
+    object-fit: cover;
+    object-position: center;
+    display: inline-block;
+}
 @media (max-width: 450px) {
     #song {
         margin-top: 20px;
