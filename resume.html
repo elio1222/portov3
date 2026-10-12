@@ -1,11 +1,63 @@
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Resume</title>
-    </head>
-    <body>
-        <embed src = "styles/Rocha's Resume.pdf" style = "height: 100vh; width: 100vw;">
-    </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/resume.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <title>Resume | Elio Rocha</title>
+    <link rel="icon" type="image/jpeg" href="images/profileoutline-svgrepo-com.svg">
+</head>
+<body class="resume-page">
+    <div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
+    <header class = "header" id = "top">
+        <nav class = "nav" aria-label = "Main">
+            <a class = "nav-brand" href = "index.html" aria-label = "Back to home">
+                <span class = "nav-wordmark">ROCHA</span>
+                <span class = "nav-status"><span class = "status-dot"></span><span class = "status-text">online</span></span>
+            </a>
+            <div class = "nav-links">
+                <a class = "nav-link" href = "index.html#proj">Projects</a>
+                <a class = "nav-link" href = "index.html#git">Activity</a>
+                <a class = "nav-link" href = "photogallery.html">Gallery</a>
+                <a class = "nav-link active" href = "resume.html">Resume</a>
+                <a class = "nav-cta" href = "index.html#bottom">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="rs-main">
+        <div class="rs-head">
+            <h1 class="rs-title">Resume</h1>
+            <p class="rs-sub">My experience, education and skills</p>
+        </div>
+
+        <div class="rs-stage" id="rs-stage">
+            <div class="rs-glow"></div>
+            <a class="rs-tilt" id="rs-tilt" href="styles/Rocha's Resume.pdf" target="_blank" rel="noopener" aria-label="Open resume PDF in a new tab">
+                <div class="rs-paper" id="rs-paper">
+                    <canvas id="rs-canvas" aria-hidden="true"></canvas>
+                    <div class="rs-loading" id="rs-loading">Printing&hellip;</div>
+                    <div class="rs-beam" id="rs-beam"></div>
+                    <div class="rs-glare"></div>
+                </div>
+            </a>
+        </div>
+
+        <div class="rs-actions" id="rs-actions">
+            <a href="styles/Rocha's Resume.pdf" download="Elio Rocha - Resume.pdf">Download</a>
+            <a href="styles/Rocha's Resume.pdf" target="_blank" rel="noopener">Open full size</a>
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script src="js/resume.js"></script>
+</body>
 </html>

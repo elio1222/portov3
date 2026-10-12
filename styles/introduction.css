@@ -46,58 +46,88 @@
 }
 
 .introduction {
-    height: 170px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    gap: 18px;
+    padding: 8px 0 4px;
+}
+.intro-head {
+    display: flex;
     align-items: center;
+    gap: 16px;
 }
-.intro1 {
-    flex: 1;
-    margin-right: 13px;
-}
-.intro2 {
-    flex: 5;
-    margin: 0px 5px 5px 0px;
-
+.photo {
+    position: relative;
+    flex: none;
+    width: 80px;
+    height: 80px;
+    animation: floaty 6s ease-in-out infinite;
 }
 .mypicture {
-    margin: 10px 5px 5px 20px;
-    height: 120px;
-    width: 120px;
-    border-radius: 60px;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
     object-fit: cover;
-    transform: scale(1.1);
-    border-style: solid;
-    border-width: 2px;
-    border-color: rgba(115, 108, 157, 0.5);
-} 
-.mypicture:hover {
-    animation: rotating 3s;
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    transition: transform 0.3s ease, border-color 0.3s ease;
 }
+.photo:hover .mypicture { transform: scale(1.06) rotate(-3deg); border-color: rgba(255, 255, 255, 0.7); }
+@keyframes floaty { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
 
+.intro-id { flex: 1; min-width: 0; }
 .p-intro, .p-intro2, .p-intro3 {
     font-family: "Geist";
     color: #FFFFFF;
     margin: 0;
-    padding: 0
+    padding: 0;
 }
-.p-intro {
-    max-width: 350px;
-    font-size: 32px;
-    margin-top: 0px;
-    margin-bottom: 4px;
-    overflow: hidden;
-    overflow-y: hidden;
-    overflow-x: hidden;
-    white-space: nowrap;
-    animation: typing 6s steps(23) infinite;
-    animation-delay: 200ms;
+.p-intro3 {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 6px;
+    font-size: 16px;
+    font-weight: 500;
 }
+.p-intro { font-size: 26px; line-height: 1.2; letter-spacing: -0.01em; }
+.p-intro .fancy-text { font-size: inherit; padding: 0; }
+.caret {
+    display: inline-block;
+    width: 2px;
+    height: 0.95em;
+    margin-left: 3px;
+    vertical-align: -0.1em;
+    background: #22d3ee;
+    animation: caretblink 1s steps(1) infinite;
+}
+@keyframes caretblink { 50% { opacity: 0; } }
+.pin { display: inline-block; margin-right: 2px; animation: pinbounce 2.8s ease-in-out infinite; transform-origin: bottom center; }
+@keyframes pinbounce { 0%, 70%, 100% { transform: translateY(0); } 80% { transform: translateY(-4px); } 90% { transform: translateY(0); } }
 .p-intro2 {
-    margin: 7px 0px 20px 0px;
-    color: darkgray;
-    animation: appear2 2s ease forwards;
+    max-width: 620px;
+    margin: 6px auto 0;
+    text-align: center;
+    font-size: 17px;
+    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.88);
+    opacity: 0;
+    filter: blur(6px);
+    animation: bioin 1s ease 0.5s forwards;
 }
+@keyframes bioin { to { opacity: 1; filter: blur(0); transform: none; } }
+/* highlighter-marker effect on the key phrases */
+.p-intro2 .fancy-text2 {
+    color: #fff;
+    font-weight: 600;
+    padding: 0 3px;
+    border-radius: 3px;
+    background: linear-gradient(transparent 52%, rgba(200, 16, 46, 0.7) 52%); /* CUA cardinal red */
+    -webkit-text-fill-color: #fff;
+    text-shadow: none;
+    transform: none;
+}
+.p-intro2 .fancy-text2:hover { transform: none; text-shadow: none; background: linear-gradient(transparent 20%, rgba(200, 16, 46, 0.9) 20%); }
 .fancy-text2 {
     color: white;
     font-weight: 600;
@@ -109,63 +139,6 @@
     text-shadow: 2px 2px 3px rgb(125, 119, 158);
     transform: translate(-2px, -2px);
 }
-.p-intro3 {
-    margin-top: 10px;
-    margin-bottom: 0px;
-    animation: appear2 2s ease forwards;
-}
-
-@media (max-width: 600px) {
-
-    .introduction-header {
-        display: block;
-        margin-top: 0;
-        margin-bottom: 30px;
-    }
-    .hover-links > p {
-        display: none;
-    }
-    .mypicture {
-        height: 120px;
-        width: 120px;
-        border-radius: 60px;
-        object-fit: cover;
-        transform: scale(1.1);
-        border-style: solid;
-        border-width: 3px;
-        border-color: (73, 73, 73);
-    }
-    .introduction {
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: auto;
-    }
-    .intro1 {
-        flex: 1;
-        margin-bottom: 5px;
-    }
-    .intro2 {
-        display:flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        width: 100%;
-    }
-    .p-intro {
-        font-size: 25px;
-    }
-    .intro-below-header {
-        display: none;
-    }
-    .linkss-text > p {
-        display: none;
-    }
-
-}
-
 .fancy {
     font-weight: 600;
     background-image: linear-gradient(to bottom right, #ffffff, rgba(255, 255, 255, 0.5));
@@ -178,4 +151,67 @@
 }
 .md:hover {
 	text-shadow: 1px 1px 1px #e21833, 1px 1px 1px #ffd200, 0.5px 0.5px 0.5px #ffffff, 0.5px 0.5px 0.5px black;
+}
+/* social links: outlined puzzle pieces that interlock */
+.socials { display: flex; flex: none; padding-right: 2px; }
+.social {
+    position: relative;
+    display: block;
+    width: 62px;
+    height: 44px;
+    margin-left: -18px;           /* knob of one piece sits inside the socket of the next */
+    -webkit-tap-highlight-color: transparent;
+    animation: pzsnap 0.7s cubic-bezier(.2,.9,.3,1.25) both;
+    animation-delay: calc(0.5s + var(--i) * 0.12s);
+    transition: transform 0.25s ease;
+}
+.social:first-child { margin-left: 0; }
+.pz { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.pz path {
+    fill: rgba(125, 119, 158, 0.10);
+    stroke: rgba(150, 142, 205, 0.75);
+    stroke-width: 1.5;
+    stroke-linejoin: round;
+    transition: fill 0.25s ease, stroke 0.25s ease;
+    /* a signal runs through the connected pieces, one after the other */
+    animation: pzpulse 4.5s ease-in-out infinite;
+    animation-delay: calc(2s + var(--i) * 0.3s);
+}
+.social img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    transform: translate(-50%, -50%);
+    transition: transform 0.25s ease;
+}
+.social:hover { transform: translateY(-4px); z-index: 2; }
+.social:hover .pz path { fill: rgba(125, 119, 158, 0.28); stroke: #fff; animation: none; }
+.social:hover img { transform: translate(-50%, -50%) scale(1.15); }
+.social:focus-visible { outline: none; }
+.social:focus-visible .pz path { stroke: #fff; }
+@keyframes pzsnap {
+    from { opacity: 0; transform: translateX(calc((var(--i) + 1) * 14px)) translateY(-10px) rotate(calc(var(--i) * 4deg - 6deg)); }
+    to { opacity: 1; transform: none; }
+}
+@keyframes pzpulse {
+    0%, 22%, 100% { stroke: rgba(150, 142, 205, 0.75); fill: rgba(125, 119, 158, 0.10); }
+    8% { stroke: #d6dbff; fill: rgba(125, 119, 158, 0.30); }
+}
+
+@media (max-width: 600px) {
+    .intro-head { flex-wrap: wrap; }
+    .intro-id { flex: 1 1 calc(100% - 100px); }
+    .socials { width: 100%; margin-top: 2px; }
+    .p-intro { font-size: 22px; }
+    .photo { width: 72px; height: 72px; }
+    .p-intro2 { font-size: 15.5px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .photo, .caret, .pin { animation: none; }
+    .p-intro2 { opacity: 1; filter: none; animation: none; }
+    .social, .pz path { animation: none; }
 }

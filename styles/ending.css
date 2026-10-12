@@ -1,84 +1,54 @@
-.ending {
-    padding: 2rem;
-    padding-bottom: 10rem;
+.footer {
+    margin-top: 40px;
+    padding: 0 16px 40px;
+    color: #fff;
+    font-family: "Geist", sans-serif;
 }
-.myname {
-    font-family: 'Geist';
-    color:white;
-    font-size: 32px;
-    font-weight: 600;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    text-align: center;
-    margin-bottom: 30px;
-}
-.quote {
-    margin-top: 30px;
-    font-family: 'Geist';
-    color: darkgrey;
-    font-size: 16px;
-    font-weight: 300;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    text-align: center;
-    padding-bottom: 70px;
-}
-.linkss2 {
-    color: white;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    column-gap: 8px;
-}
-
-.linkss-text2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: "Geist";
-    color: #FFFFFF;
-    font-weight: 500;
-    transition: opacity 0.7s;
-    animation: headerappear 0.7s ease-in forwards;
-    column-gap: 8px;
-}
-.linkz {
-    padding-top: 14px;
-    color: white;
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    column-gap: 16px;
-    margin-bottom: 15px;
-}
-.linkz > div:hover {
-    cursor: pointer;
-    opacity: 0.7;
-}
-.linkz > div:active {
-    cursor: pointer;
-    opacity: 0.5;
-}
-.linkz:active {
-    -webkit-tap-highlight-color: transparent;
-}
-.l2 {
-    margin-top: 24px;
+.footer div, .footer a, .footer span, .footer p { font-family: "Geist", sans-serif; }
+.ft-inner {
+    max-width: 780px;
+    margin: 0 auto;
+    padding-top: 32px;
+    border-top: 1px solid rgba(255, 255, 255, 0.10);
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    gap: 16px;
     text-align: center;
-    row-gap: 0px;
 }
-.l2-text {
+.ft-socials { display: flex; gap: 6px; }
+.ft-socials a {
+    width: 32px;
+    height: 32px;
+    display: grid;
+    place-items: center;
+    border-radius: 8px;
+    opacity: 0.7;
+    transition: opacity 0.2s ease, background 0.2s ease;
+}
+.ft-socials a:hover { opacity: 1; background: rgba(255, 255, 255, 0.08); }
+.ft-socials img { width: 18px; height: 18px; }
+.ft-quote {
+    margin: 0;
+    max-width: 460px;
+    font-size: 13px;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.55);
+}
+.ft-local {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
-    text-align: center;
+    gap: 6px 8px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.4);
+    font-variant-numeric: tabular-nums;
 }
+.ft-local [hidden] { display: none; }
+.ft-sep { opacity: 0.6; }
+
 .fancy-text {
     font-weight: 600;
     margin: 0;

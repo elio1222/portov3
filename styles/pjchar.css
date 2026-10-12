@@ -1,0 +1,71 @@
+/* the cartoon who leans on the centred project card, shoves it forward and gets flattened going back */
+.proj-wrap {
+    position: relative;
+}
+.projects {
+    z-index: 1;
+}
+.pj-char {
+    --fx: 1;
+    --sx: 1;
+    --sy: 1;
+    --ox: 0px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 48px;
+    height: 96px;
+    z-index: 0;
+    pointer-events: none;
+    transform: translateX(var(--ox));
+}
+.pj-char svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    filter: drop-shadow(0 2px 0 rgba(0, 0, 0, 0.35));
+}
+.pj-flip {
+    transform-box: view-box;
+    transform-origin: 25px 96px;
+    transform: scale(calc(var(--fx) * var(--sx)), var(--sy));
+}
+.pj-body, .pj-arm, .pj-leg {
+    transform-box: view-box;
+    transition: transform 0.12s ease-out;
+}
+.pj-body { transform-origin: 25px 96px; }
+.pj-arm  { transform-origin: 25px 34px; }
+.pj-leg  { transform-origin: 25px 60px; }
+
+/* leaning, back against the card */
+.pj-char.lean .pj-body  { transform: rotate(-11deg); animation: pj-breathe 3.2s ease-in-out infinite; }
+.pj-char.lean .pj-arm.f { transform: rotate(16deg); }
+.pj-char.lean .pj-arm.b { transform: rotate(-8deg); }
+.pj-char.lean .pj-leg.f { transform: rotate(-8deg); }
+.pj-char.lean .pj-leg.b { transform: rotate(6deg); }
+
+/* turned around, shoving the card */
+.pj-char.push .pj-body  { transform: rotate(17deg); animation: pj-strain 0.16s ease-in-out infinite alternate; }
+.pj-char.push .pj-arm   { transform: rotate(-86deg); }
+.pj-char.push .pj-leg.b { transform: rotate(22deg); }
+.pj-char.push .pj-leg.f { transform: rotate(-12deg); }
+
+@keyframes pj-breathe {
+    0%, 100% { transform: rotate(-11deg) scaleY(1); }
+    50%      { transform: rotate(-11deg) scaleY(1.015); }
+}
+@keyframes pj-strain {
+    from { transform: rotate(15deg); }
+    to   { transform: rotate(20deg); }
+}
+
+@media (max-width: 450px) {
+    .pj-char {
+        width: 32px;
+        height: 64px;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .pj-char .pj-body { animation: none !important; }
+}

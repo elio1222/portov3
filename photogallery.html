@@ -5,11 +5,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>photos</title>
         <link rel = 'icon' href = "images/photo-camera-svgrepo-com.svg">
-        <link rel = 'stylesheet' href = "photogallery.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
         <link rel = 'stylesheet' href = "styles/photogallery.css">
+        <link rel = 'stylesheet' href = "styles/header.css">
     </head>
     <body>
         <div>
@@ -17,55 +17,63 @@
             <div class="wave"></div>
             <div class="wave"></div>
         </div>
-        <div class = "header">
-            <div>
-                <a class = "fancy" style = "text-decoration: none; -webkit-tap-highlight-color: transparent;" href = "index.html">Home</a>
+        <header class = "header" id = "top">
+        <nav class = "nav" aria-label = "Main">
+            <a class = "nav-brand" href = "index.html" aria-label = "Back to home">
+                <span class = "nav-wordmark">ROCHA</span>
+                <span class = "nav-status"><span class = "status-dot"></span><span class = "status-text">online</span></span>
+            </a>
+            <div class = "nav-links">
+                <a class = "nav-link" href = "index.html#proj">Projects</a>
+                <a class = "nav-link" href = "index.html#git">Activity</a>
+                <a class = "nav-link active" href = "photogallery.html">Gallery</a>
+                <a class = "nav-link" href = "resume.html">Resume</a>
+                <a class = "nav-cta" href = "index.html#bottom">Contact</a>
             </div>
-        </div>
+        </nav>
+    </header>
         <div class = "main">
-            <div class = "subheader">
-                <span class = "fancy">Photo Gallery</span>
-            </div>
-            <div class = "subheader" style = "font-size: 12px; margin: 0px; color: darkgray">
-                Enjoy some of the photos I've taken >
+            <div class = "page-title">
+                <h1 class = "fancy">Photo Gallery</h1>
+                <p>A few moments I've captured along the way</p>
             </div>
             <div class = "container">
                 <div class = "one">
                     <div class = "small">
-                        <img class = "small-img" src = "gallery/sea.JPG">
+                        <img class = "small-img" src = "gallery/optimized/sea.jpg">
                     </div>
                     <div class = "long">
-                        <img class = "long-img" src = "gallery/mecua.jpg">
+                        <img class = "long-img" src = "gallery/optimized/mecua.jpg">
                     </div>
                 </div>
                 <div class = "two">
                     <div class = "small">
-                        <img class = "small-img" src = "gallery/nicaragua.jpg">
+                        <img class = "small-img" src = "gallery/optimized/nicaragua.jpg">
                     </div>
                     <div class = "small">
-                        <img class = "small-img" src = "gallery/mered.jpg">
+                        <img class = "small-img" src = "gallery/optimized/mered.jpg" loading = "lazy" decoding = "async">
                     </div>
                     <div class = "small">
-                        <img class = "small-img" src = "gallery/wharf.jpg">
+                        <img class = "small-img" src = "gallery/optimized/wharf.jpg" loading = "lazy" decoding = "async">
                     </div>
                 </div>
                 <div class = "three">
                     <div class = "long">
-                        <img class = "long-img" src = "gallery/sciontc.jpg">
+                        <img class = "long-img" src = "gallery/optimized/sciontc.jpg" loading = "lazy" decoding = "async">
                     </div>
                     <div class = "small">
-                        <img class = "small-img" src = "gallery/mepink.jpg">
+                        <img class = "small-img" src = "gallery/optimized/mepink.jpg" loading = "lazy" decoding = "async">
                     </div>
                 </div>
                 <div class = "four">
                     <div class = "small">
-                        <img class = "small-img" src = "gallery/beach.JPG">
+                        <img class = "small-img" src = "gallery/optimized/beach.jpg" loading = "lazy" decoding = "async">
                     </div>
                     <div class = "small">
-                        <img class = "small-img" src = "gallery/great.jpg">
+                        <img class = "small-img" src = "gallery/optimized/great.jpg" loading = "lazy" decoding = "async">
                     </div>
                     <div class = "small">
-                        <img class = "small-img" src = "gallery/darkcua.jpg">
+                        <img class = "small-img" src = "gallery/optimized/darkcua.jpg" loading = "lazy" decoding = "async">
                     </div>
                 </div>
             </div>
