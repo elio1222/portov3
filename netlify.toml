@@ -3,7 +3,9 @@
     functions = "netlify/functions"
 
 [functions."oura-refresh"]
-    schedule = "@hourly"
+    # Netlify crons are UTC: 13:00 = 9am EDT, 14:00 = 9am EST. Both run so the
+    # card is refreshed at 9am year-round (the second run is a harmless re-fetch).
+    schedule = "0 13,14 * * *"
 
 # Static assets: cache in the browser to save bandwidth credits. Filenames are
 # not hashed, so keep lifetimes short enough that edits show up.

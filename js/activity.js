@@ -596,7 +596,7 @@
     } else {
       const io = new IntersectionObserver((entries) => {
         if (entries.some((e) => e.isIntersecting)) { io.disconnect(); run(); gauges(); }
-      }, { threshold: 0.4 });
+      }, { threshold: 0.1 });
       io.observe($("oura-card"));
     }
 

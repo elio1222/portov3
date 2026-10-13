@@ -1,6 +1,6 @@
 const { connectLambda, refreshSummary } = require("./_lib/oura");
 
-// Scheduled hourly. The only place tokens are refreshed, so the single-use
+// Scheduled daily around 9am New York (see netlify.toml). The only place tokens are refreshed, so the single-use
 // refresh token can't be raced by concurrent visitors.
 // Locally: `netlify functions:invoke oura-refresh`
 exports.handler = async (event) => {

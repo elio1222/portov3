@@ -3,7 +3,7 @@ const { getStore, connectLambda } = require("@netlify/blobs");
 const AUTHORIZE_URL = "https://cloud.ouraring.com/oauth/authorize";
 const TOKEN_URL = "https://api.ouraring.com/oauth/token";
 const API_BASE = "https://api.ouraring.com";
-const SCOPE = "personal daily";
+const SCOPE = "daily";
 const TIMEOUT_MS = 10000;
 const REFRESH_MARGIN_MS = 10 * 60 * 1000;
 
@@ -131,7 +131,16 @@ async function fetchSummary(accessToken) {
   // Today's activity is partial, so prefer the latest completed day.
   const today = localDay(end);
   const a = latest(activity.filter((x) => x.day < today)) ?? latest(activity);
-  const night = latest(sessions.filter((x) => x.type === "long_sleep"));
+  // Match the night to the daily_sleep day. Several long_sleep rows can share a
+  // day, so take the longest one rather than whichever the API lists last.
+  const longSleeps = sessions.filter((x) => x.type === "long_sleep");
+  const sameDay = longSleeps.filter((x) => x.day === s?.day);
+  const pool = sameDay.length ? sameDay : longSleeps;
+  const night = pool.reduce(
+    (best, x) =>
+      !best || x.day > best.day || (x.day === best.day && x.total_sleep_duration > best.total_sleep_duration) ? x : best,
+    null
+  );
 
   // Flat shape consumed by js/activity.js
   return {
@@ -160,6 +169,9 @@ async function refreshSummary() {
     tokens = await getValidTokens({ force: true });
     summary = await fetchSummary(tokens.access_token);
   }
+  // Never replace the saved summary with an older day.
+  const saved = await store().get("summary", { type: "json" }).catch(() => null);
+  if (saved?.day && summary.day && summary.day < saved.day) return saved;
   await store().setJSON("summary", summary);
   return summary;
 }

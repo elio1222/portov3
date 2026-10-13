@@ -54,16 +54,6 @@
         linear-gradient(160deg, rgba(115, 108, 157, 0.28), #0d0c1d 55%);
     background-color: #0d0c1d;
 }
-.hud-panel::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 110px;
-    height: 100%;
-    background: repeating-linear-gradient(115deg, rgba(255, 255, 255, 0.05) 0 6px, transparent 6px 14px);
-    pointer-events: none;
-}
 .hud-panel::after { content: ""; position: absolute; right: 0; bottom: 0; width: 64px; height: 4px; background: var(--hud-red); }
 
 .hud-top {
