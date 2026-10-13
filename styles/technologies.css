@@ -1,92 +1,225 @@
-.techy {
+/* technologies: grouped stacks along a small trail */
+.tech-map {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     margin-top: 14px;
+    padding: 14px 8px 30px;
+    overflow: hidden;
+    border: 1px solid rgba(150, 142, 205, 0.2);
+    border-radius: 18px;
+    background: linear-gradient(180deg, rgba(115, 108, 157, 0.12), rgba(13, 12, 29, 0.5));
+    transition: transform 0.45s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+/* same hover highlight as the project cards */
+.tech-map:hover {
+    transform: translateY(-4px);
+    border-color: rgba(150, 142, 205, 0.7);
+    box-shadow: 0 18px 36px -18px rgba(115, 108, 157, 0.6);
+}
+/* night scene: pillar hills, a castle and a purple grass strip behind the stacks */
+.tm-scene {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+.tm-pillar {
+    position: absolute;
+    bottom: 14px;
+    width: var(--w);
+    height: var(--h);
+    border-radius: 999px 999px 0 0;
+    background:
+        repeating-linear-gradient(135deg, rgba(167, 159, 230, 0.10) 0 5px, transparent 5px 10px),
+        rgba(115, 108, 157, 0.16);
+}
+.tm-castle {
+    position: absolute;
+    right: 8px;
+    bottom: 14px;
+    width: 38px;
+    fill: #2c2456;
+}
+.tm-pipe {
+    position: absolute;
+    bottom: 13px;
+    width: 22px;
+    height: var(--ph);
+    margin-left: -11px;
+    opacity: 0.9;
+}
+.tm-kart {
+    position: absolute;
+    left: 0;
+    bottom: 9px;
+    width: 60px;
+    animation: tm-drive 10s linear infinite;
+}
+.tm-kart svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    animation: tm-bump 0.35s ease-in-out infinite alternate;
+}
+.tm-wheel {
+    transform-box: view-box;
+    transform-origin: var(--cx) var(--cy);
+    animation: tm-roll 0.45s linear infinite;
+}
+.tm-block {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    opacity: 0.85;
+}
+.tm-coin {
+    position: absolute;
+    width: 8px;
+    height: auto;
+    animation: tm-spin 2.4s ease-in-out infinite;
+}
+@keyframes tm-drive {
+    from { left: -60px; }
+    to   { left: 100%; }
+}
+@keyframes tm-bump {
+    from { transform: translateY(0); }
+    to   { transform: translateY(-1.5px); }
+}
+@keyframes tm-roll {
+    to { transform: rotate(360deg); }
+}
+@keyframes tm-spin {
+    0%, 100% { transform: scaleX(1); }
+    50% { transform: scaleX(0.35); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .tm-coin, .tm-kart, .tm-kart svg, .tm-wheel { animation: none; }
+    .tm-kart { left: 45%; }
+}
+.tm-mini {
+    position: absolute;
+    bottom: 12px;
+    width: 14px;
+    height: auto;
+    opacity: 0.8;
+}
+.tech-map::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 14px;
+    border-top: 2px solid #5a4aa8;
+    background: repeating-linear-gradient(90deg, #2a2152 0 28px, #231b47 28px 56px);
+}
+.tm-trail {
+    z-index: 1;
+    position: absolute;
+    left: 8px;
+    right: 8px;
+    top: 14px;
+    width: calc(100% - 16px);
+    height: 36px;
+    fill: none;
+    pointer-events: none;
+}
+.tm-trail path {
+    vector-effect: non-scaling-stroke;
+    stroke: rgba(150, 142, 205, 0.55);
+    stroke-width: 2;
+    stroke-dasharray: 1 8;
+    stroke-linecap: round;
+}
+.tm-group {
+    position: relative;
+    z-index: 1;
+    padding: 46px 8px 0;
+    text-align: center;
+}
+.tm-node {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 26px;
+    height: auto;
+    margin-left: -13px;
+    filter: drop-shadow(0 0 8px rgba(167, 159, 230, 0.55));
+}
+.tm-group:nth-of-type(odd) .tm-node  { top: 12px; }
+.tm-group:nth-of-type(even) .tm-node { top: -2px; }
+.tm-title {
+    margin: 0 0 10px;
+    font-family: "Geist";
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #b9b3ec;
+}
+.tm-title span {
+    margin-right: 6px;
+    color: rgba(185, 179, 236, 0.5);
+}
+.tm-group ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
     display: flex;
-    max-width: 100%;
-    justify-content: center;
-    align-items: center;
-    column-gap: 10px;
     flex-wrap: wrap;
-}
-.techs-icons {
-    padding: 5px 5px 5px 5px;
-    font-family: "Geist";
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
     justify-content: center;
-    font-size: 16px;
-    font-weight: 200;
+    gap: 6px;
 }
-.techs-icons > img {
-    height: 40px;
-    width: 40px;
-    object-fit: contain;
-    object-position: center;
-}
-
-.techs-icons {
-    opacity: 0;
-    animation: appear 0.7s ease-in forwards;
-    transition: transform 0.3s ease;
-}
-.techy .techs-icons:nth-child(1) {animation-delay: 0.1s;}
-.techy .techs-icons:nth-child(2) {animation-delay: 0.2s;}
-.techy .techs-icons:nth-child(3) {animation-delay: 0.3s;}
-.techy .techs-icons:nth-child(4) {animation-delay: 0.4s;}
-.techy .techs-icons:nth-child(5) {animation-delay: 0.5s;}
-.techy .techs-icons:nth-child(6) {animation-delay: 0.6s;}
-.techy .techs-icons:nth-child(7) {animation-delay: 0.7s;}
-.techy .techs-icons:nth-child(8) {animation-delay: 0.8s;}
-.techy .techs-icons:nth-child(9) {animation-delay: 0.9s;}
-.techy .techs-icons:nth-child(10) {animation-delay: 1s;}
-
-.techs-icons:hover {
-    transform: translateY(-5px);
-}
-.testing-tech {
-    font-family: "Geist";
-    color: white;
-    display: flex;
-    flex-direction: column;
+.tm-group li {
+    display: inline-flex;
     align-items: center;
-    text-align: center;
-    justify-content: center;
-    font-size: 16px;
-    font-weight: 200;
-    transition: transform 0.3s ease;
+    gap: 6px;
+    padding: 4px 10px 4px 6px;
+    font-family: "Geist";
+    font-size: 14px;
+    font-weight: 500;
+    color: #ece9fb;
+    background: rgba(115, 108, 157, 0.2);
+    border: 1px solid rgba(150, 142, 205, 0.4);
+    border-radius: 999px;
+    transition: background 0.2s, transform 0.2s;
 }
-.testing-tech > img{
-    height: 40px;
-    width: 40px;
+.tm-group li:hover {
+    background: rgba(150, 142, 205, 0.34);
+    transform: translateY(-2px);
+}
+.tm-group li img {
+    width: 22px;
+    height: 22px;
+    padding: 2px;
+    box-sizing: border-box;
     object-fit: contain;
-    object-position: center;
-}
-.testing-tech:hover {
-    transform: translateY(-5px);
+    background: #f4f2ff;
+    border-radius: 50%;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 640px) {
     #tech {
-        margin-top: 10px
+        margin-top: 10px;
     }
-    .techs-icons {
-        padding: 5px 5px 5px 5px;
-        font-family: "Geist";
-        color: white;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        justify-content: center;
-        font-size: 14px;
-        font-weight: 200;
+    .tech-map {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 18px;
     }
-    .techs-icons > img {
-        height: 35px;
-        width: 35px;
-        object-fit: contain;
-        object-position: center;
+    .tm-trail {
+        display: none;
     }
+    .tm-group,
+    .tm-group:nth-of-type(n) {
+        padding-top: 22px;
+    }
+    .tm-group:nth-of-type(n) .tm-node {
+        top: 0;
+    }
+}
+
+/* icons drawn in white need a dark disc */
+.tm-group li img.tm-dark {
+    background: #2b2450;
 }

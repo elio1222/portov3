@@ -1,26 +1,157 @@
+html { scroll-behavior: smooth; }
+#oura, #edu, #tech, #proj, #git, #bottom { scroll-margin-top: 84px; }
+
 .header {
-    padding-top: 14px;
+    position: sticky;
+    top: 12px;
+    z-index: 100;
+    padding: 0 16px;
+    margin-top: 12px;
     color: white;
-    justify-content: center;
     animation: headerappear 1s ease forwards;
 }
-.hashtags {
+.nav {
+    max-width: 780px;
+    margin: 0 auto;
+    height: 56px;
+    padding: 0 8px 0 10px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    column-gap: 20px;
-    
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    background: rgba(18, 17, 36, 0.55);
+    -webkit-backdrop-filter: blur(14px) saturate(160%);
+    backdrop-filter: blur(14px) saturate(160%);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
-.hashtags:active {
+.header.scrolled .nav {
+    background: rgba(12, 11, 27, 0.82);
+    border-color: rgba(255, 255, 255, 0.16);
+    box-shadow: 0 10px 36px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     -webkit-tap-highlight-color: transparent;
 }
-.hashtags > div{
-    overflow-x: visible;
-    width: 100%;
+.nav-wordmark {
+    font-family: "Geist", sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: 0.12em;
+    color: #fff;
 }
-@media (max-width: 600px) {
-    .hashtags > div{
-        overflow-x: visible;
-        width: 100%;
-    }
+/* a brown chess knight (horse) that hops on hover */
+.nav-knight {
+    width: 22px;
+    height: 22px;
+    margin-left: 8px;
+    fill: #8a5633;
+    stroke: #c99468;
+    stroke-width: 0.9;
+    stroke-linejoin: round;
+    transition: transform 0.25s ease;
 }
+.nav-knight .eye { fill: #f3e7d8; stroke: none; }
+.nav-brand:hover .nav-knight { transform: translateY(-3px); }
+@media (prefers-reduced-motion: reduce) { .nav-knight { transition: none; } }
+
+/* "online" status pill */
+.nav-status {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 9px 4px 8px;
+    border-radius: 999px;
+    border: 1px solid rgba(52, 211, 153, 0.3);
+    background: rgba(52, 211, 153, 0.1);
+}
+.status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #34d399;
+    animation: statuspulse 2.4s ease-out infinite;
+}
+.status-text {
+    font-family: "Geist", sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: #6ee7b7;
+}
+@keyframes statuspulse {
+    0% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.6); }
+    70%, 100% { box-shadow: 0 0 0 6px rgba(52, 211, 153, 0); }
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+.nav-link {
+    position: relative;
+    padding: 8px 12px;
+    border-radius: 999px;
+    font-family: "Geist", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.68);
+    -webkit-tap-highlight-color: transparent;
+    transition: color 0.2s ease, background 0.2s ease;
+}
+.nav .nav-link:visited { color: rgba(255, 255, 255, 0.68); }
+.nav .nav-link.active:visited, .nav .nav-link:hover:visited { color: #fff; }
+.nav-link:hover { color: #fff; background: rgba(255, 255, 255, 0.08); }
+.nav-link.active { color: #fff; background: rgba(255, 255, 255, 0.12); }
+.nav-cta {
+    margin-left: 6px;
+    padding: 9px 16px;
+    border-radius: 999px;
+    font-family: "Geist", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #0c0b1b;
+    background: #fff;
+    -webkit-tap-highlight-color: transparent;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.nav .nav-cta, .nav .nav-cta:visited { color: #0c0b1b; }
+.nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(255, 255, 255, 0.25); }
+.nav-cta:active { transform: translateY(0); }
+.nav a:focus-visible { outline: 2px solid #8ab4ff; outline-offset: 2px; }
+
+@media (max-width: 640px) {
+    .header { padding: 0 12px; }
+    .nav { height: 54px; padding: 0 8px; justify-content: center; }
+    /* brand is dropped on phones so the links have room to breathe */
+    .nav-brand { display: none; }
+    .nav-links { width: 100%; justify-content: space-between; gap: 0; }
+    .nav-link { padding: 9px 8px; font-size: 14px; }
+    .nav-cta { padding: 9px 14px; font-size: 14px; margin-left: 0; }
+}
+@media (max-width: 380px) {
+    .nav { padding: 0 6px; }
+    .nav-link { padding: 9px 5px; font-size: 12.5px; }
+    .nav-cta { padding: 9px 11px; font-size: 12.5px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .status-dot { animation: none; }
+}
+
+@keyframes headerappear {
+    from { opacity: 0; transform: translateY(-14px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* keep the header identical on pages that don't load site.css */
+.nav a, .nav a:hover, .nav a:visited { text-decoration: none; }
+.nav-wordmark { display: inline-block; }

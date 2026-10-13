@@ -1,0 +1,136 @@
+.activity-card {
+    margin-top: 14px;
+    padding: 16px;
+    color: white;
+    border-radius: 20px;
+    border: 1px solid rgba(115, 108, 157, 0.5);
+    background: rgba(12, 11, 27, 0.55);
+    transition: transform 0.45s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+/* same hover highlight as the project cards */
+.activity-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(150, 142, 205, 0.7);
+    box-shadow: 0 18px 36px -18px rgba(115, 108, 157, 0.6);
+}
+.activity-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: darkgrey;
+    margin-bottom: 10px;
+}
+.activity-meta a:hover { color: white; }
+
+.iso-stage { position: relative; }
+.iso-wrap { position: relative; width: 100%; }
+#contrib-canvas { display: block; width: 100%; cursor: grab; touch-action: pan-y; }
+#contrib-canvas.dragging { cursor: grabbing; }
+.iso-tip {
+    display: none;
+    position: absolute;
+    pointer-events: none;
+    padding: 4px 8px;
+    border-radius: 8px;
+    font-size: 12px;
+    white-space: nowrap;
+    color: white;
+    background: rgba(12, 11, 27, 0.95);
+    border: 1px solid rgba(115, 108, 157, 0.7);
+}
+.iso-stats { position: absolute; inset: 0; pointer-events: none; }
+.iso-stat { position: absolute; }
+.st-label { font-size: 14px; color: darkgrey; }
+.st-row { display: flex; align-items: center; gap: 8px; }
+.st-num {
+    font-family: "Press Start 2P", monospace;
+    font-size: 24px;
+    line-height: 1.2;
+}
+/* Minecraft chat colours, each with its darker drop shadow. */
+.st-total .st-num { color: #55ff55; text-shadow: 3px 3px 0 #153f15; }
+.st-busiest .st-num { color: #ffaa00; text-shadow: 3px 3px 0 #2a2a00; }
+.st-longest .st-num { color: #55ffff; text-shadow: 3px 3px 0 #153f3f; }
+.st-current .st-num { color: #ff5555; text-shadow: 3px 3px 0 #3f1515; }
+.st-unit { display: flex; flex-direction: column; font-size: 14px; color: white; }
+.st-unit small { font-size: 12px; color: darkgrey; }
+.st-total { top: 0; right: 0; text-align: right; }
+.st-total .st-num { font-size: 30px; }
+.st-busiest { top: 100px; right: 40px; text-align: right; }
+.st-longest { bottom: 70px; left: 0; }
+.st-current { bottom: 0; left: 0; }
+/* Narrow cards: chart on top, stats in a 2x2 grid below. */
+.iso-compact .iso-stats {
+    position: static;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 14px;
+    margin-top: 12px;
+}
+.iso-compact .iso-stat { position: static; text-align: left; }
+.iso-compact .st-num, .iso-compact .st-total .st-num { font-size: 17px; }
+.iso-compact .st-unit { font-size: 12px; }
+
+.cell {
+    width: 11px;
+    height: 11px;
+    border-radius: 2px;
+    display: inline-block;
+}
+.lvl-0 { background: #5e9d34; }
+.lvl-1 { background: #d9d5c8; }
+.lvl-2 { background: #4a7a2b; }
+.lvl-3 { background: #2d5a3a; }
+.lvl-4 { background: #3da52a; }
+
+.contrib-legend {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 6px 18px;
+    margin-top: 10px;
+    font-size: 11px;
+    color: darkgrey;
+}
+.lg-item { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+
+.latest-project {
+    margin-top: 16px;
+    padding-left: 12px;
+    border-left: 3px solid #5e9d34;
+}
+.commit-label { font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: darkgrey; }
+.commit-line { margin-top: 2px; font-weight: 600; font-size: 17px; line-height: 1.3; overflow-wrap: anywhere; }
+.commit-line a:hover { opacity: 0.7; }
+.commit-sub { margin-top: 4px; font-size: 13px; color: darkgrey; }
+.commit-sub a:hover { color: white; }
+.commit-sub code { font-family: ui-monospace, Menlo, monospace; }
+.commit-sub :empty { display: none; }
+.commit-sub > * + *::before { content: "·"; margin: 0 7px; }
+
+@media (max-width: 450px) {
+    #git { margin-top: 10px; }
+}
+
+.iso-hint {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    font-size: 11px;
+    font-weight: 700;
+    color: #fff;
+    pointer-events: none;
+}
+
+.mc-note {
+    margin: 8px 0 0;
+    text-align: center;
+    font-size: 11px;
+    color: darkgrey;
+}
+
+.mc-note b {
+    font-weight: 700;
+    color: #fff;
+}

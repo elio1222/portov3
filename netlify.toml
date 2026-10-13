@@ -1,3 +1,28 @@
 [build]
     publish = "."
     functions = "netlify/functions"
+
+[functions."oura-refresh"]
+    schedule = "@hourly"
+
+# Static assets: cache in the browser to save bandwidth credits. Filenames are
+# not hashed, so keep lifetimes short enough that edits show up.
+[[headers]]
+    for = "/images/*"
+    [headers.values]
+        Cache-Control = "public, max-age=604800"
+
+[[headers]]
+    for = "/gallery/*"
+    [headers.values]
+        Cache-Control = "public, max-age=604800"
+
+[[headers]]
+    for = "/styles/*"
+    [headers.values]
+        Cache-Control = "public, max-age=3600"
+
+[[headers]]
+    for = "/js/*"
+    [headers.values]
+        Cache-Control = "public, max-age=3600"

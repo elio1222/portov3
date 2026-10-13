@@ -93,3 +93,330 @@
     }
 
 }
+/* education: Clash-of-Clans-style upgrade cards */
+.edu-coc {
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+.edu-card {
+    padding: 14px 16px 14px;
+    border: 1px solid rgba(150, 142, 205, 0.2);
+    border-radius: 16px;
+    background: linear-gradient(180deg, rgba(115, 108, 157, 0.12), rgba(13, 12, 29, 0.5));
+}
+.edu-card .college,
+.edu-card .highschool {
+    margin-bottom: 14px;
+}
+.edu-card .descript-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 10px;
+}
+.edu-max {
+    font-family: "Press Start 2P", monospace;
+    font-size: 8px;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    padding: 5px 7px 4px;
+    color: #3a2704;
+    background: linear-gradient(180deg, #ffe38a, #e0a92c);
+    border: 1px solid #8a6420;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(240, 190, 70, 0.35);
+}
+.edu-queue {
+    list-style: none;
+    margin: 0 0 12px;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+.edu-queue li {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 10px 3px 8px;
+    font-family: "Geist";
+    font-size: 12.5px;
+    color: #ece9fb;
+    background: rgba(115, 108, 157, 0.2);
+    border: 1px solid rgba(150, 142, 205, 0.4);
+    border-radius: 999px;
+}
+.edu-queue li::before {
+    content: "";
+    width: 7px;
+    height: 9px;
+    border-radius: 50% 50% 50% 50% / 65% 65% 35% 35%;
+    background: linear-gradient(180deg, #e27cf0, #a24be0);
+    box-shadow: 0 0 6px rgba(200, 110, 240, 0.6);
+}
+.edu-upg-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+    font-family: "Geist";
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #b9b3ec;
+}
+.edu-time {
+    margin-left: auto;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.04em;
+    color: #f4f1ff;
+    text-transform: none;
+    font-size: 13px;
+}
+.edu-bar {
+    position: relative;
+    height: 20px;
+    border-radius: 999px;
+    overflow: hidden;
+    background: rgba(13, 12, 29, 0.85);
+    border: 1px solid rgba(150, 142, 205, 0.4);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+.edu-fill {
+    height: 100%;
+    width: 0;
+    border-radius: 999px;
+    background:
+        repeating-linear-gradient(115deg, rgba(255, 255, 255, 0.16) 0 8px, transparent 8px 16px),
+        linear-gradient(180deg, #d96aea, #8a3fd6);
+    background-size: 32px 100%, 100% 100%;
+    animation: edu-shine 1.6s linear infinite;
+    transition: width 1.2s ease;
+}
+.edu-upgrade.done .edu-fill {
+    background:
+        repeating-linear-gradient(115deg, rgba(255, 255, 255, 0.2) 0 8px, transparent 8px 16px),
+        linear-gradient(180deg, #ffe38a, #d9a02a);
+    background-size: 32px 100%, 100% 100%;
+    animation: none;
+}
+.edu-pct {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    font-family: "Geist";
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+}
+@keyframes edu-shine {
+    to { background-position: 32px 0, 0 0; }
+}
+@keyframes edu-hit {
+    0%, 55%, 100% { transform: rotate(-38deg); }
+    72% { transform: rotate(18deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .edu-fill, .edu-swing { animation: none; }
+}
+@media (max-width: 600px) {
+    .edu-card {
+        padding: 12px;
+    }
+    .edu-upg-head {
+        font-size: 11px;
+    }
+}
+
+/* clash-of-clans cues: chunky outlined type, town hall badge, glossy bar */
+.edu-upg-label, .edu-time, .edu-pct, .edu-max, .edu-sub {
+    font-family: "Lilita One", "Geist", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+    paint-order: stroke fill;
+    -webkit-text-stroke: 3px #140f2a;
+}
+.edu-upg-head {
+    flex-wrap: wrap;
+    gap: 6px 8px;
+}
+.edu-upg-label {
+    font-size: 15px;
+    text-transform: none;
+    letter-spacing: 0.03em;
+    color: #fff;
+}
+.edu-th {
+    width: 42px;
+    height: 42px;
+    flex: none;
+    filter: drop-shadow(0 2px 0 rgba(0, 0, 0, 0.35));
+}
+.edu-clock {
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+.edu-clock svg {
+    width: 15px;
+    height: 15px;
+}
+.edu-time {
+    margin-left: 0;
+    font-size: 15px;
+    color: #fff;
+    letter-spacing: 0.03em;
+}
+.edu-sub {
+    margin: 0 0 5px;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #d9a8f2;
+    -webkit-text-stroke: 2.500px #140f2a;
+}
+.edu-max {
+    font-size: 12px;
+    padding: 3px 9px 2px;
+    color: #fff3c4;
+    -webkit-text-stroke: 3px #5a3d08;
+    background: linear-gradient(180deg, #f3c94f, #c98a1c);
+    border: 2px solid #5a3d08;
+    border-radius: 8px;
+}
+.edu-bar {
+    height: 24px;
+    border: 2px solid #140f2a;
+    box-shadow: 0 0 0 1.500px #4b4375, inset 0 2px 4px rgba(0, 0, 0, 0.55);
+}
+.edu-fill {
+    position: relative;
+}
+.edu-fill::after {
+    content: "";
+    position: absolute;
+    left: 6px;
+    right: 6px;
+    top: 2px;
+    height: 36%;
+    border-radius: 999px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+}
+.edu-pct {
+    font-size: 14px;
+    color: #fff;
+    -webkit-text-stroke: 3px #140f2a;
+}
+@media (max-width: 600px) {
+    .edu-upg-label { font-size: 14px; }
+}
+
+/* builder working on the town hall */
+.edu-site {
+    display: inline-flex;
+    align-items: flex-end;
+    flex: none;
+}
+.edu-builder {
+    width: 42px;
+    height: 47px;
+    margin-right: -6px;
+    overflow: visible;
+    filter: drop-shadow(0 2px 0 rgba(0, 0, 0, 0.35));
+}
+.edu-swing {
+    transform-box: view-box;
+    transform-origin: 20px 22px;
+    animation: edu-hit 1s ease-in-out infinite;
+}
+/* bowie: coins instead of elixir */
+.edu-queue.gold li::before {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, #fff1a8, #f0b92c 60%, #b8801a);
+    border: 1px solid #7a5410;
+    box-shadow: inset 0 0 0 2px rgba(255, 236, 150, 0.55), 0 0 6px rgba(240, 190, 70, 0.55);
+}
+.edu-queue.gold li {
+    border-color: rgba(240, 195, 90, 0.4);
+}
+.edu-sub.gold {
+    color: #f3cd66;
+}
+
+/* clash cues: builder tag + collector / mine with storage bars */
+.edu-sub { display: flex; align-items: center; gap: 8px; }
+.edu-builder-tag { margin-left: auto; padding-top: 1px; padding-bottom: 1px; }
+.edu-store {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 12px;
+    font-family: "Lilita One", "Geist", sans-serif;
+    font-size: 13px;
+    color: #fff;
+}
+.edu-store svg { width: 24px; height: 24px; flex: none; }
+.edu-store-name {
+    paint-order: stroke fill;
+    -webkit-text-stroke: 3px #140f2a;
+}
+.edu-store .hud-bar { width: 90px; box-shadow: 0 0 0 1.500px #4b4375; }
+.hud-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 10px 3px 5px;
+    font-family: "Lilita One", "Geist", sans-serif;
+    font-size: 13px;
+    color: #fff;
+    background: rgba(13, 12, 29, 0.7);
+    border: 2px solid #140f2a;
+    box-shadow: 0 0 0 1.500px #4b4375;
+    border-radius: 999px;
+}
+.hud-pill svg {
+    width: 22px;
+    height: 22px;
+    flex: none;
+}
+.hud-pill b, .hud-pill em {
+    font-weight: 400;
+    font-style: normal;
+    paint-order: stroke fill;
+    -webkit-text-stroke: 3px #140f2a;
+}
+.hud-pill em { color: #ffe38a; }
+.hud-bar {
+    width: 64px;
+    height: 10px;
+    border-radius: 999px;
+    overflow: hidden;
+    background: #140f2a;
+}
+.hud-bar span {
+    display: block;
+    height: 100%;
+    width: 0;
+    border-radius: 999px;
+    transition: width 1.2s ease;
+}
+.hud-bar.elixir span { background: linear-gradient(180deg, #e27cf0, #a24be0); }
+.hud-bar.gold span { background: linear-gradient(180deg, #ffe38a, #d9a02a); }
+.edu-builder-tag svg { animation: hud-bob 1s ease-in-out infinite; }
+@keyframes hud-bob {
+    50% { transform: translateY(-2px); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .edu-builder-tag svg { animation: none; }
+}
+@media (max-width: 600px) {
+    .hud-bar { width: 48px; }
+}

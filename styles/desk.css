@@ -1,0 +1,125 @@
+/* hand-drawn desk scene */
+/* hero scene, sits between the intro header and the bio */
+.desk-hero { position: relative; }
+.desk-wrap {
+    position: relative;
+    container-type: inline-size;
+}
+.desk-svg {
+    --ink: #e8e6f5;
+    --bfill: #ffffff;
+    --bstroke: #2a2a3a;
+    color: var(--ink);
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.desk-svg .ln {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+.desk-svg .wire { stroke-width: 1.6; stroke: #cfcfe0; }
+.desk-svg .pen { font-family: "Caveat", "Segoe Print", cursive; font-size: 19px; fill: currentColor; font-weight: 700; }
+.desk-svg .dk { fill: #222; }
+.desk-svg .cal-m, .desk-svg .cal-d, .desk-svg .cal-w { font-family: "Geist", sans-serif; }
+.desk-svg .cal-w { font-size: 7.5px; font-weight: 700; letter-spacing: 0.14em; fill: #16152d; }
+.desk-svg .cal-m { font-size: 9px; font-weight: 600; letter-spacing: 0.16em; fill: #a79fe6; }
+.desk-svg .cal-d { font-size: 28px; font-weight: 800; fill: #fff; }
+.desk-svg .sticker-tx { font-size: 13px; }
+
+/* clickable parts */
+.desk-svg .hot { cursor: pointer; outline: none; transition: transform 0.2s ease; transform-box: fill-box; transform-origin: center; }
+.desk-svg .hot:focus-visible { transform: translateY(-3px); }
+@media (hover: hover) { .desk-svg .hot:hover { transform: translateY(-3px); } }
+.desk-svg #d-desk { transform: none; }
+.desk-svg #d-me:hover, .desk-svg #d-laptop:hover { transform: none; filter: brightness(0.96); }
+.desk-svg .hot:focus-visible { filter: drop-shadow(0 0 3px #6a5cff); }
+
+.desk-svg .sway { transform-origin: 126px 50px; animation: sway 4s ease-in-out infinite; }
+.desk-svg .sun-rays { animation: spin 40s linear infinite; transform-box: fill-box; transform-origin: center; }
+.desk-svg #lamp-glow { transition: opacity 0.6s ease; }
+
+@keyframes sway { 0%, 100% { transform: rotate(-1.5deg); } 50% { transform: rotate(1.5deg); } }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* skyline in the window flips with day/night */
+.desk-svg { --grass: #5fb04a; --dirt: #8b5a2b; --dirtd: #744a22; --log: #6b4a2b; --leaf: #3f8a36; --leafd: #2f6e29; --plank: #b88a4a; --plankd: #8e6630; --cobble: #8a8a8a; --roofc: #8b3a2a; --glass: #9fd8ff; --door: #5a3a1c; }
+.desk-svg.night { --bfill: #262d5c; --bstroke: #aab4ff; --grass: #2d5a2a; --dirt: #4a3220; --dirtd: #3a2616; --log: #3b2918; --leaf: #1f4d3d; --leafd: #163a2d; --plank: #5e4526; --plankd: #473319; --cobble: #4a4a55; --roofc: #4a2020; --glass: #f7d046; --door: #2e1d0e; }
+.desk-svg { --frame: #e8e2d4; }
+.desk-svg.night { --frame: #6f6c86; }
+.desk-svg .wf, .desk-svg .wf-blind { fill: var(--frame); stroke: #2a2a3a; stroke-width: 1.800; stroke-linejoin: round; transition: fill 0.6s; }
+.desk-svg .wf-d { fill-opacity: 0.7; }
+.desk-svg .wf-blind { stroke-width: 1.200; }
+.desk-svg .ban-tx { font-family: "Geist", Georgia, serif; font-size: 19px; font-weight: 800; fill: #f3e7d8; letter-spacing: 1px; }
+.desk-svg .ban-sm { font-family: "Geist", sans-serif; font-size: 7px; font-weight: 700; fill: #f3e7d8; letter-spacing: 0.8px; }
+.desk-svg .m-grass, .desk-svg .m-dirt, .desk-svg .m-log, .desk-svg .m-leaf, .desk-svg .m-plank, .desk-svg .m-cobble, .desk-svg .m-roof, .desk-svg .m-glass, .desk-svg .m-door { stroke: rgba(0, 0, 0, 0.35); stroke-width: 0.8; }
+.desk-svg .m-grass { fill: var(--grass); }
+.desk-svg .m-dirt { fill: var(--dirt); }
+.desk-svg .m-dirtd { fill: var(--dirtd); }
+.desk-svg .m-log { fill: var(--log); }
+.desk-svg .m-leaf { fill: var(--leaf); }
+.desk-svg .m-leafd { fill: var(--leafd); }
+.desk-svg .m-plank { fill: var(--plank); }
+.desk-svg .m-plankd { fill: var(--plankd); }
+.desk-svg .m-cobble { fill: var(--cobble); }
+.desk-svg .m-roof { fill: var(--roofc); }
+.desk-svg .m-glass { fill: var(--glass); }
+.desk-svg .m-door { fill: var(--door); }
+.desk-svg #sky { transition: fill 0.6s; }
+
+.desk-svg .hoodie-tx { font-family: "Geist", sans-serif; font-size: 9.5px; font-weight: 700; fill: #f3e7d8; letter-spacing: 0.2px; }
+.desk-svg .bd-tx { font-family: "Caveat", cursive; font-size: 11px; font-weight: 700; fill: #2b3560; }
+.desk-svg .clock-tx { font-family: "Geist", ui-monospace, monospace; font-size: 11.5px; font-weight: 700; fill: #ffb347; letter-spacing: 0.3px; }
+.desk-svg .clock-ap { font-family: "Geist", sans-serif; font-size: 5.5px; font-weight: 700; fill: #ffb347; opacity: 0.85; }
+.desk-svg #clock-time { filter: drop-shadow(0 0 2px rgba(255, 179, 71, 0.8)); }
+.desk-svg .spine { font-family: "Caveat", cursive; font-size: 12px; font-weight: 700; }
+.desk-svg .twinkle { animation: twinkle 2s ease-in-out infinite; }
+
+/* lamp: bulb flickers while lit */
+.desk-svg #lamp-bulb { transition: fill 0.3s; }
+.desk-svg #d-lamp.lit #lamp-bulb { fill: #fff3b0; animation: filament 1.8s ease-in-out infinite; }
+.desk-svg #lamp-beam { transition: opacity 0.4s; }
+
+@keyframes twinkle { 0%, 100% { opacity: 0.45; } 50% { opacity: 1; } }
+@keyframes filament { 0%, 100% { filter: drop-shadow(0 0 3px #ffd86b); } 45% { filter: drop-shadow(0 0 9px #ffe9a3); } 50% { filter: drop-shadow(0 0 2px #ffd86b); } 55% { filter: drop-shadow(0 0 9px #ffe9a3); } }
+
+.desk-caption {
+    padding: 0 10px 8px;
+    text-align: center;
+    font-family: "Caveat", "Geist", cursive;
+    font-size: 22px;
+    color: #b9b6cc;
+}
+
+.bio-short { display: none; }
+@media (max-width: 700px) {
+    /* phones: "Hello" on top, then the scene, then location + links centered, then a shorter bio.
+       The photo is hidden. display: contents lets the pieces of .intro-head be reordered. */
+    .introduction .intro-head, .introduction .intro-id { display: contents; }
+    .introduction .photo { display: none; }
+    .introduction { gap: 14px; }
+    .introduction .p-intro { order: 0; text-align: center; }
+    .introduction .desk-hero { order: 1; }
+    .introduction .p-intro3 { order: 2; align-self: center; margin-top: 0; }
+    .introduction .socials { order: 3; width: auto; align-self: center; justify-content: center; margin: 0; }
+    .introduction .p-intro2 { order: 4; }
+    .bio-full { display: none; }
+    .bio-short { display: inline; }
+    /* nothing in the scene is interactive on phones: no taps, no caption */
+    .desk-svg { pointer-events: none; }
+    .desk-caption { display: none; }
+    /* social puzzle pieces keep their shape but sit apart instead of interlocking */
+    .introduction .socials { gap: 0; }
+    .introduction .social { margin-left: 14px; }
+    .introduction .social:first-child { margin-left: 0; }
+    /* the scene is cropped to you and the desk (see js/desk.js), so it fits with no sideways scroll */
+}
+}
+@media (max-width: 520px) {
+}
+@media (prefers-reduced-motion: reduce) {
+    .desk-svg * { animation: none !important; }
+}

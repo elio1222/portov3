@@ -13,19 +13,21 @@
         <link rel = "stylesheet" href = "styles/header.css">
         <link rel = "stylesheet" href = "styles/introduction.css">
         <link rel = "stylesheet" href = "styles/technologies.css">
-        <link rel = "stylesheet" href = "styles/spotify.css">
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+        <link rel = "stylesheet" href = "styles/activity.css">
+        <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+        <link rel = "stylesheet" href = "styles/desk.css">
+        <link rel = "stylesheet" href = "styles/pjchar.css">
+        <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@1,700;1,800&display=swap" rel="stylesheet">
+        <link rel = "stylesheet" href = "styles/oura.css">
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&display=swap" rel="stylesheet">
+        <link rel = "stylesheet" href = "styles/odyssey.css">
+        <link rel = "stylesheet" href = "styles/space.css">
+        <link rel = "stylesheet" href = "styles/projects.css">
 
-        <title>Elio's porto</title>
-        <link rel = "icon" class= "mypicture" type = "image/jpeg" href = "images/profileoutline-svgrepo-com.svg">
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-T5MXG85PJ9"></script>
-        <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-T5MXG85PJ9');
-        </script>
+        <title>Elio's Portfolio</title>
+        <link rel = "icon" type = "image/svg+xml" href = "images/favicon.svg">
     </head>
     <body style = "background-color: rgb(12, 11, 27);">
           <div>
@@ -33,415 +35,1293 @@
             <div class="wave"></div>
             <div class="wave"></div>
         </div>
-        <div class = "header" id = "top">
-            <div class = "hashtags">
-                <div>
-                    <a href = "photogallery.html"><div class="hover-links fancy">GALLERY -></div></a>
+        <header class = "header" id = "top">
+            <nav class = "nav" aria-label = "Main">
+                <a class = "nav-brand" href = "#top" aria-label = "Back to top">
+                    <svg class = "nav-knight" viewBox = "0 0 20 20" aria-hidden = "true"><path d = "M4 18.500h12V16H4zM5 16c0-3.500 2-5 3.200-7.200L5.600 10 4 8.800 5.200 6 8.500 3.200 9 1.200l1.600 1.300C14.400 3.300 16.200 7 16 11.500V16z"/><circle cx = "8.800" cy = "6" r = ".9" class = "eye"/></svg>
+                    <span class = "nav-wordmark">ROCHA</span>
+                    <span class = "nav-status"><span class = "status-dot"></span><span class = "status-text">online</span></span>
+                </a>
+                <div class = "nav-links">
+                    <a class = "nav-link" href = "#proj" data-spy = "proj">Projects</a>
+                    <a class = "nav-link" href = "#git" data-spy = "git">Activity</a>
+                    <a class = "nav-link" href = "photogallery.html">Gallery</a>
+                    <a class = "nav-link" href = "resume.html">Resume</a>
+                    <a class = "nav-cta" href = "#bottom">Contact</a>
                 </div>
-                <div>
-                    <a href = "resume.html"><div class="hover-links fancy">RESUME -></div></a>
-                </div>
-                <div>
-                    <a href = "#bottom"><div class="hover-links fancy">CONTACT -></div></a>
-                </div>
-            </div>
-        </div>
+            </nav>
+        </header>
         <div class = "container">
             <div class = "main-body">
-                <div class = "introduction-header">
-                    <div class = "linkss">
-                        <a href = "https://github.com/elio1222" target = "_blank">
-                        <div class = "linkss-text">
-                            <div class="hover-links">
-                                <img class = "icons" src = "images/github-color-svgrepo-com.svg">
-                                <p >GitHub</p>
-                            </div>
-                        </div>
-                        </a>
-                        <a href = "https://www.linkedin.com/in/elio-rocha-b7b995273/" target="_blank">
-                        <div class = "linkss-text">
-                            <div class="hover-links">
-                                <img class = "icons" src = "images/linkedin-1-svgrepo-com.svg">
-                                <p>LinkedIn</p>
-                            </div>
-                        </div>
-                        </a>
-                        <a href = "https://x.com/eliorochadev" target="_blank">
-                        <div class = "linkss-text">
-                            <div class="hover-links">
-                                <img class = "icons" src = "images/twitter-color-svgrepo-com.svg">
-                                <p>Twitter</p>
-                            </div>
-                        </div>
-                        </a>
-                        <a href = "https://www.youtube.com/@callmemrfreeze" target = "_blank">
-                        <div class = "linkss-text">
-                            <div class="hover-links">
-                                <img class = "icons" src = "images/youtube-svgrepo-com (1).svg">
-                                <p>YouTube</p>
-                            </div>
-                        </div>
-                        </a>
-                    </div>
-                </div>
                 <div class = "introduction">
-                    <div class = "intro1">
-                        <img class = "mypicture" src = "images/mypicture.jpeg">
+                    <div class = "intro-head">
+                        <div class = "photo"><img class = "mypicture" src = "images/mypicture.jpeg" alt = "Elio Rocha"></div>
+                        <div class = "intro-id">
+                            <p class = "p-intro" aria-label = "Hello, I am Elio Rocha,">
+                                <span class = "fancy-text" id = "typed" aria-hidden = "true">Hello, I am Elio Rocha,</span><span class = "caret" aria-hidden = "true"></span>
+                            </p>
+                            <p class = "p-intro3">
+                                <span class = "pin">📍</span><span class = "md">Bowie, Maryland</span>
+                            </p>
+                        </div>
+                        <div class = "socials">
+                            <a class = "social" style = "--i:0" href = "https://github.com/elio1222" target = "_blank" rel = "noopener" aria-label = "GitHub" title = "GitHub">
+                                <svg class = "pz" viewBox = "0 0 62 44" aria-hidden = "true"><path d = "M15,0 H47 Q53,0 53,6 V17 a5.8 5.8 0 1 1 0 10 V38 Q53,44 47,44 H15 Q9,44 9,38 V27 a5.8 5.8 0 1 0 0 -10 V6 Q9,0 15,0 Z"/></svg>
+                                <img src = "images/github-color-svgrepo-com.svg" alt = "">
+                            </a>
+                            <a class = "social" style = "--i:1" href = "https://www.linkedin.com/in/elio-rocha-b7b995273/" target = "_blank" rel = "noopener" aria-label = "LinkedIn" title = "LinkedIn">
+                                <svg class = "pz" viewBox = "0 0 62 44" aria-hidden = "true"><path d = "M15,0 H26 a5 5 0 0 1 10 0 H47 Q53,0 53,6 V16 L61,11 V33 L53,28 V38 Q53,44 47,44 H15 Q9,44 9,38 V27 a5.8 5.8 0 1 0 0 -10 V6 Q9,0 15,0 Z"/></svg>
+                                <img src = "images/linkedin-1-svgrepo-com.svg" alt = "">
+                            </a>
+                            <a class = "social" style = "--i:2" href = "https://x.com/eliorochadev" target = "_blank" rel = "noopener" aria-label = "Twitter" title = "Twitter">
+                                <svg class = "pz" viewBox = "0 0 62 44" aria-hidden = "true"><path d = "M15,0 H47 Q53,0 53,6 V15 H61 V29 H53 V38 Q53,44 47,44 H36 a5 5 0 0 0 -10 0 H15 Q9,44 9,38 V28 L17,33 V11 L9,16 V6 Q9,0 15,0 Z"/></svg>
+                                <img src = "images/twitter-color-svgrepo-com.svg" alt = "">
+                            </a>
+                            <a class = "social" style = "--i:3" href = "https://www.youtube.com/@eliorochadev" target = "_blank" rel = "noopener" aria-label = "YouTube" title = "YouTube">
+                                <svg class = "pz" viewBox = "0 0 62 44" aria-hidden = "true"><path d = "M15,0 H47 Q53,0 53,6 V17 a5.8 5.8 0 1 0 0 10 V38 Q53,44 47,44 H15 Q9,44 9,38 V29 H17 V15 H9 V6 Q9,0 15,0 Z"/></svg>
+                                <img src = "images/youtube-svgrepo-com (1).svg" alt = "">
+                            </a>
+                        </div>
                     </div>
-                    <div class = "intro2">
-                        <p class = "p-intro">
-                            <span class = "fancy-text">Hello, I am Elio Rocha,</span>
-                        </p>
-                        <p class = "p-intro2">
-                            I am a <span class = "fancy-text2">Software Engineer</span> and <span class = 'fancy-text2'>Computer Science Undergraduate</span> at The Catholic University of America with a strong interest in backend systems, distributed infrastructure, and developer tooling. I enjoy creating projects that are both meaningful and practical.
-                        </p>
-                        <p class = p-intro3>
-                            📍<span class = "md">Bowie, Maryland</span>
-                        </p>
-                    </div>
+                    <section class = "desk-hero" id = "desk" aria-label = "Elio's desk">
+                        <div class = "desk-wrap" id = "desk-wrap">
+                    <svg class = "desk-svg" id = "desk-svg" viewBox = "62 28 948 330" role = "group" aria-label = "Illustrated desk: Elio working on a MacBook with earbuds in, a gaming PC, snacks and a water bottle">
+                        <defs>
+                            <filter id = "rough" x = "-2%" y = "-2%" width = "104%" height = "104%">
+                                <feTurbulence type = "fractalNoise" baseFrequency = "0.03" numOctaves = "2" seed = "7" result = "n"/>
+                                <feDisplacementMap in = "SourceGraphic" in2 = "n" scale = "2.6"/>
+                            </filter>
+                            <linearGradient id = "led-g" x1 = "0" x2 = "1" y1 = "0" y2 = "0">
+                                <stop offset = "0" stop-color = "#ff4fd8"/><stop offset = "0.5" stop-color = "#4fd8ff"/><stop offset = "1" stop-color = "#8b5cff"/>
+                            </linearGradient>
+                            <clipPath id = "win-clip"><rect x = "181" y = "49" width = "188" height = "138"/></clipPath>
+                            <pattern id = "mesh" width = "7" height = "7" patternUnits = "userSpaceOnUse" patternTransform = "rotate(45)">
+                                <path d = "M0 0 H7 M0 0 V7" stroke = "#e8e6f5" stroke-width = "0.9" fill = "none" opacity = "0.75"/>
+                            </pattern>
+                            <clipPath id = "trash-clip"><path d = "M217 298 H281 L276 349 H222 Z"/></clipPath>
+                            <clipPath id = "bottle-clip"><rect x = "697" y = "224" width = "24" height = "52" rx = "9"/></clipPath>
+                        </defs>
+
+                        <g filter = "url(#rough)">
+                            <!-- pennant -->
+                            <g transform = "translate(-8 0)">
+                            <g class = "hot" id = "d-pennant" data-say = "Go Cardinals! CUA, class of 2027." tabindex = "0" role = "button">
+                                <title>Catholic University banner</title>
+                                <g class = "sway">
+                                    <rect x = "84" y = "44" width = "84" height = "6" rx = "3" fill = "#8b5a2b" stroke = "currentColor" stroke-width = "1.800"/>
+                                    <circle cx = "84" cy = "47" r = "4.500" fill = "#8b5a2b" stroke = "currentColor" stroke-width = "1.600"/>
+                                    <circle cx = "168" cy = "47" r = "4.500" fill = "#8b5a2b" stroke = "currentColor" stroke-width = "1.600"/>
+                                    <path d = "M92 52 H160 V172 L126 154 L92 172 Z" fill = "#a8121d" stroke = "currentColor" stroke-width = "2.200" stroke-linejoin = "round"/>
+                                    <path d = "M98 58 H154 V162 L126 147 L98 162 Z" fill = "none" stroke = "#f3e7d8" stroke-width = "1.400" stroke-dasharray = "4 3"/>
+                                    <circle cx = "126" cy = "86" r = "21" fill = "#f3e7d8" stroke = "#111" stroke-width = "1.800"/>
+                                    <!-- cardinal -->
+                                    <path d = "M108 104 L97 115 L112 108 Z" fill = "#c0121f" stroke = "#111" stroke-width = "1.200" stroke-linejoin = "round"/>
+                                    <ellipse cx = "120" cy = "92" rx = "12" ry = "9" fill = "#c0121f" stroke = "#111" stroke-width = "1.400"/>
+                                    <path d = "M113 92 q6 5 14 -2" fill = "none" stroke = "#7d0b13" stroke-width = "1.600" stroke-linecap = "round"/>
+                                    <circle cx = "130" cy = "80" r = "7.500" fill = "#c0121f" stroke = "#111" stroke-width = "1.400"/>
+                                    <path d = "M125 74 L121 64 L132 72 Z" fill = "#c0121f" stroke = "#111" stroke-width = "1.200" stroke-linejoin = "round"/>
+                                    <ellipse cx = "134" cy = "81" rx = "3.500" ry = "3" fill = "#111"/>
+                                    <path d = "M137 79 L144 82 L137 85 Z" fill = "#f08a24" stroke = "#111" stroke-width = "1"/>
+                                    <circle cx = "131" cy = "79" r = "1" fill = "#fff"/>
+                                    <path class = "ln" d = "M118 101 v4 M123 101 v4" stroke = "#c88a24" stroke-width = "1.400"/>
+                                    <text x = "126" y = "128" text-anchor = "middle" class = "ban-tx">CUA</text>
+                                    <text x = "126" y = "141" text-anchor = "middle" class = "ban-sm">CARDINALS</text>
+                                </g>
+                            </g>
+                            </g>
+                            <!-- window -->
+                            <g transform = "translate(10 0)">
+                            <g class = "hot" id = "d-window" tabindex = "0" role = "button">
+                                <title>Window: click to peek at day or night</title>
+                                <rect class = "wf" x = "169" y = "37" width = "212" height = "160" rx = "3"/>
+                                <rect id = "sky" x = "181" y = "49" width = "188" height = "138" fill = "#cfe6fb"/>
+                                <g clip-path = "url(#win-clip)">
+                                    <g transform = "translate(0 -8)">
+                                        <g id = "sky-day" transform = "translate(0 18)">
+                                        <rect x = "329" y = "59" width = "22" height = "22" fill = "#ffe14d" stroke = "#e0a800" stroke-width = "1.500"/>
+                                        <rect x = "334" y = "64" width = "12" height = "12" fill = "#fff3a0"/>
+                                        <g fill = "#fff" fill-opacity = "0.95">
+                                            <rect x = "196" y = "68" width = "26" height = "8"/><rect x = "188" y = "74" width = "42" height = "8"/><rect x = "204" y = "62" width = "12" height = "6"/>
+                                            <rect x = "276" y = "92" width = "22" height = "8"/><rect x = "270" y = "98" width = "34" height = "7"/>
+                                        </g>
+                                    </g>
+                                    <g id = "sky-night" style = "display:none" transform = "translate(0 18)">
+                                        <rect x = "329" y = "57" width = "22" height = "22" fill = "#dfe6f3" stroke = "#9aa5bd" stroke-width = "1.500"/>
+                                        <rect x = "334" y = "62" width = "5" height = "5" fill = "#b8c2d6"/><rect x = "342" y = "69" width = "5" height = "5" fill = "#b8c2d6"/>
+                                        <g class = "twinkle" fill = "#fff">
+                                            <rect x = "198" y = "62" width = "3" height = "3"/><rect x = "232" y = "78" width = "3" height = "3"/>
+                                            <rect x = "296" y = "60" width = "3" height = "3"/><rect x = "260" y = "56" width = "3" height = "3"/>
+                                            <rect x = "362" y = "104" width = "3" height = "3"/><rect x = "214" y = "96" width = "3" height = "3"/>
+                                        </g>
+                                    </g>
+                                    <g id = "skyline">
+                                        <!-- ground -->
+                                        <rect class = "m-grass" x = "177" y = "179" width = "196" height = "8"/>
+                                        <rect class = "m-dirt" x = "177" y = "187" width = "196" height = "8"/>
+                                        <g class = "m-dirtd"><rect x = "190" y = "190" width = "4" height = "4"/><rect x = "230" y = "189" width = "4" height = "4"/><rect x = "282" y = "191" width = "4" height = "4"/><rect x = "330" y = "189" width = "4" height = "4"/><rect x = "358" y = "191" width = "4" height = "4"/></g>
+                                        <!-- small tree behind the house -->
+                                        <rect class = "m-log" x = "358" y = "156" width = "8" height = "23"/>
+<rect class = "m-leaf" x = "348" y = "138" width = "26" height = "12"/><rect class = "m-leafd" x = "348" y = "146" width = "4" height = "4"/><rect class = "m-leafd" x = "360" y = "146" width = "4" height = "4"/><rect class = "m-leafd" x = "360" y = "146" width = "4" height = "4"/>
+<rect class = "m-leaf" x = "352" y = "128" width = "18" height = "10"/><rect class = "m-leafd" x = "356" y = "128" width = "4" height = "4"/><rect class = "m-leafd" x = "356" y = "132" width = "4" height = "4"/>
+
+                                        <!-- oak trees -->
+                                        <rect class = "m-log" x = "196" y = "147" width = "8" height = "32"/>
+<rect class = "m-leaf" x = "178" y = "131" width = "44" height = "16"/><rect class = "m-leafd" x = "214" y = "131" width = "4" height = "4"/><rect class = "m-leafd" x = "178" y = "139" width = "4" height = "4"/><rect class = "m-leafd" x = "198" y = "135" width = "4" height = "4"/><rect class = "m-leafd" x = "194" y = "139" width = "4" height = "4"/><rect class = "m-leafd" x = "190" y = "143" width = "4" height = "4"/><rect class = "m-leafd" x = "206" y = "135" width = "4" height = "4"/><rect class = "m-leafd" x = "182" y = "135" width = "4" height = "4"/>
+<rect class = "m-leaf" x = "186" y = "115" width = "28" height = "16"/><rect class = "m-leafd" x = "198" y = "123" width = "4" height = "4"/><rect class = "m-leafd" x = "190" y = "115" width = "4" height = "4"/><rect class = "m-leafd" x = "198" y = "115" width = "4" height = "4"/><rect class = "m-leafd" x = "202" y = "115" width = "4" height = "4"/>
+<rect class = "m-leaf" x = "192" y = "107" width = "16" height = "8"/><rect class = "m-leafd" x = "204" y = "107" width = "4" height = "4"/>
+
+                                        <rect class = "m-log" x = "240" y = "130" width = "8" height = "49"/>
+<rect class = "m-leaf" x = "216" y = "118" width = "48" height = "16"/><rect class = "m-leafd" x = "228" y = "130" width = "4" height = "4"/><rect class = "m-leafd" x = "220" y = "130" width = "4" height = "4"/><rect class = "m-leafd" x = "232" y = "122" width = "4" height = "4"/><rect class = "m-leafd" x = "236" y = "130" width = "4" height = "4"/><rect class = "m-leafd" x = "256" y = "118" width = "4" height = "4"/><rect class = "m-leafd" x = "216" y = "126" width = "4" height = "4"/><rect class = "m-leafd" x = "256" y = "118" width = "4" height = "4"/><rect class = "m-leafd" x = "232" y = "122" width = "4" height = "4"/>
+<rect class = "m-leaf" x = "222" y = "102" width = "36" height = "16"/><rect class = "m-leafd" x = "246" y = "110" width = "4" height = "4"/><rect class = "m-leafd" x = "226" y = "114" width = "4" height = "4"/><rect class = "m-leafd" x = "234" y = "114" width = "4" height = "4"/><rect class = "m-leafd" x = "246" y = "102" width = "4" height = "4"/><rect class = "m-leafd" x = "226" y = "110" width = "4" height = "4"/><rect class = "m-leafd" x = "230" y = "106" width = "4" height = "4"/>
+<rect class = "m-leaf" x = "230" y = "90" width = "20" height = "12"/><rect class = "m-leafd" x = "238" y = "98" width = "4" height = "4"/><rect class = "m-leafd" x = "246" y = "90" width = "4" height = "4"/>
+
+                                        <!-- sheep -->
+                                        <rect x = "262" y = "174" width = "4" height = "5" fill = "#d8d8d8"/><rect x = "276" y = "174" width = "4" height = "5" fill = "#d8d8d8"/>
+                                        <rect x = "260" y = "165" width = "22" height = "11" fill = "#f2f2f2" stroke = "#9a9a9a" stroke-width = "0.800"/>
+                                        <rect x = "254" y = "163" width = "8" height = "8" fill = "#c9b8a8" stroke = "#8a7a6a" stroke-width = "0.800"/>
+                                        <rect x = "255" y = "165" width = "2" height = "2" fill = "#222"/>
+                                        <!-- house -->
+                                        <rect class = "m-plank" x = "292" y = "150" width = "50" height = "29"/>
+                                        <g class = "m-plankd"><rect x = "292" y = "158" width = "50" height = "1.500"/><rect x = "292" y = "166" width = "50" height = "1.500"/></g>
+                                        <rect class = "m-cobble" x = "292" y = "172" width = "50" height = "7"/>
+                                        <rect class = "m-roof" x = "286" y = "142" width = "62" height = "8"/>
+                                        <rect class = "m-roof" x = "294" y = "134" width = "46" height = "8"/>
+                                        <rect class = "m-roof" x = "302" y = "126" width = "30" height = "8"/>
+                                        <rect class = "m-roof" x = "310" y = "118" width = "14" height = "8"/>
+                                        <rect class = "m-door" x = "310" y = "157" width = "11" height = "22"/>
+                                        <path class = "ln" d = "M315.500 157 V179 M310 168 H321" stroke = "#2e1d0e" stroke-width = "1"/>
+                                        <rect class = "m-glass" x = "297" y = "157" width = "10" height = "10"/>
+                                        <rect class = "m-glass" x = "326" y = "157" width = "10" height = "10"/>
+                                        <path class = "ln" d = "M302 157 V167 M297 162 H307 M331 157 V167 M326 162 H336" stroke = "#5a3a1c" stroke-width = "1.200"/>
+                                        <g id = "city-lights" fill = "#ffb347" stroke = "none" style = "display:none">
+                                            <rect x = "305" y = "160" width = "3" height = "6"/><rect x = "323" y = "160" width = "3" height = "6"/>
+                                        </g>
+                                    </g>
+                                    </g>
+                                    <!-- glass glare -->
+                                    <path d = "M232 49 L254 49 L198 187 L176 187 Z" fill = "#fff" fill-opacity = "0.16" pointer-events = "none"/>
+                                    <path d = "M266 49 L274 49 L218 187 L210 187 Z" fill = "#fff" fill-opacity = "0.12" pointer-events = "none"/>
+                                    <rect x = "181" y = "49" width = "188" height = "5" fill = "#000" fill-opacity = "0.2"/>
+                                    <!-- roller blind, pulled up -->
+                                    <rect class = "wf-blind" x = "181" y = "49" width = "188" height = "11"/>
+                                    <path class = "ln" stroke-width = "0.8" stroke = "rgba(0,0,0,0.3)"><path d = "M181 53 H369"/><path d = "M181 57 H369"/></path>
+                                    <rect class = "wf-blind" x = "181" y = "59" width = "188" height = "3"/>
+                                    <path class = "ln" d = "M358 62 V84" stroke-width = "1.200"/>
+                                    <circle cx = "358" cy = "86" r = "2.800" class = "wf-blind"/>
+                                </g>
+                                <!-- inner frame, mullions -->
+                                <rect x = "181" y = "49" width = "188" height = "138" fill = "none" stroke = "#2a2a3a" stroke-width = "2"/>
+                                <rect class = "wf" x = "272" y = "49" width = "6" height = "138"/>
+                                <rect class = "wf" x = "181" y = "115" width = "188" height = "6"/>
+                                <rect class = "wf" x = "266" y = "112" width = "18" height = "12" rx = "2"/>
+                                <rect x = "272" y = "116" width = "6" height = "4" fill = "#9aa0b4" stroke = "#2a2a3a" stroke-width = "1"/>
+                                <!-- sill -->
+                                <rect class = "wf" x = "161" y = "197" width = "228" height = "9" rx = "1.500"/>
+                                <rect class = "wf wf-d" x = "169" y = "206" width = "212" height = "5"/>
+                            </g>
+                            </g>
+
+                            <!-- whiteboard: a busy, half-erased study board -->
+                            <g class = "hot" id = "d-board" data-say = "The whiteboard is a bit of everything: a system design sketch, a graph with Dijkstra's shortest path, calculus notes and a to-do list. Messy, but organised." tabindex = "0" role = "button">
+                                <title>Whiteboard of notes</title>
+                                <rect x = "672" y = "40" width = "222" height = "112" rx = "4" fill = "#f3f5f9" stroke = "#9aa0b4" stroke-width = "4"/>
+                                <rect x = "672" y = "40" width = "222" height = "112" rx = "4" fill = "none" stroke = "currentColor" stroke-width = "1.400"/>
+                                <ellipse cx = "787" cy = "103" rx = "20" ry = "3.500" fill = "#c9ced9" opacity = ".35" transform = "rotate(-6 787 103)"/><ellipse cx = "880" cy = "100" rx = "9" ry = "3" fill = "#c9ced9" opacity = ".3"/>
+                                <g transform = "rotate(-.8 735 72)"><text x = "680" y = "53" style = "font-size:8.5px;fill:#d23b3b">system design</text><path d = "M680 55.500 q22 2 46 -.6" fill = "none" stroke = "#d23b3b" stroke-width = "1" stroke-linecap = "round"/><g fill = "none" stroke-linecap = "round" stroke-linejoin = "round" stroke-width = "1.400"><rect x = "680" y = "58" width = "22" height = "13" rx = "3" stroke = "#2b50c8"/><rect x = "710" y = "58" width = "22" height = "13" rx = "3" stroke = "#7a4fc0"/><rect x = "740" y = "58" width = "22" height = "13" rx = "3" stroke = "#2b50c8"/><rect x = "772" y = "58" width = "20" height = "11" rx = "5.500" stroke = "#d9772b"/><ellipse cx = "751" cy = "83" rx = "9" ry = "3" stroke = "#1f8a4c"/><path d = "M742 83 v8 q9 5 18 0 v-8" stroke = "#1f8a4c"/><ellipse cx = "721" cy = "87" rx = "8" ry = "2.800" stroke = "#1f8a4c"/><path d = "M713 87 v7 q8 4.500 16 0 v-7" stroke = "#1f8a4c"/><ellipse cx = "781" cy = "87" rx = "8" ry = "2.800" stroke = "#1f8a4c"/><path d = "M773 87 v7 q8 4.500 16 0 v-7" stroke = "#1f8a4c"/><path stroke = "#d23b3b" stroke-width = "1.200" d = "M702 64.5 L710 64.5 M706.4 66.5 L710 64.5 L706.4 62.5 M732 64.5 L740 64.5 M736.4 66.5 L740 64.5 L736.4 62.5 M762 64 L772 64 M768.4 66 L772 64 L768.4 62 M751 71 L751 79.5 M749 75.9 L751 79.5 L753 75.9 M742 89.5 L729.5 89.5 M733.1 87.5 L729.5 89.5 L733.1 91.5 M760 89.5 L772.5 89.5 M768.9 91.5 L772.5 89.5 L768.9 87.5"/></g><g class = "bd-tx"><text x = "691" y = "66.5" text-anchor = "middle" style = "font-size:5.5px">client</text><text x = "721" y = "66.5" text-anchor = "middle" style = "font-size:5.5px;fill:#7a4fc0">proxy</text><text x = "751" y = "66.5" text-anchor = "middle" style = "font-size:5.5px">API</text><text x = "782" y = "65.5" text-anchor = "middle" style = "font-size:5.5px;fill:#d9772b">cache</text><text x = "751" y = "87.5" text-anchor = "middle" style = "font-size:6px;fill:#1f8a4c">DB</text><text x = "721" y = "90" text-anchor = "middle" style = "font-size:6px;fill:#1f8a4c">r</text><text x = "781" y = "90" text-anchor = "middle" style = "font-size:6px;fill:#1f8a4c">r</text></g></g>
+                                <g transform = "rotate(1 844 74)"><text x = "802" y = "53" style = "font-size:8.5px;fill:#d23b3b">graph theory</text><path d = "M802 55.500 q22 2 48 -.6" fill = "none" stroke = "#d23b3b" stroke-width = "1" stroke-linecap = "round"/><g fill = "none" stroke-linecap = "round" stroke-width = "1.200"><path d = "M810 70 L834 60" stroke = "#5b6075"/><path d = "M834 60 L862 68" stroke = "#5b6075"/><path d = "M810 70 L824 90" stroke = "#5b6075"/><path d = "M834 60 L824 90" stroke = "#5b6075"/><path d = "M834 60 L858 88" stroke = "#5b6075"/><path d = "M862 68 L858 88" stroke = "#5b6075"/><path d = "M824 90 L858 88" stroke = "#5b6075"/><path d = "M810 70 L834 60 L862 68" stroke = "#d23b3b" stroke-width = "2"/><circle cx = "810" cy = "70" r = "5" fill = "#f3f5f9" stroke = "#2b50c8" stroke-width = "1.400"/><circle cx = "834" cy = "60" r = "5" fill = "#f3f5f9" stroke = "#2b50c8" stroke-width = "1.400"/><circle cx = "862" cy = "68" r = "5" fill = "#f3f5f9" stroke = "#2b50c8" stroke-width = "1.400"/><circle cx = "824" cy = "90" r = "5" fill = "#f3f5f9" stroke = "#2b50c8" stroke-width = "1.400"/><circle cx = "858" cy = "88" r = "5" fill = "#f3f5f9" stroke = "#2b50c8" stroke-width = "1.400"/></g><g class = "bd-tx"><text x = "810" y = "72" text-anchor = "middle" style = "font-size:6px">A</text><text x = "834" y = "62" text-anchor = "middle" style = "font-size:6px">B</text><text x = "862" y = "70" text-anchor = "middle" style = "font-size:6px">C</text><text x = "824" y = "92" text-anchor = "middle" style = "font-size:6px">D</text><text x = "858" y = "90" text-anchor = "middle" style = "font-size:6px">E</text><text x = "822" y = "62" text-anchor = "middle" style = "font-size:5.5px;fill:#d9772b">4</text><text x = "849" y = "61" text-anchor = "middle" style = "font-size:5.5px;fill:#d9772b">2</text><text x = "814" y = "82" text-anchor = "middle" style = "font-size:5.5px;fill:#d9772b">7</text><text x = "826" y = "76" text-anchor = "middle" style = "font-size:5.5px;fill:#d9772b">3</text><text x = "849" y = "76" text-anchor = "middle" style = "font-size:5.5px;fill:#d9772b">6</text><text x = "864" y = "79" text-anchor = "middle" style = "font-size:5.5px;fill:#d9772b">5</text><text x = "841" y = "96" text-anchor = "middle" style = "font-size:5.5px;fill:#d9772b">1</text><text x = "804" y = "101" style = "font-size:6.5px;fill:#1f8a4c">Dijkstra  O(E log V)</text></g></g>
+                                <g transform = "rotate(-1 735 128)"><text x = "680" y = "110" style = "font-size:8.5px;fill:#d23b3b">calculus</text><path d = "M680 112 q16 2 34 -.6" fill = "none" stroke = "#d23b3b" stroke-width = "1" stroke-linecap = "round"/><ellipse cx = "706" cy = "125" rx = "30" ry = "6.500" fill = "none" stroke = "#d9772b" stroke-width = "1.100"/><g class = "bd-tx"><text x = "680" y = "120" style = "font-size:7px">d/dx  x^n = n·x^(n-1)</text><text x = "680" y = "128" style = "font-size:7px">∫ x dx = x^2/2 + C</text><text x = "680" y = "136" style = "font-size:7px">lim  sin x / x = 1</text><text x = "680" y = "144" style = "font-size:7px;fill:#2b50c8">e^(iπ) + 1 = 0</text></g><g fill = "none" stroke-linecap = "round" stroke-linejoin = "round"><path d = "M752 128 H792 M771 112 V146" stroke = "#5b6075" stroke-width = "1"/><path d = "M752 128 q5 -13 9.500 0 t9.500 0 t9.500 0 t9.500 0" stroke = "#2b50c8" stroke-width = "1.400"/><path d = "M748 126 l4 2 l-4 2" stroke = "#5b6075" stroke-width = ".8"/></g><g class = "bd-tx"><text x = "777" y = "110" style = "font-size:6px;fill:#d9772b">f(x)</text></g></g>
+                                <g transform = "rotate(.8 845 128)"><text x = "802" y = "110" style = "font-size:8.5px;fill:#d23b3b">to do</text><path d = "M802 112 q12 2 24 -.6" fill = "none" stroke = "#d23b3b" stroke-width = "1" stroke-linecap = "round"/><rect x = "802" y = "113.0" width = "5" height = "5" rx = "1" fill = "none" stroke = "#5b6075" stroke-width = "1"/><path d = "M802.800 115.7 l1.700 1.800 l3.500 -4.800" fill = "none" stroke = "#1f8a4c" stroke-width = "1.300" stroke-linecap = "round" stroke-linejoin = "round"/><path d = "M810.500 116.0 h42" stroke = "#8a90a6" stroke-width = ".9" stroke-linecap = "round"/><g class = "bd-tx"><text x = "810.5" y = "118.0" style = "font-size:6.6px;fill:#8a90a6">ship portfolio</text></g><rect x = "802" y = "120.4" width = "5" height = "5" rx = "1" fill = "none" stroke = "#5b6075" stroke-width = "1"/><path d = "M802.800 123.10000000000001 l1.700 1.800 l3.500 -4.800" fill = "none" stroke = "#1f8a4c" stroke-width = "1.300" stroke-linecap = "round" stroke-linejoin = "round"/><path d = "M810.500 123.4 h36" stroke = "#8a90a6" stroke-width = ".9" stroke-linecap = "round"/><g class = "bd-tx"><text x = "810.5" y = "125.4" style = "font-size:6.6px;fill:#8a90a6">fix prod bug</text></g><rect x = "802" y = "127.80000000000001" width = "5" height = "5" rx = "1" fill = "none" stroke = "#5b6075" stroke-width = "1"/><g class = "bd-tx"><text x = "810.5" y = "132.8" style = "font-size:6.6px">write tests</text></g><rect x = "802" y = "135.2" width = "5" height = "5" rx = "1" fill = "none" stroke = "#5b6075" stroke-width = "1"/><g class = "bd-tx"><text x = "810.5" y = "140.2" style = "font-size:6.6px">leetcode</text></g><rect x = "802" y = "142.6" width = "5" height = "5" rx = "1" fill = "none" stroke = "#5b6075" stroke-width = "1"/><g class = "bd-tx"><text x = "810.5" y = "147.6" style = "font-size:6.6px">recycling</text></g><g fill = "none" stroke = "#1f8a4c" stroke-width = "1.100" stroke-linecap = "round" stroke-linejoin = "round"><path d = "M842 147.5 L845 142.0 M844 142.0 L845 142.0 L846.3 143.3"/><path d = "M845.6 142.0 L848.2 147.0 M848.2 145.2 L848.2 147.0 L846.4 147.3"/><path d = "M848 147.6 L842.6 147.6 M844 146.2 L842.6 147.6 L844 149.0"/></g><g class = "bd-tx"><text text-anchor = "middle" x = "878" y = "112" style = "font-size:9px;fill:#e0a800">★</text></g></g>
+                            </g>
+                            <!-- marker tray -->
+                            <g class = "hot" id = "d-markers" data-say = "Dry-erase markers: mostly boxes, arrows and database cylinders." tabindex = "0" role = "button">
+                                <title>Markers</title>
+                                <rect x = "700" y = "152" width = "166" height = "6" rx = "2" fill = "#9aa0b4" stroke = "currentColor" stroke-width = "1.600"/>
+                                <rect x = "722" y = "145" width = "22" height = "7" rx = "3" fill = "#d23b3b" stroke = "currentColor" stroke-width = "1.400"/>
+                                <rect x = "750" y = "145" width = "22" height = "7" rx = "3" fill = "#2b50c8" stroke = "currentColor" stroke-width = "1.400"/>
+                                <rect x = "778" y = "145" width = "22" height = "7" rx = "3" fill = "#1f8a4c" stroke = "currentColor" stroke-width = "1.400"/>
+                            </g>
+
+                            <!-- calendar -->
+                            <g transform = "translate(-452 0)">
+                            <!-- calendar -->
+                            <g class = "hot" id = "d-cal" data-go = "#git" tabindex = "0" role = "button">
+                                <title>Today: click for my GitHub activity</title>
+                                <!-- tear-off paper calendar: the next sheet peeks out behind, rings on top, corner curling up -->
+                                <rect x = "883" y = "66" width = "62" height = "60" rx = "4" fill = "#d9d3c0" stroke = "currentColor" stroke-width = "2" transform = "rotate(3 914 96)"/>
+                                <rect x = "880" y = "62" width = "62" height = "60" rx = "4" fill = "#f4efe2" stroke = "currentColor" stroke-width = "2.200"/>
+                                <path d = "M880 82 V66 Q880 62 884 62 H938 Q942 62 942 66 V82 Z" fill = "#d9534f"/>
+                                <path d = "M880 82 H942" stroke = "currentColor" stroke-width = "1.400"/>
+                                <text id = "cal-mon" x = "911" y = "76" text-anchor = "middle" class = "cal-m" style = "fill:#fff;font-size:10px">OCT</text>
+                                <text id = "cal-day" x = "911" y = "110" text-anchor = "middle" class = "cal-d" style = "fill:#2a2540">12</text>
+                                <text id = "cal-wd" x = "911" y = "119" text-anchor = "middle" class = "cal-w" style = "fill:#6b6f85">MON</text>
+                                <rect x = "892" y = "57" width = "5" height = "11" rx = "2.500" fill = "#c9ced9" stroke = "currentColor" stroke-width = "1.600"/>
+                                <rect x = "925" y = "57" width = "5" height = "11" rx = "2.500" fill = "#c9ced9" stroke = "currentColor" stroke-width = "1.600"/>
+                                <path d = "M942 106 L926 122 H938 Q942 122 942 118 Z" fill = "#d9d3c0" stroke = "currentColor" stroke-width = "1.400" stroke-linejoin = "round"/>
+                            </g>
+                            </g>
+
+                            <!-- desk -->
+                            <g id = "d-desk">
+                                <rect x = "302" y = "278" width = "696" height = "10" rx = "2" fill = "#14132a" stroke = "currentColor" stroke-width = "2.4"/>
+                                <path class = "ln" d = "M334 288 V352 M962 288 V352"/>
+                            </g>
+                            <!-- trash can overflowing with empty water bottles -->
+                            <g transform = "translate(-14 0)">
+                            <g class = "hot" id = "d-trash" tabindex = "0" role = "button">
+                                <title>Trash can</title>
+                                <path d = "M217 298 H281 L276 349 H222 Z" fill = "#07061a" fill-opacity = "0.85"/>
+                                <g clip-path = "url(#trash-clip)">
+                                    <g transform = "translate(232 326) rotate(100)">
+                                        <rect x = "-5.500" y = "-30" width = "11" height = "6" rx = "1.500" fill = "#2f7dea" stroke = "currentColor" stroke-width = "1.200"/>
+                                        <path d = "M-4 -24 H4 L7 -18 V0 Q7 4 3 4 H-3 Q-7 4 -7 0 V-18 Z" fill = "#8fd3ff" fill-opacity = "0.28" stroke = "currentColor" stroke-width = "1.400" stroke-linejoin = "round"/>
+                                        <path d = "M-7 -12 H7 M-7 -6 H7" class = "ln" stroke-width = "0.900"/>
+                                    </g>
+                                    <g transform = "translate(246 320) rotate(72)">
+                                        <rect x = "-5.500" y = "-30" width = "11" height = "6" rx = "1.500" fill = "#2f7dea" stroke = "currentColor" stroke-width = "1.200"/>
+                                        <path d = "M-4 -24 H4 L7 -18 V0 Q7 4 3 4 H-3 Q-7 4 -7 0 V-18 Z" fill = "#8fd3ff" fill-opacity = "0.28" stroke = "currentColor" stroke-width = "1.400" stroke-linejoin = "round"/>
+                                        <path d = "M-7 -12 H7 M-7 -6 H7" class = "ln" stroke-width = "0.900"/>
+                                    </g>
+                                    <g transform = "translate(262 328) rotate(115)">
+                                        <rect x = "-5.500" y = "-30" width = "11" height = "6" rx = "1.500" fill = "#2f7dea" stroke = "currentColor" stroke-width = "1.200"/>
+                                        <path d = "M-4 -24 H4 L7 -18 V0 Q7 4 3 4 H-3 Q-7 4 -7 0 V-18 Z" fill = "#8fd3ff" fill-opacity = "0.28" stroke = "currentColor" stroke-width = "1.400" stroke-linejoin = "round"/>
+                                        <path d = "M-7 -12 H7 M-7 -6 H7" class = "ln" stroke-width = "0.900"/>
+                                    </g>
+                                    <g transform = "translate(240 338) rotate(80)">
+                                        <rect x = "-5.500" y = "-30" width = "11" height = "6" rx = "1.500" fill = "#2f7dea" stroke = "currentColor" stroke-width = "1.200"/>
+                                        <path d = "M-4 -24 H4 L7 -18 V0 Q7 4 3 4 H-3 Q-7 4 -7 0 V-18 Z" fill = "#8fd3ff" fill-opacity = "0.28" stroke = "currentColor" stroke-width = "1.400" stroke-linejoin = "round"/>
+                                        <path d = "M-7 -12 H7 M-7 -6 H7" class = "ln" stroke-width = "0.900"/>
+                                    </g>
+                                    <g transform = "translate(256 340) rotate(98)">
+                                        <rect x = "-5.500" y = "-30" width = "11" height = "6" rx = "1.500" fill = "#2f7dea" stroke = "currentColor" stroke-width = "1.200"/>
+                                        <path d = "M-4 -24 H4 L7 -18 V0 Q7 4 3 4 H-3 Q-7 4 -7 0 V-18 Z" fill = "#8fd3ff" fill-opacity = "0.28" stroke = "currentColor" stroke-width = "1.400" stroke-linejoin = "round"/>
+                                        <path d = "M-7 -12 H7 M-7 -6 H7" class = "ln" stroke-width = "0.900"/>
+                                    </g>
+                                    <g transform = "translate(228 342) rotate(70)">
+                                        <rect x = "-5.500" y = "-30" width = "11" height = "6" rx = "1.500" fill = "#2f7dea" stroke = "currentColor" stroke-width = "1.200"/>
+                                        <path d = "M-4 -24 H4 L7 -18 V0 Q7 4 3 4 H-3 Q-7 4 -7 0 V-18 Z" fill = "#8fd3ff" fill-opacity = "0.28" stroke = "currentColor" stroke-width = "1.400" stroke-linejoin = "round"/>
+                                        <path d = "M-7 -12 H7 M-7 -6 H7" class = "ln" stroke-width = "0.900"/>
+                                    </g>
+                                    <g transform = "translate(270 340) rotate(84)">
+                                        <rect x = "-5.500" y = "-30" width = "11" height = "6" rx = "1.500" fill = "#2f7dea" stroke = "currentColor" stroke-width = "1.200"/>
+                                        <path d = "M-4 -24 H4 L7 -18 V0 Q7 4 3 4 H-3 Q-7 4 -7 0 V-18 Z" fill = "#8fd3ff" fill-opacity = "0.28" stroke = "currentColor" stroke-width = "1.400" stroke-linejoin = "round"/>
+                                        <path d = "M-7 -12 H7 M-7 -6 H7" class = "ln" stroke-width = "0.900"/>
+                                    </g>
+                                    <g transform = "translate(250 310) rotate(130)">
+                                        <rect x = "-5.500" y = "-30" width = "11" height = "6" rx = "1.500" fill = "#2f7dea" stroke = "currentColor" stroke-width = "1.200"/>
+                                        <path d = "M-4 -24 H4 L7 -18 V0 Q7 4 3 4 H-3 Q-7 4 -7 0 V-18 Z" fill = "#8fd3ff" fill-opacity = "0.28" stroke = "currentColor" stroke-width = "1.400" stroke-linejoin = "round"/>
+                                        <path d = "M-7 -12 H7 M-7 -6 H7" class = "ln" stroke-width = "0.900"/>
+                                    </g>
+                                    <g transform = "translate(236 312) rotate(50)">
+                                        <rect x = "-5.500" y = "-30" width = "11" height = "6" rx = "1.500" fill = "#2f7dea" stroke = "currentColor" stroke-width = "1.200"/>
+                                        <path d = "M-4 -24 H4 L7 -18 V0 Q7 4 3 4 H-3 Q-7 4 -7 0 V-18 Z" fill = "#8fd3ff" fill-opacity = "0.28" stroke = "currentColor" stroke-width = "1.400" stroke-linejoin = "round"/>
+                                        <path d = "M-7 -12 H7 M-7 -6 H7" class = "ln" stroke-width = "0.900"/>
+                                    </g>
+                                    </g>
+                                
+                                <g transform = "translate(236 282) rotate(-28)">
+                                    <rect x = "-5.500" y = "-30" width = "11" height = "6" rx = "1.500" fill = "#2f7dea" stroke = "currentColor" stroke-width = "1.200"/>
+                                    <path d = "M-4 -24 H4 L7 -18 V0 Q7 4 3 4 H-3 Q-7 4 -7 0 V-18 Z" fill = "#8fd3ff" fill-opacity = "0.22" stroke = "currentColor" stroke-width = "1.500" stroke-linejoin = "round"/>
+                                    <path d = "M-7 -12 H7 M-7 -6 H7" class = "ln" stroke-width = "0.900"/>
+                                </g>
+                                <g transform = "translate(250 276) rotate(-8)">
+                                    <rect x = "-5.500" y = "-30" width = "11" height = "6" rx = "1.500" fill = "#2f7dea" stroke = "currentColor" stroke-width = "1.200"/>
+                                    <path d = "M-4 -24 H4 L7 -18 V0 Q7 4 3 4 H-3 Q-7 4 -7 0 V-18 Z" fill = "#8fd3ff" fill-opacity = "0.22" stroke = "currentColor" stroke-width = "1.500" stroke-linejoin = "round"/>
+                                    <path d = "M-7 -12 H7 M-7 -6 H7" class = "ln" stroke-width = "0.900"/>
+                                </g>
+                                <g transform = "translate(264 280) rotate(14)">
+                                    <rect x = "-5.500" y = "-30" width = "11" height = "6" rx = "1.500" fill = "#2f7dea" stroke = "currentColor" stroke-width = "1.200"/>
+                                    <path d = "M-4 -24 H4 L7 -18 V0 Q7 4 3 4 H-3 Q-7 4 -7 0 V-18 Z" fill = "#8fd3ff" fill-opacity = "0.22" stroke = "currentColor" stroke-width = "1.500" stroke-linejoin = "round"/>
+                                    <path d = "M-7 -12 H7 M-7 -6 H7" class = "ln" stroke-width = "0.900"/>
+                                </g>
+                                <g transform = "translate(244 288) rotate(-48)">
+                                    <rect x = "-5.500" y = "-30" width = "11" height = "6" rx = "1.500" fill = "#2f7dea" stroke = "currentColor" stroke-width = "1.200"/>
+                                    <path d = "M-4 -24 H4 L7 -18 V0 Q7 4 3 4 H-3 Q-7 4 -7 0 V-18 Z" fill = "#8fd3ff" fill-opacity = "0.22" stroke = "currentColor" stroke-width = "1.500" stroke-linejoin = "round"/>
+                                    <path d = "M-7 -12 H7 M-7 -6 H7" class = "ln" stroke-width = "0.900"/>
+                                </g>
+                                <g transform = "translate(258 288) rotate(34)">
+                                    <rect x = "-5.500" y = "-30" width = "11" height = "6" rx = "1.500" fill = "#2f7dea" stroke = "currentColor" stroke-width = "1.200"/>
+                                    <path d = "M-4 -24 H4 L7 -18 V0 Q7 4 3 4 H-3 Q-7 4 -7 0 V-18 Z" fill = "#8fd3ff" fill-opacity = "0.22" stroke = "currentColor" stroke-width = "1.500" stroke-linejoin = "round"/>
+                                    <path d = "M-7 -12 H7 M-7 -6 H7" class = "ln" stroke-width = "0.900"/>
+                                </g>
+                                <g transform = "translate(228 296) rotate(-70)">
+                                    <rect x = "-5.500" y = "-30" width = "11" height = "6" rx = "1.500" fill = "#2f7dea" stroke = "currentColor" stroke-width = "1.200"/>
+                                    <path d = "M-4 -24 H4 L7 -18 V0 Q7 4 3 4 H-3 Q-7 4 -7 0 V-18 Z" fill = "#8fd3ff" fill-opacity = "0.22" stroke = "currentColor" stroke-width = "1.500" stroke-linejoin = "round"/>
+                                    <path d = "M-7 -12 H7 M-7 -6 H7" class = "ln" stroke-width = "0.900"/>
+                                </g>
+                                <g transform = "translate(272 292) rotate(58)">
+                                    <rect x = "-5.500" y = "-30" width = "11" height = "6" rx = "1.500" fill = "#2f7dea" stroke = "currentColor" stroke-width = "1.200"/>
+                                    <path d = "M-4 -24 H4 L7 -18 V0 Q7 4 3 4 H-3 Q-7 4 -7 0 V-18 Z" fill = "#8fd3ff" fill-opacity = "0.22" stroke = "currentColor" stroke-width = "1.500" stroke-linejoin = "round"/>
+                                    <path d = "M-7 -12 H7 M-7 -6 H7" class = "ln" stroke-width = "0.900"/>
+                                </g>
+                                <!-- fallen bottles -->
+                                <g transform = "translate(298 346) rotate(84)">
+                                    <rect x = "-5.500" y = "-30" width = "11" height = "6" rx = "1.500" fill = "#2f7dea" stroke = "currentColor" stroke-width = "1.200"/>
+                                    <path d = "M-4 -24 H4 L7 -18 V0 Q7 4 3 4 H-3 Q-7 4 -7 0 V-18 Z" fill = "#8fd3ff" fill-opacity = "0.22" stroke = "currentColor" stroke-width = "1.500" stroke-linejoin = "round"/>
+                                </g>
+                                <path d = "M214 296 H284 L278 350 H220 Z" fill = "url(#mesh)" stroke = "currentColor" stroke-width = "2.400" stroke-linejoin = "round"/>
+                                <path class = "ln" d = "M221 297 L225 349 M247 297 V349 M273 297 L270 349" stroke-width = "1.800"/>
+                                <path class = "ln" d = "M220 349 H278" stroke-width = "3.200"/>
+                                <rect x = "210" y = "291" width = "78" height = "7" rx = "3" fill = "none" stroke = "currentColor" stroke-width = "2.400"/>
+                            </g>
+                            </g>
+
+                            <!-- desk clock -->
+                            <g class = "hot" id = "d-clock" tabindex = "0" role = "button">
+                                <title>Desk clock</title>
+                                <path class = "ln" d = "M330 247 v3 M366 247 v3" stroke-width = "2.400"/>
+                                <rect x = "322" y = "250" width = "60" height = "28" rx = "6" fill = "#14132a" stroke = "currentColor" stroke-width = "2.200"/>
+                                <rect x = "327" y = "255" width = "50" height = "18" rx = "3" fill = "#07061a" stroke = "#3a3858" stroke-width = "1"/>
+                                <circle id = "clock-sun" cx = "333" cy = "264" r = "3" fill = "#ffd24a"/>
+                                <path id = "clock-moon" d = "M335 260 a4.500 4.500 0 1 0 0 8 a3.500 3.500 0 0 1 0 -8 z" fill = "#dfe6f3" style = "display:none"/>
+                                <text id = "clock-time" x = "357" y = "268.500" text-anchor = "middle" class = "clock-tx">12:00</text>
+                                <text id = "clock-ampm" x = "372" y = "260" text-anchor = "middle" class = "clock-ap">PM</text>
+                            </g>
+
+                            <!-- snacks -->
+                            <g class = "hot" id = "d-snacks" tabindex = "0" role = "button">
+                                <title>Snacks</title>
+                                <!-- chip bag -->
+                                <path d = "M400 278 L404 232 L398 226 L416 222 L434 226 L428 232 L432 278 Z" fill = "#e8453c" stroke = "currentColor" stroke-width = "2" stroke-linejoin = "round"/>
+                                <path class = "ln" d = "M399 228 l3 -3 l3 3 l3 -3 l3 3 l3 -3 l3 3 l3 -3 l3 3 l2 -2" stroke-width = "1.4"/>
+                                <ellipse cx = "416" cy = "254" rx = "10" ry = "11" fill = "#ffd166" stroke = "currentColor" stroke-width = "1.6"/>
+                                <path d = "M410 254 q6 -8 12 0" class = "ln dk" stroke = "#a4410a" stroke-width = "1.8"/>
+                                <!-- cookies -->
+                                <ellipse cx = "466" cy = "273" rx = "20" ry = "5" fill = "#e9d9c3" stroke = "currentColor" stroke-width = "1.8"/>
+                                <circle cx = "460" cy = "266" r = "9" fill = "#c98a4b" stroke = "currentColor" stroke-width = "1.8"/>
+                                <circle cx = "474" cy = "267" r = "8" fill = "#c98a4b" stroke = "currentColor" stroke-width = "1.8"/>
+                                <circle cx = "457" cy = "264" r = "1.4" fill = "#3a2417"/><circle cx = "463" cy = "269" r = "1.4" fill = "#3a2417"/>
+                                <circle cx = "472" cy = "264" r = "1.4" fill = "#3a2417"/><circle cx = "477" cy = "270" r = "1.4" fill = "#3a2417"/>
+                                <!-- candy bar -->
+                                <rect x = "486" y = "266" width = "28" height = "11" rx = "2" fill = "#7a4b2c" stroke = "currentColor" stroke-width = "1.8" transform = "rotate(-6 500 271)"/>
+                                <path d = "M492 267 v10 M500 266 v10 M508 265 v10" class = "ln" stroke-width = "1" transform = "rotate(-6 500 271)"/>
+                            </g>
+
+                            <!-- person -->
+                            <g class = "hot" id = "d-me" data-say = "Hey, I am Elio. Thanks for stopping by!" tabindex = "0" role = "button">
+                                <title>Elio</title>
+                                <g transform = "translate(0 -10)">
+                                    <!-- hoodie -->
+                                    <path d = "M530 218 Q528 172 566 166 H604 Q642 172 640 218 Z" fill = "#7b4a2c" stroke = "#120d0a" stroke-width = "2.2" stroke-linejoin = "round"/>
+                                    <path d = "M531 205 Q516 230 512 272 L528 278 Q532 240 544 214 Z" fill = "#7b4a2c" stroke = "#120d0a" stroke-width = "2" stroke-linejoin = "round"/>
+                                    <path d = "M639 205 Q654 230 658 272 L642 278 Q638 240 626 214 Z" fill = "#7b4a2c" stroke = "#120d0a" stroke-width = "2" stroke-linejoin = "round"/>
+                                    <!-- hood -->
+                                    <ellipse cx = "585" cy = "166" rx = "40" ry = "15" fill = "#8a5633" stroke = "#120d0a" stroke-width = "2.2"/>
+                                    <ellipse cx = "585" cy = "164" rx = "24" ry = "9" fill = "#4a2b18" stroke = "#120d0a" stroke-width = "1.6"/>
+                                    <path d = "M574 160 V170 Q585 178 596 170 V160 Z" fill = "#d9a273" stroke = "currentColor" stroke-width = "1.8"/>
+                                    <!-- drawstrings -->
+                                    <path class = "ln" d = "M576 176 Q574 186 576 194 M594 176 Q596 186 594 194" stroke = "#f3e7d8" stroke-width = "1.8"/>
+                                    <circle cx = "576" cy = "195" r = "2" fill = "#f3e7d8"/><circle cx = "594" cy = "195" r = "2" fill = "#f3e7d8"/>
+                                    <!-- chest print -->
+                                    <text x = "585" y = "204" text-anchor = "middle" class = "hoodie-tx" textLength = "72" lengthAdjust = "spacingAndGlyphs">eliorocha.dev</text>
+                                    <!-- earbud wires -->
+                                    <path class = "ln wire" d = "M551 142 C534 172 548 198 572 217"/>
+                                    <path class = "ln wire" d = "M619 142 C636 172 622 198 598 217"/>
+                                    <!-- ears -->
+                                    <circle cx = "551" cy = "134" r = "6.500" fill = "#d9a273" stroke = "currentColor" stroke-width = "2"/>
+                                    <circle cx = "619" cy = "134" r = "6.500" fill = "#d9a273" stroke = "currentColor" stroke-width = "2"/>
+                                    <!-- face -->
+                                    <ellipse cx = "585" cy = "131" rx = "33" ry = "35" fill = "#d9a273" stroke = "currentColor" stroke-width = "2.2"/>
+                                    <!-- 8-guard buzz cut -->
+                                    <path d = "M551 130 C546 100 564 89 585 89 C606 89 624 100 619 130 C616 114 604 108 585 108 C566 108 554 114 551 130 Z" fill = "#2a221d" stroke = "#0a0806" stroke-width = "1.8" stroke-linejoin = "round"/>
+                                    <!-- glasses -->
+                                    <rect x = "560" y = "126" width = "21" height = "15" rx = "4" fill = "#fff" fill-opacity = "0.18" stroke = "#1b1714" stroke-width = "2.4"/>
+                                    <rect x = "589" y = "126" width = "21" height = "15" rx = "4" fill = "#fff" fill-opacity = "0.18" stroke = "#1b1714" stroke-width = "2.4"/>
+                                    <path class = "ln" stroke = "#1b1714" d = "M581 131 H589 M560 130 L553 128 M610 130 L617 128" stroke-width = "2"/>
+                                    <circle cx = "571" cy = "134" r = "2" fill = "#1b1714"/><circle cx = "600" cy = "134" r = "2" fill = "#1b1714"/>
+                                    <!-- mustache, smile, goatee -->
+                                    <path d = "M574 152 Q585 147 596 152" fill = "none" stroke = "#1b1714" stroke-width = "3" stroke-linecap = "round"/>
+                                    <path class = "ln" stroke = "#5a2f22" d = "M578 156 Q585 160 592 156" stroke-width = "2"/>
+                                    <path d = "M577 162 Q585 174 593 162 Q585 165 577 162 Z" fill = "#1b1714" stroke = "#1b1714" stroke-width = "2" stroke-linejoin = "round"/>
+                                    <!-- earbuds -->
+                                    <ellipse cx = "552" cy = "136" rx = "3.400" ry = "4.400" fill = "#fff" stroke = "currentColor" stroke-width = "1.600"/>
+                                    <ellipse cx = "618" cy = "136" rx = "3.400" ry = "4.400" fill = "#fff" stroke = "currentColor" stroke-width = "1.600"/>
+                                </g>
+                            </g>
+
+                            <!-- laptop (back of lid faces the viewer) -->
+                            <g class = "hot" id = "d-laptop" data-go = "https://github.com/elio1222" tabindex = "0" role = "button">
+                                <title>My MacBook: click for GitHub</title>
+                                <rect x = "518" y = "203" width = "130" height = "75" rx = "8" fill = "#d9dbe3" stroke = "currentColor" stroke-width = "2.4"/>
+                                <path transform = "translate(583 240) scale(1.05)" fill = "#9a9cab" stroke = "#555766" stroke-width = "1.600" stroke-linejoin = "round" d = "M0 -5 C-3 -8 -9 -6 -9 0 C-9 6 -5 11 -2 11 C0 11 0 10 1 10 C2 10 2 11 4 11 C7 11 10 6 10 3 C6 2 5 -4 9 -7 C6 -10 1 -9 0 -5 Z M0 -6 C0 -10 3 -12 5 -12 C5 -9 3 -6 0 -6 Z"/>
+                            </g>
+                            <!-- Python sticker -->
+                            <g class = "hot" id = "d-minecraft" data-say = "Minecraft: it even inspired the GitHub activity map below." tabindex = "0" role = "button">
+                                <title>Minecraft sticker</title>
+                                <g transform = "translate(620 232) rotate(7) translate(-19 -19)">
+                                    <rect x = "-1" y = "-1" width = "40" height = "40" rx = "11" fill = "#1f2233" stroke = "#e8e6f5" stroke-width = "1.800"/>
+                                    <path d = "M19 6 L33 13 L19 20 L5 13 Z" fill = "#5fb04a" stroke = "#1b2a14" stroke-width = "1.200" stroke-linejoin = "round"/>
+                                    <path d = "M5 13 L19 20 V35 L5 28 Z" fill = "#8b5a2b" stroke = "#1b2a14" stroke-width = "1.200" stroke-linejoin = "round"/>
+                                    <path d = "M19 20 L33 13 V28 L19 35 Z" fill = "#6b4220" stroke = "#1b2a14" stroke-width = "1.200" stroke-linejoin = "round"/>
+                                    <path d = "M5 13 L19 20 V25 L5 18 Z" fill = "#4a9a3a"/>
+                                    <path d = "M19 20 L33 13 V18 L19 25 Z" fill = "#3d8230"/>
+                                    <g fill = "#4a2e14"><rect x = "8" y = "23" width = "3" height = "3"/><rect x = "13" y = "28" width = "3" height = "3"/><rect x = "23" y = "29" width = "3" height = "3"/><rect x = "28" y = "22" width = "3" height = "3"/></g>
+                                </g>
+                            </g>
+                            <!-- Claude Code bug sticker -->
+                            <g class = "hot" id = "d-claude" data-go = "https://claude.com/product/claude-code" tabindex = "0" role = "button">
+                                <title>Claude Code sticker</title>
+                                <g transform = "rotate(-6 545 232)">
+                                    <rect x = "526" y = "212" width = "38" height = "38" rx = "10" fill = "#1d1b2e" stroke = "currentColor" stroke-width = "1.800"/>
+                                    <g fill = "#d97757">
+                                        <rect x = "533" y = "223" width = "24" height = "13"/>
+                                        <rect x = "530" y = "228" width = "3" height = "5"/><rect x = "557" y = "228" width = "3" height = "5"/>
+                                        <rect x = "536" y = "236" width = "3" height = "5"/><rect x = "541" y = "236" width = "3" height = "5"/>
+                                        <rect x = "547" y = "236" width = "3" height = "5"/><rect x = "552" y = "236" width = "3" height = "5"/>
+                                    </g>
+                                    <rect x = "538" y = "227" width = "3" height = "5" fill = "#1d1b2e"/><rect x = "549" y = "227" width = "3" height = "5" fill = "#1d1b2e"/>
+                                </g>
+                            </g>
+                            <!-- hands -->
+                            <circle cx = "514" cy = "270" r = "9" fill = "#d9a273" stroke = "currentColor" stroke-width = "2"/>
+                            <circle cx = "652" cy = "270" r = "9" fill = "#d9a273" stroke = "currentColor" stroke-width = "2"/>
+
+                            <!-- water bottle -->
+                            <g class = "hot" id = "d-bottle" tabindex = "0" role = "button">
+                                <title>Water bottle: take a sip</title>
+                                <rect x = "703" y = "208" width = "12" height = "9" rx = "2" fill = "#2f7dea" stroke = "currentColor" stroke-width = "1.800"/>
+                                <rect x = "701" y = "216" width = "16" height = "10" rx = "2" fill = "#14132a" stroke = "currentColor" stroke-width = "1.800"/>
+                                <rect x = "697" y = "224" width = "24" height = "52" rx = "9" fill = "#14132a"/>
+                                <g clip-path = "url(#bottle-clip)"><rect id = "water" x = "697" y = "232" width = "24" height = "44" fill = "#5cc8ff" opacity = "0.85"/></g>
+                                <rect x = "697" y = "224" width = "24" height = "52" rx = "9" fill = "none" stroke = "currentColor" stroke-width = "2.200"/>
+                                <path class = "ln" d = "M702 240 v10" stroke = "#fff" stroke-width = "2" opacity = "0.7"/>
+                                <rect x = "697" y = "252" width = "24" height = "9" fill = "#2f7dea" opacity = "0.9"/>
+                                <circle cx = "718" cy = "236" r = "1.200" fill = "#fff"/><circle cx = "716" cy = "242" r = "1" fill = "#fff"/>
+                            </g>
+
+                            <!-- lamp -->
+                            <g class = "hot" id = "d-lamp" tabindex = "0" role = "button">
+                                <title>Desk lamp: click to toggle</title>
+                                <path id = "lamp-beam" d = "M746 201 L712 277 L796 277 L760 201 Z" fill = "#ffe9a3" opacity = "0" pointer-events = "none"/>
+                                <ellipse cx = "768" cy = "275" rx = "24" ry = "5" fill = "#14132a" stroke = "currentColor" stroke-width = "2.200"/>
+                                <path class = "ln" d = "M768 271 V208 Q768 182 752 174"/>
+                                <path d = "M742 164 H764 L778 196 H728 Z" fill = "#14132a" stroke = "currentColor" stroke-width = "2.200" stroke-linejoin = "round" transform = "rotate(-10 752 180)"/>
+                                <circle id = "lamp-bulb" cx = "751" cy = "200" r = "5" fill = "#aeb1c4" stroke = "currentColor" stroke-width = "1.600"/>
+                            </g>
+
+                            <!-- books -->
+                            <g class = "hot" id = "d-books" data-say = "On the stack: The Odyssey, System Design Interview, Graph Theory, The Psychology of Money." tabindex = "0" role = "button">
+                                <title>Reading list</title>
+                                <ellipse cx = "913" cy = "278" rx = "68" ry = "3.500" fill = "#000" fill-opacity = "0.35"/>
+                                <rect x = "848" y = "261" width = "130" height = "17" rx = "2" fill = "#e4b242" stroke = "currentColor" stroke-width = "2"/>
+                                    <path d = "M850 264 H976" class = "ln" stroke = "#fff" stroke-opacity = "0.28" stroke-width = "1.400"/>
+                                    <path d = "M855 262.5 V276.5 M971 262.5 V276.5" class = "ln" stroke = "#000" stroke-opacity = "0.35" stroke-width = "1.400"/>
+                                    <path d = "M858 274 H968" class = "ln" stroke = "#000" stroke-opacity = "0.18" stroke-width = "1"/>
+                                    <text x = "913.0" y = "272.6" text-anchor = "middle" class = "spine" style = "font-size:9.5px" fill = "#2a2110">The Psychology of Money</text>
+                                <rect x = "854" y = "245" width = "118" height = "16" rx = "2" fill = "#3aa6a0" stroke = "currentColor" stroke-width = "2"/>
+                                    <path d = "M856 248 H970" class = "ln" stroke = "#fff" stroke-opacity = "0.28" stroke-width = "1.400"/>
+                                    <path d = "M861 246.5 V259.5 M965 246.5 V259.5" class = "ln" stroke = "#000" stroke-opacity = "0.35" stroke-width = "1.400"/>
+                                    <path d = "M864 257 H962" class = "ln" stroke = "#000" stroke-opacity = "0.18" stroke-width = "1"/>
+                                    <text x = "913.0" y = "255.9" text-anchor = "middle" class = "spine" style = "font-size:10.5px" fill = "#06201f">Graph Theory</text>
+                                <rect x = "846" y = "228" width = "126" height = "17" rx = "2" fill = "#7b5fd1" stroke = "currentColor" stroke-width = "2"/>
+                                    <path d = "M848 231 H970" class = "ln" stroke = "#fff" stroke-opacity = "0.28" stroke-width = "1.400"/>
+                                    <path d = "M853 229.5 V243.5 M965 229.5 V243.5" class = "ln" stroke = "#000" stroke-opacity = "0.35" stroke-width = "1.400"/>
+                                    <path d = "M856 241 H962" class = "ln" stroke = "#000" stroke-opacity = "0.18" stroke-width = "1"/>
+                                    <text x = "909.0" y = "239.6" text-anchor = "middle" class = "spine" style = "font-size:9px" fill = "#fff">System Design Interview</text>
+                                <!-- bookmark ribbon -->
+                                <path d = "M958 243 v15 l3 -3.500 l3 3.500 v-15 z" fill = "#d23b3b" stroke = "currentColor" stroke-width = "1.200" stroke-linejoin = "round"/>
+                                <g transform = "rotate(-3 914.0 220.0)">
+                                    <rect x = "860" y = "212" width = "108" height = "16" rx = "2" fill = "#c95f3b" stroke = "currentColor" stroke-width = "2"/>
+                                    <path d = "M862 215 H966" class = "ln" stroke = "#fff" stroke-opacity = "0.28" stroke-width = "1.400"/>
+                                    <path d = "M867 213.5 V226.5 M961 213.5 V226.5" class = "ln" stroke = "#000" stroke-opacity = "0.35" stroke-width = "1.400"/>
+                                    <path d = "M870 224 H958" class = "ln" stroke = "#000" stroke-opacity = "0.18" stroke-width = "1"/>
+                                    <text x = "914.0" y = "222.9" text-anchor = "middle" class = "spine" style = "font-size:10.5px" fill = "#fff">The Odyssey</text>
+                                </g>
+                            </g>
+                        </g>
+                        <ellipse id = "lamp-glow" cx = "752" cy = "215" rx = "78" ry = "66" fill = "#ffd86b" opacity = "0" pointer-events = "none" style = "mix-blend-mode:screen"/>
+                    </svg>
+                    <div class = "desk-caption" id = "desk-caption" aria-live = "polite">Everything here is clickable. Go ahead, poke around.</div>
                 </div>
-                <div class = "intro-below-header">
-                    <div class = "linkss">
-                        <a href = "https://github.com/elio1222" target = "_blank">
-                        <div class = "linkss-text">
-                            <div class="hover-links fancy">
-                                <img class = "icons" src = "images/github-color-svgrepo-com.svg">
-                                GitHub
-                            </div>
-                        </div>
-                        </a>
-                        <a href = "https://www.linkedin.com/in/elio-rocha-b7b995273/" target="_blank">
-                        <div class = "linkss-text">
-                            <div class="hover-links fancy">
-                                <img class = "icons" src = "images/linkedin-1-svgrepo-com.svg">
-                                LinkedIn
-                            </div>
-                        </div>
-                        </a>
-                        <a href = "https://x.com/eliorochadev" target="_blank">
-                        <div class = "linkss-text">
-                            <div class="hover-links fancy">
-                                <img class = "icons" src = "images/twitter-color-svgrepo-com.svg">
-                                Twitter
-                            </div>
-                        </div>
-                        </a>
-                        <a href = "https://www.youtube.com/@callmemrfreeze" target = "_blank">
-                        <div class = "linkss-text">
-                            <div class="hover-links fancy">
-                                <img class = "icons" src = "images/youtube-svgrepo-com (1).svg">
-                                Youtube
-                            </div>
-                        </div>
-                        </a>
-                    </div>
+                    </section>
+                    <p class = "p-intro2">
+                        <span class = "bio-full">I am a <span class = "fancy-text2">Software Engineer</span> and <span class = 'fancy-text2'>Computer Science Undergraduate</span> at The Catholic University of America with a strong interest in backend systems, cloud computing, and developer tooling. I enjoy creating projects that are both meaningful and practical.</span><span class = "bio-short">I am a <span class = "fancy-text2">Software Engineer</span> and <span class = "fancy-text2">CS undergrad</span> at The Catholic University of America, into backend systems, cloud computing, and developer tooling.</span>
+                    </p>
                 </div>
                 <div class = "jump-headers" id = "edu" style = "color: white; margin-top: 28px">
                     <span class = "fancy-text2">EXPERIENCE</span>
                 </div>
-                <div class = "education-container">
-                    <div class = "college">
-                        <div class = "school-logo">
-                            <img class = "school-logox" src = "images/leidos.svg">
-                        </div>
-                        <div class = "school-text">
-                            <div class = "descript-text">
-                                Upcoming May - Aug 2026
-                            </div>
-                            <div class = "descript-header">
-                                <span class = "cua-color">Software Engineer Intern @ Leidos</span>
-                            </div>
-                            <div class = "descript-text">
-                                Designing and building software prototypes, APIs, and microservices across front-end and back-end systems. Writing clean, tested code, collaborating to solve problems, and exploring new technologies.
-                            </div>
-                        </div>
+                <section class = "odyssey" aria-label = "Experience">
+                    <div class = "od-helm" aria-hidden = "true">
+                        <svg class = "od-me" viewBox = "496 -14 178 238">
+                            <defs>
+                                <linearGradient id = "od-steel" x1 = "0" y1 = "0" x2 = "1" y2 = "1">
+                                    <stop offset = "0" stop-color = "#4a6ea8"/><stop offset = ".45" stop-color = "#243f6a"/><stop offset = "1" stop-color = "#101a33"/>
+                                </linearGradient>
+                                <linearGradient id = "od-fur" x1 = "0" y1 = "1" x2 = "0" y2 = "0">
+                                    <stop offset = "0" stop-color = "#4f1866"/><stop offset = ".7" stop-color = "#8e2fab"/><stop offset = "1" stop-color = "#b255cf"/>
+                                </linearGradient>
+                                <clipPath id = "od-fur-clip"><path d = "M566 60 L551 42 L549 14 L560 10 L572 12 L584 8 L596 12 L608 9 L618 15 L614 42 L604 60 Z"/></clipPath>
+                                <clipPath id = "od-dome-clip"><path d = "M545 128 C543 92 560 70 585 70 C610 70 627 92 625 128 L627 150 L637 172 L622 168 L612 154 Q606 146 598 146 L572 146 Q564 146 558 154 L548 168 L533 172 L543 150 Z"/></clipPath>
+                            </defs>
+                            <g class = "od-bob">
+                                <g transform = "translate(0 -10)">
+                                    <!-- shoulders + hoodie (no arms) -->
+                                    <path d = "M500 236 Q500 194 542 182 Q562 176 585 178 Q608 176 628 182 Q670 194 670 236 Z" fill = "#7b4a2c" stroke = "#120d0a" stroke-width = "2.200" stroke-linejoin = "round"/>
+                                    <ellipse cx = "585" cy = "170" rx = "40" ry = "15" fill = "#8a5633" stroke = "#120d0a" stroke-width = "2.200"/>
+                                    <ellipse cx = "585" cy = "168" rx = "24" ry = "9" fill = "#4a2b18" stroke = "#120d0a" stroke-width = "1.600"/>
+                                    <path d = "M574 160 V172 Q585 180 596 172 V160 Z" fill = "#d9a273" stroke = "#120d0a" stroke-width = "1.800"/>
+                                    <path d = "M576 182 Q574 192 576 200 M594 182 Q596 192 594 200" fill = "none" stroke = "#f3e7d8" stroke-width = "1.800" stroke-linecap = "round"/>
+                                    <circle cx = "576" cy = "201" r = "2" fill = "#f3e7d8"/><circle cx = "594" cy = "201" r = "2" fill = "#f3e7d8"/>
+                                    <text x = "585" y = "218" text-anchor = "middle" class = "hoodie-tx" textLength = "88" lengthAdjust = "spacingAndGlyphs">eliorocha.dev</text>
+
+                                    <!-- face (shows through the helmet openings) -->
+                                    <ellipse cx = "585" cy = "131" rx = "33" ry = "35" fill = "#d9a273" stroke = "#120d0a" stroke-width = "2.200"/>
+                                    <path d = "M574 153 Q585 148 596 153" fill = "none" stroke = "#1b1714" stroke-width = "3" stroke-linecap = "round"/>
+                                    <path d = "M578 157 Q585 161 592 157" fill = "none" stroke = "#5a2f22" stroke-width = "2" stroke-linecap = "round"/>
+                                    <path d = "M577 163 Q585 175 593 163 Q585 166 577 163 Z" fill = "#1b1714" stroke = "#1b1714" stroke-width = "2" stroke-linejoin = "round"/>
+                                    <!-- dark eye wells + eyes -->
+                                    <path d = "M558 120 L581 122 L580 136 Q568 141 560 134 Z" fill = "#0c0912"/><path d = "M612 120 L589 122 L590 136 Q602 141 610 134 Z" fill = "#0c0912"/>
+                                    <g class = "od-eyes">
+                                        <ellipse cx = "570" cy = "129" rx = "4" ry = "3" fill = "#f4ecd8"/><circle cx = "571" cy = "129" r = "2" fill = "#1b1714"/>
+                                        <ellipse cx = "600" cy = "129" rx = "4" ry = "3" fill = "#f4ecd8"/><circle cx = "599" cy = "129" r = "2" fill = "#1b1714"/>
+                                    </g>
+
+                                    <!-- crest: straight horsehair brush on a black holder -->
+                                    <g class = "od-crest">
+                                        <path d = "M566 60 L551 42 L549 14 L560 10 L572 12 L584 8 L596 12 L608 9 L618 15 L614 42 L604 60 Z" fill = "url(#od-fur)" stroke = "#120d0a" stroke-width = "2" stroke-linejoin = "round"/>
+                                        <g clip-path = "url(#od-fur-clip)" stroke = "#e4a9f2" stroke-width = ".9" stroke-opacity = ".45">
+                                            <path d = "M556 62V8M562 62V8M568 62V8M574 62V8M580 62V8M586 62V8M592 62V8M598 62V8M604 62V8M610 62V8"/>
+                                        </g>
+                                    </g>
+                                    <path d = "M560 74 Q585 52 610 74 L604 76 Q585 62 566 76 Z" fill = "#3a4a6a" stroke = "#120d0a" stroke-width = "1.800" stroke-linejoin = "round"/>
+                                    <rect x = "566" y = "54" width = "38" height = "15" rx = "2" fill = "#141a2c" stroke = "#120d0a" stroke-width = "1.800"/>
+                                    <rect x = "562" y = "68" width = "46" height = "6" rx = "2" fill = "#1d2742" stroke = "#120d0a" stroke-width = "1.600"/>
+
+                                    <!-- helmet shell -->
+                                    <path fill-rule = "evenodd" fill = "url(#od-steel)" stroke = "#120d0a" stroke-width = "2.400" stroke-linejoin = "round" d = "M545 128 C543 92 560 70 585 70 C610 70 627 92 625 128 L627 150 L637 172 L622 168 L612 154 Q606 146 598 146 L572 146 Q564 146 558 154 L548 168 L533 172 L543 150 Z M558 120 L581 122 L580 136 Q568 141 560 134 Z M612 120 L589 122 L590 136 Q602 141 610 134 Z"/>
+                                    <!-- nose guard -->
+                                    <path d = "M581 121 L589 121 L588.500 144 L590 148 L585 150 L580 148 L581.500 144 Z" fill = "url(#od-steel)" stroke = "#120d0a" stroke-width = "1.800" stroke-linejoin = "round"/>
+                                    <!-- bronze trim -->
+                                    <g class = "od-trim" stroke = "#c9a66b" stroke-width = "1.300">
+                                        <path d = "M558 120 L581 122 L580 136 Q568 141 560 134 Z"/><path d = "M612 120 L589 122 L590 136 Q602 141 610 134 Z"/>
+                                        <path d = "M566 94 L604 94 L599 108 L585 114 L571 108 Z" stroke-opacity = ".9"/>
+                                        <path d = "M572 76 L568 94 M598 76 L602 94" stroke-opacity = ".75"/>
+                                        <path d = "M548 130 L551 150 M622 130 L619 150 M551 152 L545 166 M619 152 L625 166" stroke-opacity = ".7"/>
+                                        <path d = "M558 154 Q564 147 572 147 M612 154 Q606 147 598 147" stroke-opacity = ".8"/>
+                                    </g>
+                                    <g class = "od-trim" stroke = "#a9c2ea" stroke-width = ".9" stroke-opacity = ".5">
+                                        <path d = "M552 104 L558 110 M616 100 L610 108 M590 84 L596 90 M547 144 L552 140 M624 142 L619 138"/>
+                                    </g>
+                                    <g clip-path = "url(#od-dome-clip)"><path class = "od-glint" d = "M-20 0 L-8 0 L12 180 L0 180 Z" fill = "#cfe0ff" fill-opacity = ".3"/></g>
+                                </g>
+                            </g>
+                        </svg>
+                        <div class = "od-shadow"></div>
                     </div>
-                </div>
+                    <div class = "od-text od-card">
+                        <div class = "od-book">Book I <span>&middot;</span> May &ndash; Aug 2026</div>
+                        <div class = "od-head">
+                            <div class = "od-company"><img src = "images/leidos.svg" alt = "Leidos" width = "56" height = "28"></div>
+                            <h3 class = "od-role">Software Engineer Intern</h3>
+                        </div>
+                        <div class = "od-meander" aria-hidden = "true"></div>
+                        <p class = "od-desc">Designing and building software prototypes, APIs, and microservices across front-end and back-end systems. Writing clean, tested code, collaborating to solve problems, and exploring new technologies.</p>
+                    </div>
+                </section>
                 <div class = "jump-headers" id = "edu" style = "color: white; margin-top: 28px">
                     <span class = "fancy-text2">EDUCATION</span>
                 </div>
-                <div class = "education-container">
-                    <div class = "college">
-                        <div class = "school-logo">
-                            <img class = "school-logox" src = "images/Catholic_Cardinals_primary_logo.svg.png">
+                <svg width = "0" height = "0" style = "position:absolute" aria-hidden = "true" focusable = "false">
+                    <defs>
+                        <symbol id = "edu-th" viewBox = "0 0 40 40">
+                            <path d = "M20 8V1.500" stroke = "#1b1714" stroke-width = "1.600" stroke-linecap = "round"/>
+                            <path d = "M20 1.800l8 2.600-8 2.600z" fill = "var(--flag, #e5483f)" stroke = "#1b1714" stroke-width = "1" stroke-linejoin = "round"/>
+                            <path d = "M5 37V21l15-6 15 6v16z" fill = "#b9b4cc" stroke = "#1b1714" stroke-width = "1.600" stroke-linejoin = "round"/>
+                            <path d = "M5 29h30M12 21v8M20 21v8M28 21v8M9 29v8M16 29v8M24 29v8M31 29v8" stroke = "#8f89a8" stroke-width = ".9" fill = "none"/>
+                            <path d = "M1.500 22L20 8l18.500 14-3 3.200L20 14 4.500 25.200z" fill = "var(--roof, #d4582f)" stroke = "#1b1714" stroke-width = "1.600" stroke-linejoin = "round"/>
+                            <path d = "M15.500 37V30a4.500 4.500 0 0 1 9 0v7z" fill = "#5a3a1c" stroke = "#1b1714" stroke-width = "1.300"/>
+                        </symbol>
+                        <symbol id = "edu-clock" viewBox = "0 0 20 20">
+                            <circle cx = "10" cy = "10" r = "8" fill = "#f4f1ff" stroke = "#1b1714" stroke-width = "1.600"/>
+                            <path d = "M10 5v5.500l3.500 2" fill = "none" stroke = "#1b1714" stroke-width = "1.800" stroke-linecap = "round" stroke-linejoin = "round"/>
+                        </symbol>
+                    </defs>
+                </svg>
+                <div class = "education-container edu-coc">
+                    <article class = "edu-card">
+                        <div class = "college">
+                            <div class = "school-logo">
+                                <img class = "school-logox" src = "images/Catholic_Cardinals_primary_logo.svg.png" loading = "lazy" decoding = "async">
+                            </div>
+                            <div class = "school-text">
+                                <div class = "descript-text">
+                                    Aug 2023 - May 2027
+                                </div>
+                                <div class = "descript-header">
+                                    <span class = "cua-color">Computer Science @ The Catholic University of America</span>
+                                </div>
+                                <div class = "descript-text">
+                                    B.S. in Computer Science
+                                </div>
+                            </div>
                         </div>
-                        <div class = "school-text">
-                            <div class = "descript-text">
-                                Aug 2023 - May 2027
+                        <div class = "edu-sub">Laboratory<span class = "hud-pill edu-builder-tag" title = "Builder busy upgrading">
+                        <svg viewBox = "0 0 24 24" aria-hidden = "true"><circle cx = "12" cy = "13" r = "6.500" fill = "#e9b98a" stroke = "#14102a" stroke-width = "1.300"/><path d = "M4.500 11.500a7.500 7.500 0 0 1 15 0z" fill = "#f2c230" stroke = "#14102a" stroke-width = "1.300" stroke-linejoin = "round"/><rect x = "3.500" y = "10.800" width = "17" height = "2.400" rx = "1.200" fill = "#f2c230" stroke = "#14102a" stroke-width = "1.100"/><circle cx = "14.500" cy = "14" r = ".9" fill = "#14102a"/></svg>
+                        <b>Builder</b><em>1/1</em>
+                    </span></div>
+                        <ul class = "edu-queue" aria-label = "Relevant coursework">
+                                <li>Data Structures &amp; Algorithms</li>
+                                <li>Database Management</li>
+                                <li>Cloud Computing</li>
+                                <li>Web Design &amp; Programming</li>
+                                <li>Operating Systems</li>
+                                <li>Object-Oriented Programming</li>
+                        </ul>
+                        <div class = "edu-store">
+                            <svg viewBox = "0 0 24 24" aria-hidden = "true"><rect x = "4" y = "17" width = "16" height = "4.500" rx = "1.500" fill = "#8f89a8" stroke = "#14102a" stroke-width = "1.300"/><rect x = "8" y = "10" width = "8" height = "8" rx = "2" fill = "#b9b4cc" stroke = "#14102a" stroke-width = "1.300"/><path d = "M12 1.500c3 3.700 4.500 5.800 4.500 7.800a4.500 4.500 0 0 1-9 0c0-2 1.500-4.100 4.500-7.800z" fill = "#c264e8" stroke = "#14102a" stroke-width = "1.300" stroke-linejoin = "round"/></svg>
+                            <span class = "edu-store-name">Elixir Storage</span>
+                            <span class = "hud-bar elixir"><span id = "hud-elixir"></span></span>
+                        </div>
+                        <div class = "edu-upgrade" id = "edu-upgrade" data-start = "2023-08-28" data-end = "2027-05-15">
+                            <div class = "edu-upg-head">
+                                <span class = "edu-site" aria-hidden = "true">
+                                    <svg class = "edu-builder" viewBox = "0 0 36 40">
+                                        <rect x = "9" y = "30" width = "5" height = "7" rx = "1.500" fill = "#3b6fd0" stroke = "#14102a" stroke-width = "1.200"/>
+                                        <rect x = "16" y = "30" width = "5" height = "7" rx = "1.500" fill = "#3b6fd0" stroke = "#14102a" stroke-width = "1.200"/>
+                                        <rect x = "8" y = "36" width = "7" height = "3" rx = "1.500" fill = "#5a3a1c"/>
+                                        <rect x = "15.500" y = "36" width = "7" height = "3" rx = "1.500" fill = "#5a3a1c"/>
+                                        <rect x = "8" y = "18" width = "14" height = "14" rx = "3" fill = "#3b6fd0" stroke = "#14102a" stroke-width = "1.200"/>
+                                        <rect x = "11" y = "20" width = "8" height = "6" rx = "1.500" fill = "#e0a24a"/>
+                                        <circle cx = "15" cy = "12.500" r = "6.500" fill = "#e9b98a" stroke = "#14102a" stroke-width = "1.200"/>
+                                        <ellipse cx = "21.200" cy = "13.600" rx = "2.600" ry = "2.100" fill = "#e9b98a" stroke = "#14102a" stroke-width = "1"/>
+                                        <path d = "M14 16.800 Q19 15.600 23 17.800 Q19 19 14 16.800 Z" fill = "#8a4b1e"/>
+                                        <circle cx = "17.500" cy = "11.500" r = "1" fill = "#14102a"/>
+                                        <path d = "M7.500 10.500 a7.500 7.500 0 0 1 15 0 z" fill = "#f2c230" stroke = "#14102a" stroke-width = "1.200" stroke-linejoin = "round"/>
+                                        <rect x = "6" y = "9.800" width = "19" height = "2.400" rx = "1.200" fill = "#f2c230" stroke = "#14102a" stroke-width = "1"/>
+                                        <g class = "edu-swing">
+                                            <path d = "M20 22 L27 19" stroke = "#14102a" stroke-width = "5" stroke-linecap = "round"/>
+                                            <path d = "M20 22 L27 19" stroke = "#e0a24a" stroke-width = "3" stroke-linecap = "round"/>
+                                            <path d = "M27 19 L31 8" stroke = "#8a5a2b" stroke-width = "2.200" stroke-linecap = "round"/>
+                                            <rect x = "27" y = "4.500" width = "8" height = "5" rx = "1.200" transform = "rotate(14 31 7)" fill = "#9aa0b8" stroke = "#14102a" stroke-width = "1.100"/>
+                                        </g>
+                                    </svg>
+                                    <svg class = "edu-th" viewBox = "0 0 40 40"><use href = "#edu-th"/></svg>
+                                </span>
+                                <span class = "edu-upg-label">Upgrading to B.S. in CS</span>
+                                <span class = "edu-clock"><svg viewBox = "0 0 20 20" aria-hidden = "true"><use href = "#edu-clock"/></svg><span class = "edu-time" id = "edu-time">&nbsp;</span></span>
                             </div>
-                            <div class = "descript-header">
-                                <span class = "cua-color">Computer Science @ The Catholic University of America</span>
-                            </div>
-                            <div class = "descript-text">
-                                B.S. in CS. Relevant Coursework: Data Structures & Algorithms, Database Management, Cloud Computing, Web Design & Programming, Operating Systems, Object-Oriented Programming
+                            <div class = "edu-bar" role = "progressbar" aria-label = "Degree progress" aria-valuemin = "0" aria-valuemax = "100" aria-valuenow = "0" id = "edu-bar">
+                                <div class = "edu-fill" id = "edu-fill"></div>
+                                <span class = "edu-pct" id = "edu-pct"></span>
                             </div>
                         </div>
-                    </div>
-                    <div class = "highschool">
-                        <div class = "school-logo">
-                            <img class = "school-logox" src = "images/bowiehighlogo.png">
+                    </article>
+                    <article class = "edu-card">
+                        <div class = "highschool">
+                            <div class = "school-logo">
+                                <img class = "school-logox" src = "images/bowiehighlogo.png" loading = "lazy" decoding = "async">
+                            </div>
+                            <div class = "school-text">
+                                <div class = "descript-text">
+                                    Aug 2019 - May 2023
+                                </div>
+                                <div class = "descript-header">
+                                    <span class = "bowie-color">Bowie High School</span>
+                                    <span class = "edu-max">MAX LEVEL</span>
+                                </div>
+                                <div class = "descript-text">
+                                    High school diploma
+                                </div>
+                            </div>
                         </div>
-                        <div class = "school-text">
-                            <div class = "descript-text">
-                                Aug 2019 - May 2023
-                            </div>
-                            <div class = "descript-header">
-                                <span class = "bowie-color">Bowie High School</span>
-                            </div>
-                            <div class = "descript-text">
-                                High school diploma. Relevant Coursework: Physics & Math
-                            </div>
+                        <div class = "edu-sub gold">Vault</div>
+                        <ul class = "edu-queue gold" aria-label = "Relevant coursework">
+                                <li>Physics</li>
+                                <li>Math</li>
+                        </ul>
+                        <div class = "edu-store">
+                            <svg viewBox = "0 0 24 24" aria-hidden = "true"><path d = "M2.500 21.500l4-9 4 3 4-6 7 12z" fill = "#8f89a8" stroke = "#14102a" stroke-width = "1.300" stroke-linejoin = "round"/><circle cx = "12" cy = "8" r = "5.500" fill = "#f0b92c" stroke = "#14102a" stroke-width = "1.300"/><path d = "M12 5.200v5.600M10 8h4" stroke = "#8a5a10" stroke-width = "1.300" stroke-linecap = "round"/></svg>
+                            <span class = "edu-store-name">Gold Storage</span>
+                            <span class = "hud-bar gold"><span style = "width: 100%"></span></span>
                         </div>
-                    </div>
+                        <div class = "edu-upgrade done">
+                            <div class = "edu-upg-head">
+                                <svg class = "edu-th" viewBox = "0 0 40 40" style = "--roof: #e0a92c; --flag: #ffd23a" aria-hidden = "true"><use href = "#edu-th"/></svg>
+                                <span class = "edu-upg-label">Upgrade complete</span>
+                                <span class = "edu-clock"><svg viewBox = "0 0 20 20" aria-hidden = "true"><use href = "#edu-clock"/></svg><span class = "edu-time">May 2023</span></span>
+                            </div>
+                            <div class = "edu-bar"><div class = "edu-fill" style = "width: 100%"></div><span class = "edu-pct">100%</span></div>
+                        </div>
+                    </article>
                 </div>
                 <div class = "jump-headers" id = "tech" style = "color: white; padding-top: 14px;">
                     <span class = "fancy-text2">TECHNOLOGIES</span>
                 </div>
-                <div class = "techy">
-                    <div class = "techs-icons">
-                        <div class = "testing-tech">
-                            <img src = "images/python-svgrepo-com.svg">
-                            Python
+                <div class = "tech-map" role = "group" aria-label = "Technologies by group">
+                    <svg width = "0" height = "0" style = "position:absolute" aria-hidden = "true" focusable = "false">
+                        <defs>
+                            <symbol id = "tm-shroom" viewBox = "0 0 60 56">
+                                <path d = "M16 32h28v16a6 6 0 0 1-6 6H22a6 6 0 0 1-6-6z" fill = "#efe9ff"/>
+                                <ellipse cx = "25" cy = "43" rx = "2.4" ry = "4.5" fill = "#1a1530"/>
+                                <ellipse cx = "35" cy = "43" rx = "2.4" ry = "4.5" fill = "#1a1530"/>
+                                <path d = "M3 34C3 14 15 3 30 3s27 11 27 31z" fill = "var(--cap, #d4586a)"/>
+                                <circle cx = "17" cy = "22" r = "6" fill = "#fff"/>
+                                <circle cx = "32" cy = "13" r = "5" fill = "#fff"/>
+                                <circle cx = "45" cy = "24" r = "6" fill = "#fff"/>
+                            </symbol>
+                            <symbol id = "tm-castle" viewBox = "0 0 80 90">
+                                <path d = "M10 90V36h-6V22l8-8 8 8v14h6V30h8V16l10-12 10 12v14h8v6h6V22l8-8 8 8v14h-6v54z"/>
+                                <path d = "M32 90V66a8 8 0 0 1 16 0v24z" fill = "#0d0c1d"/>
+                                <rect x = "37" y = "40" width = "6" height = "9" rx = "3" fill = "#f4d35e"/>
+                            </symbol>
+                            <symbol id = "tm-pipe" viewBox = "0 0 30 40">
+                                <rect x = "4" y = "10" width = "22" height = "30" fill = "#2b8a50"/>
+                                <rect x = "8" y = "10" width = "4" height = "30" fill = "#47b673" opacity = ".7"/>
+                                <rect x = "0" y = "2" width = "30" height = "11" rx = "2" fill = "#34a361"/>
+                                <rect x = "4" y = "4" width = "4" height = "7" fill = "#5fd08b" opacity = ".8"/>
+                                <rect x = "0" y = "10" width = "30" height = "3" fill = "#1f6b3b" opacity = ".6"/>
+                            </symbol>
+                            <symbol id = "tm-me" viewBox = "0 0 60 58">
+                                <!-- slim torso -->
+                                <path d = "M15 58 Q15 42 24 36 H33 Q38 37.500 39 46 L40 58 Z" fill = "#7b4a2c" stroke = "#120d0a" stroke-width = "1.300" stroke-linejoin = "round"/>
+                                <path d = "M36.500 34.500 V43 M39 35 V42" fill = "none" stroke = "#f3e7d8" stroke-width = "1" stroke-linecap = "round"/>
+                                <!-- arm to the wheel -->
+                                <path d = "M30 41 Q41 41 50 46.500" fill = "none" stroke = "#120d0a" stroke-width = "6.200" stroke-linecap = "round"/>
+                                <path d = "M30 41 Q41 41 50 46.500" fill = "none" stroke = "#7b4a2c" stroke-width = "3.800" stroke-linecap = "round"/>
+                                <circle cx = "51" cy = "47" r = "2.800" fill = "#d9a273" stroke = "#1b1714" stroke-width = "1"/>
+                                <!-- face in profile, facing right -->
+                                <path d = "M34 7 C41 6 43 10.500 43.500 14 L46 19.500 L43.500 21 L43.800 24.500 C43.300 27.500 41.500 29.500 39 29.500 L34 31 Z" fill = "#d9a273" stroke = "#1b1714" stroke-width = "1.300" stroke-linejoin = "round"/>
+                                <!-- hood up: only the face opening shows -->
+                                <path d = "M17 23 C13.500 8 24 0 33 1 C41 1.500 45 6 43.500 11 C38.500 9 35.200 12 34.800 18 C34.600 23 35.500 27.500 37 32 L36.500 37 L20 37 C18 32 17 28 17 23 Z" fill = "#7b4a2c" stroke = "#120d0a" stroke-width = "1.300" stroke-linejoin = "round"/>
+                                <path d = "M43 10.500 C38.500 9 35.200 12 34.800 18 C34.600 23 35.500 27.500 37 32" fill = "none" stroke = "#4a2b18" stroke-width = "1.800" stroke-linecap = "round"/>
+                                <path d = "M24 8 C28 4 34 4 39 6" fill = "none" stroke = "#9a6339" stroke-width = "1.500" stroke-linecap = "round" opacity = ".8"/>
+                                <!-- glasses -->
+                                <rect x = "37" y = "13.500" width = "8" height = "6.500" rx = "2" fill = "#fff" fill-opacity = "0.2" stroke = "#1b1714" stroke-width = "1.600"/>
+                                <path d = "M37 15.500 L33.500 15.800" fill = "none" stroke = "#1b1714" stroke-width = "1.300" stroke-linecap = "round"/>
+                                <circle cx = "41.800" cy = "17" r = "1.100" fill = "#1b1714"/>
+                                <!-- mustache, mouth, goatee -->
+                                <path d = "M38.500 24.200 Q42 22.200 44 24" fill = "none" stroke = "#1b1714" stroke-width = "2.200" stroke-linecap = "round"/>
+                                <path d = "M39 26.600 Q41 27.600 42.600 26.600" fill = "none" stroke = "#5a2f22" stroke-width = "1" stroke-linecap = "round"/>
+                                <path d = "M36.500 27.800 Q39.500 33 42.500 27.800 Q39.500 29.200 36.500 27.800 Z" fill = "#1b1714" stroke = "#1b1714" stroke-width = "1.200" stroke-linejoin = "round"/>
+                            </symbol>
+                            <symbol id = "tm-block" viewBox = "0 0 20 20">
+                                <rect x = "1" y = "1" width = "18" height = "18" rx = "3" fill = "#d9a93f" stroke = "#8a6420" stroke-width = "1.5"/>
+                                <text x = "10" y = "15" text-anchor = "middle" font-size = "13" font-weight = "700" font-family = "Geist, sans-serif" fill = "#fff3c4">?</text>
+                            </symbol>
+                            <symbol id = "tm-coin" viewBox = "0 0 12 16">
+                                <ellipse cx = "6" cy = "8" rx = "5" ry = "7" fill = "#f2c94c" stroke = "#a97d17" stroke-width = "1"/>
+                                <rect x = "5" y = "4" width = "2" height = "8" rx = "1" fill = "#c99a1f"/>
+                            </symbol>
+                        </defs>
+                    </svg>
+                    <div class = "tm-scene" aria-hidden = "true">
+                        <span class = "tm-pillar" style = "left: 3%; --w: 34px; --h: 62px"></span>
+                        <span class = "tm-pillar" style = "left: 9%; --w: 46px; --h: 84px"></span>
+                        <span class = "tm-pillar" style = "left: 31%; --w: 30px; --h: 50px"></span>
+                        <span class = "tm-pillar" style = "left: 47%; --w: 40px; --h: 70px"></span>
+                        <span class = "tm-pillar" style = "left: 68%; --w: 32px; --h: 54px"></span>
+                        <span class = "tm-pillar" style = "left: 76%; --w: 44px; --h: 80px"></span>
+                        <svg class = "tm-castle" viewBox = "0 0 80 90"><use href = "#tm-castle"/></svg>
+                        <svg class = "tm-pipe" style = "left: 24.5%; --ph: 30px" viewBox = "0 0 30 40"><use href = "#tm-pipe"/></svg>
+                        <svg class = "tm-pipe" style = "left: 75%; --ph: 24px" viewBox = "0 0 30 40"><use href = "#tm-pipe"/></svg>
+                        <div class = "tm-kart">
+                            <svg viewBox = "0 0 64 46">
+                                <!-- cabin: grey roof with tinted glass -->
+                                <path d = "M8 29 L16 11 Q17.500 8 21 8 H38 Q41 8 43 11 L52 27 Z" fill = "#8d929c" stroke = "#4a4e58" stroke-width = "1" stroke-linejoin = "round"/>
+                                <path d = "M12.500 27 L18 12.500 Q19 11 21 11 H37.500 Q39 11 40.500 13 L47 26 Z" fill = "#1e2433"/>
+                                <path d = "M19 12 L25 12 L19.500 26 H14.500 Z" fill = "#fff" opacity = ".07"/>
+                                <!-- driver -->
+                                <use href = "#tm-me" x = "13" y = "12" width = "27" height = "26"/>
+                                <!-- steering wheel -->
+                                <ellipse cx = "37.500" cy = "23.500" rx = "1.200" ry = "3" transform = "rotate(-18 37.500 23.500)" fill = "none" stroke = "#0d0f16" stroke-width = "1.300"/>
+                                <!-- body -->
+                                <path d = "M2 38 V32 Q2 28.500 6 28 L16 26.500 H46 Q52 26.500 56 29.500 L61 31.500 Q63 32.500 63 35.500 V38 Z" fill = "#8d929c" stroke = "#4a4e58" stroke-width = "1" stroke-linejoin = "round"/>
+                                <path d = "M6 29 L40 27.500" fill = "none" stroke = "#c4c8d1" stroke-width = "1" opacity = ".8"/>
+                                <rect x = "2" y = "35" width = "61" height = "3" fill = "#2a2d35"/>
+                                <path d = "M29 28 V35 M41.500 28 V35" stroke = "#5d616b" stroke-width = ".8" fill = "none"/>
+                                <rect x = "31" y = "30" width = "4.500" height = "1.200" rx = ".6" fill = "#4a4e58"/>
+                                <rect x = "42" y = "21" width = "4.500" height = "2.800" rx = "1.200" fill = "#8d929c" stroke = "#4a4e58" stroke-width = ".8"/>
+                                <rect x = "59" y = "30.500" width = "4" height = "2.400" rx = "1" fill = "#f2eac0"/>
+                                <rect x = "1.500" y = "30" width = "3" height = "2.800" rx = "1" fill = "#c23b4a"/>
+                                <!-- wheel arches + alloys -->
+                                <circle cx = "15" cy = "37" r = "8" fill = "#15171d"/>
+                                <circle cx = "49" cy = "37" r = "8" fill = "#15171d"/>
+                                <g class = "tm-wheel" style = "--cx: 15px; --cy: 37px"><circle cx = "15" cy = "37" r = "6.500" fill = "#1a1530"/><circle cx = "15" cy = "37" r = "4.400" fill = "#cfd2dc"/><path d = "M15 33v8M11 37h8M12.200 34.200l5.600 5.600M17.800 34.200l-5.600 5.600" stroke = "#6c7080" stroke-width = ".9"/><circle cx = "15" cy = "37" r = "1" fill = "#6c7080"/></g>
+                                <g class = "tm-wheel" style = "--cx: 49px; --cy: 37px"><circle cx = "49" cy = "37" r = "6.500" fill = "#1a1530"/><circle cx = "49" cy = "37" r = "4.400" fill = "#cfd2dc"/><path d = "M49 33v8M45 37h8M46.200 34.200l5.600 5.600M51.800 34.200l-5.600 5.600" stroke = "#6c7080" stroke-width = ".9"/><circle cx = "49" cy = "37" r = "1" fill = "#6c7080"/></g>
+                            </svg>
                         </div>
+                        <svg class = "tm-mini" style = "left: 5%; --cap: #4fae7b" viewBox = "0 0 60 56"><use href = "#tm-shroom"/></svg>
+                        <svg class = "tm-mini" style = "left: 37%; --cap: #e0b84f" viewBox = "0 0 60 56"><use href = "#tm-shroom"/></svg>
+                        <svg class = "tm-mini" style = "left: 63%; --cap: #d4586a" viewBox = "0 0 60 56"><use href = "#tm-shroom"/></svg>
+                        <svg class = "tm-mini" style = "left: 88%; --cap: #6b8be0" viewBox = "0 0 60 56"><use href = "#tm-shroom"/></svg>
+                        <svg class = "tm-block" style = "right: 2%; top: 26px" viewBox = "0 0 20 20"><use href = "#tm-block"/></svg>
+                        <svg class = "tm-block" style = "left: 1.5%; top: 26px" viewBox = "0 0 20 20"><use href = "#tm-block"/></svg>
+                        <svg class = "tm-coin" style = "left: 18%; top: 4px" viewBox = "0 0 12 16"><use href = "#tm-coin"/></svg>
+                        <svg class = "tm-coin" style = "left: 56%; top: 6px" viewBox = "0 0 12 16"><use href = "#tm-coin"/></svg>
+                        <svg class = "tm-coin" style = "left: 94%; top: 4px" viewBox = "0 0 12 16"><use href = "#tm-coin"/></svg>
                     </div>
-                    <div class = "techs-icons">
-                        <div class="testing-tech">
-                            <img src = "images/java-svgrepo-com.svg">
-                            Java
-                        </div>
-                    </div>
-                    <div class = "techs-icons">
-                        <div class="testing-tech">
-                            <img src = "images/javascript-svgrepo-com.svg">
-                            JavaScript
-                        </div>
-                    </div>
-                    <div class = "techs-icons">
-                        <div class="testing-tech">
-                            <img src = "images/sql-database-generic-svgrepo-com.svg">
-                            SQL
-                        </div>
-                    </div>
-                    <div class = "techs-icons">
-                        <div class="testing-tech">
-                            <img src = "images/django-svgrepo-com.svg">
-                            Django
-                        </div>
-                    </div>
-                    <div class = "techs-icons">
-                        <div class="testing-tech">
-                            <img src = "images/FastAPI.svg">
-                            FastAPI     
-                        </div>
-                    </div>
-                    <div class = "techs-icons">
-                        <div class="testing-tech">
-                            <img src = "images/postgresql-svgrepo-com.svg">
-                            PostgreSQL
-                        </div>
-                    </div>
-                    <div class = "techs-icons">
-                        <div class="testing-tech">
-                            <img src = "images/AWS.svg">
-                            AWS
-                        </div>
-                    </div>
-                    <div class = "techs-icons">
-                        <div class="testing-tech">
-                            <img src = "images/Docker.svg">
-                            Docker
-                        </div>
-                    </div>
-                    <div class = "techs-icons">
-                        <div class="testing-tech">
-                            <img src = "images/git.svg">
-                            Git
-                        </div>
-                    </div>
+
+                    <svg class = "tm-trail" viewBox = "0 0 1000 36" preserveAspectRatio = "none" aria-hidden = "true">
+                        <path d = "M125 24 C250 24 250 10 375 10 S500 24 625 24 S750 10 875 10"/>
+                    </svg>
+                    <section class = "tm-group">
+                        <svg class = "tm-node" style = "--cap: #d4586a" viewBox = "0 0 60 56" aria-hidden = "true"><use href = "#tm-shroom"/></svg>
+                        <h3 class = "tm-title"><span>01</span>Languages</h3>
+                        <ul>
+                            <li><img src = "images/python-svgrepo-com.svg" alt = ""><span>Python</span></li>
+                            <li><img src = "images/sql-database-generic-svgrepo-com.svg" alt = ""><span>SQL</span></li>
+                            <li><img src = "images/javascript-svgrepo-com.svg" alt = ""><span>JavaScript</span></li>
+                            <li><img src = "images/java-svgrepo-com.svg" alt = ""><span>Java</span></li>
+                        </ul>
+                    </section>
+                    <section class = "tm-group">
+                        <svg class = "tm-node" style = "--cap: #4fae7b" viewBox = "0 0 60 56" aria-hidden = "true"><use href = "#tm-shroom"/></svg>
+                        <h3 class = "tm-title"><span>02</span>Backend</h3>
+                        <ul>
+                            <li><img src = "images/FastAPI.svg" alt = ""><span>FastAPI</span></li>
+                            <li><img class = "tm-dark" src = "images/flask-svgrepo-com.svg" alt = ""><span>Flask</span></li>
+                            <li><img src = "images/postgresql-svgrepo-com.svg" alt = ""><span>PostgreSQL</span></li>
+                        </ul>
+                    </section>
+                    <section class = "tm-group">
+                        <svg class = "tm-node" style = "--cap: #e0b84f" viewBox = "0 0 60 56" aria-hidden = "true"><use href = "#tm-shroom"/></svg>
+                        <h3 class = "tm-title"><span>03</span>Cloud</h3>
+                        <ul>
+                            <li><img src = "images/AWS.svg" alt = ""><span>AWS</span></li>
+                            <li><img src = "images/Docker.svg" alt = ""><span>Docker</span></li>
+                        </ul>
+                    </section>
+                    <section class = "tm-group">
+                        <svg class = "tm-node" style = "--cap: #6b8be0" viewBox = "0 0 60 56" aria-hidden = "true"><use href = "#tm-shroom"/></svg>
+                        <h3 class = "tm-title"><span>04</span>Tooling</h3>
+                        <ul>
+                            <li><img src = "images/git.svg" alt = ""><span>Git</span></li>
+                            <li><img src = "images/claude-code.svg" alt = ""><span>Claude Code</span></li>
+                        </ul>
+                    </section>
                 </div>
                 <div class = "jump-headers" id = "proj" style = "color: white; padding-top: 14px;">
                     <span class = "fancy-text2">PROJECTS</span>
                 </div>
+                <div class = "proj-wrap">
+                    <svg width = "0" height = "0" style = "position:absolute" aria-hidden = "true" focusable = "false">
+                        <defs>
+                            <symbol id = "pj-head" viewBox = "12 0 36 37">
+                                <!-- face in profile, facing right -->
+                                <path d = "M34 7 C41 6 43 10.500 43.500 14 L46 19.500 L43.500 21 L43.800 24.500 C43.300 27.500 41.500 29.500 39 29.500 L34 31 Z" fill = "#d9a273" stroke = "#1b1714" stroke-width = "1.300" stroke-linejoin = "round"/>
+                                <!-- hood up: only the face opening shows -->
+                                <path d = "M17 23 C13.500 8 24 0 33 1 C41 1.500 45 6 43.500 11 C38.500 9 35.200 12 34.800 18 C34.600 23 35.500 27.500 37 32 L36.500 37 L20 37 C18 32 17 28 17 23 Z" fill = "#7b4a2c" stroke = "#120d0a" stroke-width = "1.300" stroke-linejoin = "round"/>
+                                <path d = "M43 10.500 C38.500 9 35.200 12 34.800 18 C34.600 23 35.500 27.500 37 32" fill = "none" stroke = "#4a2b18" stroke-width = "1.800" stroke-linecap = "round"/>
+                                <path d = "M24 8 C28 4 34 4 39 6" fill = "none" stroke = "#9a6339" stroke-width = "1.500" stroke-linecap = "round" opacity = ".8"/>
+                                <!-- glasses -->
+                                <rect x = "37" y = "13.500" width = "8" height = "6.500" rx = "2" fill = "#fff" fill-opacity = "0.2" stroke = "#1b1714" stroke-width = "1.600"/>
+                                <path d = "M37 15.500 L33.500 15.800" fill = "none" stroke = "#1b1714" stroke-width = "1.300" stroke-linecap = "round"/>
+                                <circle cx = "41.800" cy = "17" r = "1.100" fill = "#1b1714"/>
+                                <!-- mustache, mouth, goatee -->
+                                <path d = "M38.500 24.200 Q42 22.200 44 24" fill = "none" stroke = "#1b1714" stroke-width = "2.200" stroke-linecap = "round"/>
+                                <path d = "M39 26.600 Q41 27.600 42.600 26.600" fill = "none" stroke = "#5a2f22" stroke-width = "1" stroke-linecap = "round"/>
+                                <path d = "M36.500 27.800 Q39.500 33 42.500 27.800 Q39.500 29.200 36.500 27.800 Z" fill = "#1b1714" stroke = "#1b1714" stroke-width = "1.200" stroke-linejoin = "round"/>
+                            </symbol>
+                        </defs>
+                    </svg>
+                    <div class = "pj-char idle" id = "pj-char" aria-hidden = "true">
+                        <svg viewBox = "0 0 50 100">
+                            <g class = "pj-front">
+                                <rect x = "18" y = "60" width = "6.500" height = "32" rx = "3" fill = "#1e1e22" stroke = "#120d0a" stroke-width = "1.200"/>
+                                <rect x = "25.500" y = "60" width = "6.500" height = "32" rx = "3" fill = "#121214" stroke = "#120d0a" stroke-width = "1.200"/>
+                                <rect x = "16" y = "90" width = "10" height = "6.500" rx = "3.200" fill = "#f1e9d6" stroke = "#120d0a" stroke-width = "1.200"/>
+                                <rect x = "24" y = "90" width = "10" height = "6.500" rx = "3.200" fill = "#f1e9d6" stroke = "#120d0a" stroke-width = "1.200"/>
+                                <g class = "pj-fbody">
+                                    <rect x = "10.500" y = "34" width = "6" height = "21" rx = "3" fill = "#5f381f" stroke = "#120d0a" stroke-width = "1.200"/>
+                                    <rect x = "33.500" y = "34" width = "6" height = "21" rx = "3" fill = "#5f381f" stroke = "#120d0a" stroke-width = "1.200"/>
+                                    <circle cx = "13.500" cy = "56" r = "3.200" fill = "#d9a273" stroke = "#1b1714" stroke-width = "1"/>
+                                    <circle cx = "36.500" cy = "56" r = "3.200" fill = "#d9a273" stroke = "#1b1714" stroke-width = "1"/>
+                                    <path d = "M14.500 34 Q25 30 35.500 34 L34.500 62 H15.500 Z" fill = "#7b4a2c" stroke = "#120d0a" stroke-width = "1.300" stroke-linejoin = "round"/>
+                                    <text x = "25" y = "41" text-anchor = "middle" font-family = "Inter, Arial, sans-serif" font-weight = "700" font-size = "2.9" textLength = "18" lengthAdjust = "spacingAndGlyphs" fill = "#f3e6cf">eliorocha.dev</text>
+                                    <path d = "M23.500 33 V37 M26.500 33 V37" fill = "none" stroke = "#d8c3a8" stroke-width = ".9" stroke-linecap = "round"/>
+                                    <path d = "M13 24 C10 8 18 2 25 2 C32 2 40 8 37 24 C37 29 33 32 25 32 C17 32 13 29 13 24 Z" fill = "#7b4a2c" stroke = "#120d0a" stroke-width = "1.300" stroke-linejoin = "round"/>
+                                    <ellipse cx = "25" cy = "17.500" rx = "9" ry = "10.500" fill = "#d9a273" stroke = "#1b1714" stroke-width = "1.200"/>
+                                    <path d = "M16.500 11.500 C19 6.500 31 6.500 33.500 11.500" fill = "none" stroke = "#4a2b18" stroke-width = "1.800" stroke-linecap = "round"/>
+                                    <rect x = "16.500" y = "13" width = "7" height = "6.500" rx = "2" fill = "#fff" fill-opacity = "0.2" stroke = "#1b1714" stroke-width = "1.400"/>
+                                    <rect x = "26.500" y = "13" width = "7" height = "6.500" rx = "2" fill = "#fff" fill-opacity = "0.2" stroke = "#1b1714" stroke-width = "1.400"/>
+                                    <path d = "M23.500 15.500 H26.500" fill = "none" stroke = "#1b1714" stroke-width = "1.200" stroke-linecap = "round"/>
+                                    <g class = "pj-eyes"><circle cx = "20" cy = "16.500" r = "1.100" fill = "#1b1714"/><circle cx = "30" cy = "16.500" r = "1.100" fill = "#1b1714"/></g>
+                                    <path d = "M19.500 23 Q25 20.200 30.500 23" fill = "none" stroke = "#1b1714" stroke-width = "2.200" stroke-linecap = "round"/>
+                                    <path d = "M23 25.200 Q25 26.200 27 25.200" fill = "none" stroke = "#5a2f22" stroke-width = "1" stroke-linecap = "round"/>
+                                    <path d = "M22 26.800 Q25 32.500 28 26.800 Q25 28.300 22 26.800 Z" fill = "#1b1714" stroke = "#1b1714" stroke-width = "1.200" stroke-linejoin = "round"/>
+                                </g>
+                            </g>
+                            <g class = "pj-flip">
+                                <g class = "pj-body">
+                                    <g class = "pj-leg b"><rect x = "21.500" y = "58" width = "7" height = "34" rx = "3" fill = "#121214" stroke = "#120d0a" stroke-width = "1.200"/><rect x = "20" y = "90" width = "15" height = "6.500" rx = "3.200" fill = "#f1e9d6" stroke = "#120d0a" stroke-width = "1.200"/></g>
+                                    <g class = "pj-leg f"><rect x = "21.500" y = "58" width = "7" height = "34" rx = "3" fill = "#1e1e22" stroke = "#120d0a" stroke-width = "1.200"/><rect x = "20" y = "90" width = "15" height = "6.500" rx = "3.200" fill = "#f1e9d6" stroke = "#120d0a" stroke-width = "1.200"/></g>
+                                    <g class = "pj-arm b"><rect x = "22" y = "32" width = "6.500" height = "21" rx = "3.200" fill = "#5f381f" stroke = "#120d0a" stroke-width = "1.200"/><circle cx = "25.200" cy = "55" r = "3.200" fill = "#d9a273" stroke = "#1b1714" stroke-width = "1"/></g>
+                                    <path d = "M17 33 Q25 30 33 33 L32.500 62 H17.500 Z" fill = "#7b4a2c" stroke = "#120d0a" stroke-width = "1.300" stroke-linejoin = "round"/>
+                                    <g class = "pj-arm f"><rect x = "22" y = "32" width = "6.500" height = "21" rx = "3.200" fill = "#7b4a2c" stroke = "#120d0a" stroke-width = "1.200"/><circle cx = "25.200" cy = "55" r = "3.200" fill = "#d9a273" stroke = "#1b1714" stroke-width = "1"/></g>
+                                    <use class = "pj-head" href = "#pj-head" x = "12.500" y = "4" width = "25" height = "25.700"/>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
                 <div class = "projects">
                     <div class = "project">
-                        <div class = "pic">
-                            <img class = "project-preview" src = "images/oura.png">
-                            <div class = "tech-used">
-                                <img src = "images/html-5-svgrepo-com.svg">
-                                <img src = "images/css-3-svgrepo-com.svg">
-                                <img src = "images/javascript-svgrepo-com.svg">
-                                <img src = "images/python-svgrepo-com.svg">
-                                <img src = "images/flask-svgrepo-com.svg">
-                                <img src = "images/postgresql-svgrepo-com.svg">
-                            </div>
+                        <div class = "proj-img"><img src = "images/cards/product-owner.svg" alt = "" loading = "lazy" decoding = "async"></div>
+                        <button class = "proj-open" type = "button" data-repo = "product-owner" aria-label = "Expand Product Owner"><svg viewBox = "0 0 24 24" fill = "none" stroke = "currentColor" stroke-width = "2.2" stroke-linecap = "round" stroke-linejoin = "round"><path d = "M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg></button>
+                        <div class = "proj-top">
+                            <div class = "proj-eyebrow">2026</div>
+                            <div class = "proj-name">Product Owner</div>
+                            <p class = "proj-desc">A local-first CLI issue tracker with dependency graphs</p>
+                            <div class = "proj-langs"><span style = "--c: #4a8bd1"><i></i>Python</span><span style = "--c: #89e051"><i></i>Shell</span></div>
+                            <div class = "proj-bar"><span title = "Python 81%" style = "--c: #4a8bd1; flex: 44921"></span><span title = "Shell 19%" style = "--c: #89e051; flex: 10459"></span></div>
                         </div>
-                        <div class = "descript">
-                            <div class = "descript-header">
-                                Oura Dashboard  <a href = "https://github.com/elio1222/oura-dashboard" target="_blank"><img class = "icons3 window" src = "images/new-window-svgrepo-com.svg"></a>
-                            </div>
-                            <div class = "descript-text">
-                                Visualize your sleep metrics using your Oura ring
-                            </div>
+                        <div class = "proj-bottom">
+                            <div class = "proj-tools"><img src = "images/python-svgrepo-com.svg" alt = ""><span>Tech stack</span></div>
+                            <a class = "proj-gh" href = "https://github.com/elio1222/product-owner" target = "_blank" rel = "noopener">View on GitHub</a>
                         </div>
                     </div>
                     <div class = "project">
-                        <div class = "pic">
-                            <img class = "project-preview" src = "images/flowgoai.png">
-                            <div class = "tech-used">
-                                <img src = "images/typescript-official-svgrepo-com.svg">
-                                <img src = "images/react-svgrepo-com.svg">
-                                <img src = "images/next-js-svgrepo-com.svg">              
-                                <img src = "images/python-svgrepo-com.svg">
-                                <img src = "images/django-svgrepo-com.svg">
-                            </div>
+                        <div class = "proj-img"><img src = "images/cards/oura-health-analytics.svg" alt = "" loading = "lazy" decoding = "async"></div>
+                        <button class = "proj-open" type = "button" data-repo = "oura-health-analytics" aria-label = "Expand Oura Health Analytics"><svg viewBox = "0 0 24 24" fill = "none" stroke = "currentColor" stroke-width = "2.2" stroke-linecap = "round" stroke-linejoin = "round"><path d = "M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg></button>
+                        <div class = "proj-top">
+                            <div class = "proj-eyebrow">2026</div>
+                            <div class = "proj-name">Oura Health Analytics</div>
+                            <p class = "proj-desc">ETL pipeline and API for your Oura health data</p>
+                            <div class = "proj-langs"><span style = "--c: #4a8bd1"><i></i>Python</span></div>
+                            <div class = "proj-bar"><span title = "Python 100%" style = "--c: #4a8bd1; flex: 71845"></span></div>
                         </div>
-                        <div class = "descript">
-                            <div class = "descript-header">
-                                FlowGo.AI <a href = "https://github.com/elio1222/flownotes-ai" target="_blank"><img class = "icons3 window" src = "images/new-window-svgrepo-com.svg"></a>
-                            </div>
-                            <div class = "descript-text">
-                                Transcirbe your thoughts and summarize with AI
-                            </div>
+                        <div class = "proj-bottom">
+                            <div class = "proj-tools"><img src = "images/python-svgrepo-com.svg" alt = ""><img src = "images/FastAPI.svg" alt = ""><img src = "images/postgresql-svgrepo-com.svg" alt = ""><img src = "images/Docker.svg" alt = ""><span>Tech stack</span></div>
+                            <a class = "proj-gh" href = "https://github.com/elio1222/oura-health-analytics" target = "_blank" rel = "noopener">View on GitHub</a>
                         </div>
                     </div>
                     <div class = "project">
-                        <div class = "pic">
-                            <img class = "project-preview" src = "images/Django (1)-page-001.jpg">
-                            <div class = "tech-used">
-                                <img src = "images/html-5-svgrepo-com.svg">
-                                <img src = "images/css-3-svgrepo-com.svg">
-                                <img src = "images/javascript-svgrepo-com.svg">
-                                <img src = "images/python-svgrepo-com.svg">
-                                <img src = "images/django-svgrepo-com.svg">
-                            </div>
+                        <div class = "proj-img"><img src = "images/cards/vllm-ec2-chat-app.svg" alt = "" loading = "lazy" decoding = "async"></div>
+                        <button class = "proj-open" type = "button" data-repo = "vllm-ec2-chat-app" aria-label = "Expand LLM Chat App"><svg viewBox = "0 0 24 24" fill = "none" stroke = "currentColor" stroke-width = "2.2" stroke-linecap = "round" stroke-linejoin = "round"><path d = "M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg></button>
+                        <div class = "proj-top">
+                            <div class = "proj-eyebrow">2026</div>
+                            <div class = "proj-name">LLM Chat App</div>
+                            <p class = "proj-desc">A secure AWS-hosted LLM chat app with API auth</p>
+                            <div class = "proj-langs"><span style = "--c: #4a8bd1"><i></i>Python</span><span style = "--c: #f1e05a"><i></i>JavaScript</span><span style = "--c: #9b7bd8"><i></i>CSS</span><span style = "--c: #e8553a"><i></i>HTML</span></div>
+                            <div class = "proj-bar"><span title = "Python 36%" style = "--c: #4a8bd1; flex: 13419"></span><span title = "JavaScript 25%" style = "--c: #f1e05a; flex: 9144"></span><span title = "CSS 24%" style = "--c: #9b7bd8; flex: 8683"></span><span title = "HTML 14%" style = "--c: #e8553a; flex: 4999"></span></div>
                         </div>
-                        <div class = "descript">
-                            <div class = "descript-header">
-                                Weather App <a href = "https://github.com/elio1222/weather-app" target="_blank"><img class = "icons3 window" src = "images/new-window-svgrepo-com.svg"></a>
-                            </div>
-                            <div class = "descript-text">
-                                Check real-time weather data for any city
-                            </div>
+                        <div class = "proj-bottom">
+                            <div class = "proj-tools"><img src = "images/python-svgrepo-com.svg" alt = ""><img src = "images/FastAPI.svg" alt = ""><img src = "images/html-5-svgrepo-com.svg" alt = ""><img src = "images/css-3-svgrepo-com.svg" alt = ""><img src = "images/javascript-svgrepo-com.svg" alt = ""><img src = "images/AWS.svg" alt = ""><span>Tech stack</span></div>
+                            <a class = "proj-gh" href = "https://github.com/elio1222/vllm-ec2-chat-app" target = "_blank" rel = "noopener">View on GitHub</a>
                         </div>
                     </div>
                     <div class = "project">
-                        <div class = "pic">
-                            <img class = "project-preview" src = "images/ticker.png">
-                            <div class = "tech-used">
-                                <img src = "images/html-5-svgrepo-com.svg">
-                                <img src = "images/css-3-svgrepo-com.svg">
-                                <img src = "images/javascript-svgrepo-com.svg">
-                                <img src = "images/python-svgrepo-com.svg">
-                                <img src = "images/flask-svgrepo-com.svg">
-                            </div>
+                        <div class = "proj-img"><img src = "images/cards/aws-gitea-deployment.svg" alt = "" loading = "lazy" decoding = "async"></div>
+                        <button class = "proj-open" type = "button" data-repo = "aws-gitea-deployment" aria-label = "Expand Gitea on AWS"><svg viewBox = "0 0 24 24" fill = "none" stroke = "currentColor" stroke-width = "2.2" stroke-linecap = "round" stroke-linejoin = "round"><path d = "M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg></button>
+                        <div class = "proj-top">
+                            <div class = "proj-eyebrow">2026</div>
+                            <div class = "proj-name">Gitea on AWS</div>
+                            <p class = "proj-desc">Self-hosted Gitea on EC2 with EBS and S3 backups</p>
+                            <div class = "proj-langs"><span style = "--c: #89e051"><i></i>Shell</span><span style = "--c: #5aa0c8"><i></i>Dockerfile</span></div>
+                            <div class = "proj-bar"><span title = "Shell 78%" style = "--c: #89e051; flex: 198"></span><span title = "Dockerfile 22%" style = "--c: #5aa0c8; flex: 56"></span></div>
                         </div>
-                        <div class = "descript">
-                            <div class = "descript-header">
-                                Ticker Tracker <a href = "https://github.com/elio1222/ticker-tracker" target="_blank"><img class = "icons3 window" src = "images/new-window-svgrepo-com.svg"></a>
-                            </div>
-                            <div class = "descript-text">
-                                Track your favorite stocks
-                            </div> 
+                        <div class = "proj-bottom">
+                            <div class = "proj-tools"><img src = "images/AWS.svg" alt = ""><img src = "images/Docker.svg" alt = ""><img src = "images/Linux.svg" alt = ""><span>Tech stack</span></div>
+                            <a class = "proj-gh" href = "https://github.com/elio1222/aws-gitea-deployment" target = "_blank" rel = "noopener">View on GitHub</a>
                         </div>
                     </div>
                     <div class = "project">
-                        <div class = "pic">
-                            <img class = "project-preview" src = "images/compiler.png">
-                            <div class = "tech-used">
-                                <img src = "images/java-svgrepo-com.svg">
-                            </div>
+                        <div class = "proj-img"><img src = "images/cards/keynotes.svg" alt = "" loading = "lazy" decoding = "async"></div>
+                        <button class = "proj-open" type = "button" data-repo = "keynotes" aria-label = "Expand KeyNotes"><svg viewBox = "0 0 24 24" fill = "none" stroke = "currentColor" stroke-width = "2.2" stroke-linecap = "round" stroke-linejoin = "round"><path d = "M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg></button>
+                        <div class = "proj-top">
+                            <div class = "proj-eyebrow">2026</div>
+                            <div class = "proj-name">KeyNotes</div>
+                            <p class = "proj-desc">Turn handwritten notes into AI study notes</p>
+                            <div class = "proj-langs"><span style = "--c: #4a8bd1"><i></i>Python</span><span style = "--c: #e8553a"><i></i>HTML</span><span style = "--c: #9b7bd8"><i></i>CSS</span><span style = "--c: #f1e05a"><i></i>JavaScript</span></div>
+                            <div class = "proj-bar"><span title = "Python 30%" style = "--c: #4a8bd1; flex: 11652"></span><span title = "HTML 30%" style = "--c: #e8553a; flex: 11646"></span><span title = "CSS 24%" style = "--c: #9b7bd8; flex: 9219"></span><span title = "JavaScript 15%" style = "--c: #f1e05a; flex: 5862"></span></div>
                         </div>
-                        <div class = "descript">
-                            <div class = "descript-header">
-                                Compiler Project <a href = "https://github.com/elio1222/compiler-project" target="_blank"><img class = "icons3 window" src = "images/new-window-svgrepo-com.svg"></a>
-                            </div>
-                            <div class = "descript-text">
-                                A mini compiler for a custom language
-                            </div>
+                        <div class = "proj-bottom">
+                            <div class = "proj-tools"><img src = "images/html-5-svgrepo-com.svg" alt = ""><img src = "images/css-3-svgrepo-com.svg" alt = ""><img src = "images/javascript-svgrepo-com.svg" alt = ""><img src = "images/python-svgrepo-com.svg" alt = ""><img src = "images/django-svgrepo-com.svg" alt = ""><img src = "images/postgresql-svgrepo-com.svg" alt = ""><span>Tech stack</span></div>
+                            <a class = "proj-gh" href = "https://github.com/elio1222/keynotes" target = "_blank" rel = "noopener">View on GitHub</a>
                         </div>
                     </div>
                     <div class = "project">
-                        <div class = "pic">
-                            <img class = "project-preview" src = "images/vending.png">
-                            <div class = "tech-used">
-                                <img src = "images/java-svgrepo-com.svg">
+                        <div class = "proj-img"><img src = "images/cards/oura-dashboard.jpg" alt = "" loading = "lazy" decoding = "async"></div>
+                        <button class = "proj-open" type = "button" data-repo = "oura-dashboard" aria-label = "Expand Oura Dashboard"><svg viewBox = "0 0 24 24" fill = "none" stroke = "currentColor" stroke-width = "2.2" stroke-linecap = "round" stroke-linejoin = "round"><path d = "M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg></button>
+                        <div class = "proj-top">
+                            <div class = "proj-eyebrow">2025</div>
+                            <div class = "proj-name">Oura Dashboard</div>
+                            <p class = "proj-desc">Visualize your sleep metrics using your Oura ring</p>
+                            <div class = "proj-langs"><span style = "--c: #4a8bd1"><i></i>Python</span><span style = "--c: #f1e05a"><i></i>JavaScript</span><span style = "--c: #e8553a"><i></i>HTML</span><span style = "--c: #9b7bd8"><i></i>CSS</span></div>
+                            <div class = "proj-bar"><span title = "Python 56%" style = "--c: #4a8bd1; flex: 16440"></span><span title = "JavaScript 26%" style = "--c: #f1e05a; flex: 7546"></span><span title = "HTML 11%" style = "--c: #e8553a; flex: 3096"></span><span title = "CSS 7%" style = "--c: #9b7bd8; flex: 2125"></span></div>
+                        </div>
+                        <div class = "proj-bottom">
+                            <div class = "proj-tools"><img src = "images/html-5-svgrepo-com.svg" alt = ""><img src = "images/css-3-svgrepo-com.svg" alt = ""><img src = "images/javascript-svgrepo-com.svg" alt = ""><img src = "images/python-svgrepo-com.svg" alt = ""><img class = "tm-dark" src = "images/flask-svgrepo-com.svg" alt = ""><img src = "images/postgresql-svgrepo-com.svg" alt = ""><span>Tech stack</span></div>
+                            <a class = "proj-gh" href = "https://github.com/elio1222/oura-dashboard" target = "_blank" rel = "noopener">View on GitHub</a>
+                        </div>
+                    </div>
+                    <div class = "project">
+                        <div class = "proj-img"><img src = "images/cards/flowgo.jpg" alt = "" loading = "lazy" decoding = "async"></div>
+                        <button class = "proj-open" type = "button" data-repo = "FlowGoAI" aria-label = "Expand FlowGo.AI"><svg viewBox = "0 0 24 24" fill = "none" stroke = "currentColor" stroke-width = "2.2" stroke-linecap = "round" stroke-linejoin = "round"><path d = "M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg></button>
+                        <div class = "proj-top">
+                            <div class = "proj-eyebrow">2025</div>
+                            <div class = "proj-name">FlowGo.AI</div>
+                            <p class = "proj-desc">Transcribe your thoughts and summarize with AI</p>
+                            <div class = "proj-langs"><span style = "--c: #4a8bd1"><i></i>Python</span><span style = "--c: #4a9eff"><i></i>TypeScript</span><span style = "--c: #9b7bd8"><i></i>CSS</span></div>
+                            <div class = "proj-bar"><span title = "Python 46%" style = "--c: #4a8bd1; flex: 21048"></span><span title = "TypeScript 45%" style = "--c: #4a9eff; flex: 20585"></span><span title = "CSS 7%" style = "--c: #9b7bd8; flex: 3032"></span></div>
+                        </div>
+                        <div class = "proj-bottom">
+                            <div class = "proj-tools"><img src = "images/python-svgrepo-com.svg" alt = ""><img src = "images/django-svgrepo-com.svg" alt = ""><img src = "images/typescript-official-svgrepo-com.svg" alt = ""><img src = "images/react-svgrepo-com.svg" alt = ""><span>Tech stack</span></div>
+                            <a class = "proj-gh" href = "https://github.com/elio1222/FlowGoAI" target = "_blank" rel = "noopener">View on GitHub</a>
+                        </div>
+                    </div>
+                    <div class = "project">
+                        <div class = "proj-img"><img src = "images/cards/weather-app.jpg" alt = "" loading = "lazy" decoding = "async"></div>
+                        <button class = "proj-open" type = "button" data-repo = "weather-app" aria-label = "Expand Weather App"><svg viewBox = "0 0 24 24" fill = "none" stroke = "currentColor" stroke-width = "2.2" stroke-linecap = "round" stroke-linejoin = "round"><path d = "M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg></button>
+                        <div class = "proj-top">
+                            <div class = "proj-eyebrow">2025</div>
+                            <div class = "proj-name">Weather App</div>
+                            <p class = "proj-desc">Check real-time weather data for any city</p>
+                            <div class = "proj-langs"><span style = "--c: #4a8bd1"><i></i>Python</span><span style = "--c: #e8553a"><i></i>HTML</span><span style = "--c: #9b7bd8"><i></i>CSS</span><span style = "--c: #f1e05a"><i></i>JavaScript</span></div>
+                            <div class = "proj-bar"><span title = "Python 46%" style = "--c: #4a8bd1; flex: 16508"></span><span title = "HTML 25%" style = "--c: #e8553a; flex: 9038"></span><span title = "CSS 22%" style = "--c: #9b7bd8; flex: 7940"></span><span title = "JavaScript 7%" style = "--c: #f1e05a; flex: 2626"></span></div>
+                        </div>
+                        <div class = "proj-bottom">
+                            <div class = "proj-tools"><img src = "images/html-5-svgrepo-com.svg" alt = ""><img src = "images/css-3-svgrepo-com.svg" alt = ""><img src = "images/javascript-svgrepo-com.svg" alt = ""><img src = "images/python-svgrepo-com.svg" alt = ""><img src = "images/django-svgrepo-com.svg" alt = ""><span>Tech stack</span></div>
+                            <a class = "proj-gh" href = "https://github.com/elio1222/weather-app" target = "_blank" rel = "noopener">View on GitHub</a>
+                        </div>
+                    </div>
+                    <div class = "project">
+                        <div class = "proj-img"><img src = "images/cards/ticker-tracker.jpg" alt = "" loading = "lazy" decoding = "async"></div>
+                        <button class = "proj-open" type = "button" data-repo = "ticker-tracker" aria-label = "Expand Ticker Tracker"><svg viewBox = "0 0 24 24" fill = "none" stroke = "currentColor" stroke-width = "2.2" stroke-linecap = "round" stroke-linejoin = "round"><path d = "M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg></button>
+                        <div class = "proj-top">
+                            <div class = "proj-eyebrow">2025</div>
+                            <div class = "proj-name">Ticker Tracker</div>
+                            <p class = "proj-desc">Track your favorite stocks</p>
+                            <div class = "proj-langs"><span style = "--c: #e8553a"><i></i>HTML</span><span style = "--c: #9b7bd8"><i></i>CSS</span><span style = "--c: #f1e05a"><i></i>JavaScript</span><span style = "--c: #4a8bd1"><i></i>Python</span></div>
+                            <div class = "proj-bar"><span title = "HTML 46%" style = "--c: #e8553a; flex: 9197"></span><span title = "CSS 36%" style = "--c: #9b7bd8; flex: 7121"></span><span title = "JavaScript 11%" style = "--c: #f1e05a; flex: 2196"></span><span title = "Python 7%" style = "--c: #4a8bd1; flex: 1464"></span></div>
+                        </div>
+                        <div class = "proj-bottom">
+                            <div class = "proj-tools"><img src = "images/html-5-svgrepo-com.svg" alt = ""><img src = "images/css-3-svgrepo-com.svg" alt = ""><img src = "images/javascript-svgrepo-com.svg" alt = ""><img src = "images/python-svgrepo-com.svg" alt = ""><img class = "tm-dark" src = "images/flask-svgrepo-com.svg" alt = ""><span>Tech stack</span></div>
+                            <a class = "proj-gh" href = "https://github.com/elio1222/ticker-tracker" target = "_blank" rel = "noopener">View on GitHub</a>
+                        </div>
+                    </div>
+                    <div class = "project">
+                        <div class = "proj-img"><img src = "images/cards/compiler-project.jpg" alt = "" loading = "lazy" decoding = "async"></div>
+                        <button class = "proj-open" type = "button" data-repo = "compiler-project" aria-label = "Expand Compiler Project"><svg viewBox = "0 0 24 24" fill = "none" stroke = "currentColor" stroke-width = "2.2" stroke-linecap = "round" stroke-linejoin = "round"><path d = "M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg></button>
+                        <div class = "proj-top">
+                            <div class = "proj-eyebrow">2024</div>
+                            <div class = "proj-name">Compiler Project</div>
+                            <p class = "proj-desc">A mini compiler for a custom language</p>
+                            <div class = "proj-langs"><span style = "--c: #e8903a"><i></i>Java</span></div>
+                            <div class = "proj-bar"><span title = "Java 100%" style = "--c: #e8903a; flex: 24219"></span></div>
+                        </div>
+                        <div class = "proj-bottom">
+                            <div class = "proj-tools"><img src = "images/java-svgrepo-com.svg" alt = ""><span>Tech stack</span></div>
+                            <a class = "proj-gh" href = "https://github.com/elio1222/compiler-project" target = "_blank" rel = "noopener">View on GitHub</a>
+                        </div>
+                    </div>
+                    <div class = "project">
+                        <div class = "proj-img"><img src = "images/cards/vendingmachine.jpg" alt = "" loading = "lazy" decoding = "async"></div>
+                        <button class = "proj-open" type = "button" data-repo = "vendingmachine" aria-label = "Expand Vending Machine"><svg viewBox = "0 0 24 24" fill = "none" stroke = "currentColor" stroke-width = "2.2" stroke-linecap = "round" stroke-linejoin = "round"><path d = "M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg></button>
+                        <div class = "proj-top">
+                            <div class = "proj-eyebrow">2024</div>
+                            <div class = "proj-name">Vending Machine</div>
+                            <p class = "proj-desc">A small program that simulates a vending machine</p>
+                            <div class = "proj-langs"><span style = "--c: #e8903a"><i></i>Java</span></div>
+                            <div class = "proj-bar"><span title = "Java 100%" style = "--c: #e8903a; flex: 23314"></span></div>
+                        </div>
+                        <div class = "proj-bottom">
+                            <div class = "proj-tools"><img src = "images/java-svgrepo-com.svg" alt = ""><span>Tech stack</span></div>
+                            <a class = "proj-gh" href = "https://github.com/elio1222/vendingmachine" target = "_blank" rel = "noopener">View on GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <div class = "proj-nav">
+                    <button class = "proj-btn" id = "proj-prev" type = "button" aria-label = "Previous projects"><svg viewBox = "0 0 24 24" fill = "none" stroke = "currentColor" stroke-width = "2.5" stroke-linecap = "round" stroke-linejoin = "round"><path d = "M15 5l-7 7 7 7"/></svg></button>
+                    <div class = "proj-dots" id = "proj-dots"></div>
+                    <button class = "proj-btn" id = "proj-next" type = "button" aria-label = "Next projects"><svg viewBox = "0 0 24 24" fill = "none" stroke = "currentColor" stroke-width = "2.5" stroke-linecap = "round" stroke-linejoin = "round"><path d = "M9 5l7 7-7 7"/></svg></button>
+                </div>
+                <div class = "proj-all-row"><button class = "proj-all-btn" id = "proj-all" type = "button" aria-haspopup = "dialog">View all projects</button></div>
+                <div class = "jump-headers" id = "git" style = "color: white; padding-top: 14px;">
+                    <span class = "fancy-text2">GITHUB ACTIVITY</span>
+                </div>
+                <div class = "activity-card" id = "github-card">
+                    <div class = "activity-meta">
+                        <span id = "github-total">Loading contributions...</span>
+                        <a href = "https://github.com/elio1222" target = "_blank">@elio1222</a>
+                    </div>
+                    <div class = "iso-stage" id = "iso-stage">
+                        <div class = "iso-wrap">
+                            <canvas id = "contrib-canvas"></canvas>
+                            <div class = "iso-tip" id = "iso-tip"></div>
+                            <div class = "iso-hint">drag to rotate</div>
+                        </div>
+                        <div class = "iso-stats">
+                            <div class = "iso-stat st-total">
+                                <div class = "st-label">1 year total</div>
+                                <div class = "st-row"><span class = "st-num" id = "st-total">--</span><span class = "st-unit">contributions<small id = "st-total-range"></small></span></div>
+                            </div>
+                            <div class = "iso-stat st-busiest">
+                                <div class = "st-label">Busiest day</div>
+                                <div class = "st-row"><span class = "st-num" id = "st-busiest">--</span><span class = "st-unit">contributions<small id = "st-busiest-date"></small></span></div>
+                            </div>
+                            <div class = "iso-stat st-longest">
+                                <div class = "st-label">Longest streak</div>
+                                <div class = "st-row"><span class = "st-num" id = "st-longest">--</span><span class = "st-unit">days<small id = "st-longest-range"></small></span></div>
+                            </div>
+                            <div class = "iso-stat st-current">
+                                <div class = "st-label">Current streak</div>
+                                <div class = "st-row"><span class = "st-num" id = "st-current">--</span><span class = "st-unit">days<small id = "st-current-range"></small></span></div>
                             </div>
                         </div>
-                        <div class = "descript">
-                            <div class = "descript-header">
-                                Vending Machine <a href = "https://github.com/elio1222/vendingmachine" target="_blank"><img class = "icons3 window" src = "images/new-window-svgrepo-com.svg"></a>
+                    </div>
+                    <div class = "contrib-legend" id = "contrib-legend"></div>
+                    <p class = "mc-note">Minecraft theme: each day is a patch of land, and <b>the more you commit the bigger the tree grows.</b></p>
+                    <div class = "latest-project">
+                        <div class = "commit-label">Latest commit</div>
+                        <div class = "commit-line">
+                            <a id = "commit-link" href = "https://github.com/elio1222" target = "_blank"><span id = "commit-msg">--</span></a>
+                        </div>
+                        <div class = "commit-sub">
+                            <a id = "commit-repo" href = "https://github.com/elio1222" target = "_blank"></a>
+                            <code id = "commit-hash"></code>
+                            <span id = "commit-details"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class = "jump-headers" id = "oura" style = "color: white; margin-top: 28px">
+                    <span class = "fancy-text2">OURA RING HEALTH STATS</span><span class = "oura-day" id = "oura-day"></span>
+                </div>
+                <div id = "oura-wrap">
+                <div class = "oura-brief">
+                    An <b>Oura ring</b> is a smart ring I wear that tracks sleep, heart rate and activity, scored out of 100. Take a peak at yesterday's scores!
+                    <span class = "brief-legend"><span><i class = "lg ult">ULT</i>Readiness</span><span><i class = "lg hp">HP</i>Sleep</span><span><i class = "lg en">EN</i>Activity</span></span>
+                </div>
+                <div class = "oura-strip" id = "oura-card">
+                    <div class = "hud-frame">
+                        <div class = "hud-panel">
+                            <div class = "hud-top">
+                                <span class = "hud-tag">MATCH REPORT</span>
+                                <span class = "hud-player">ELIO <i>//</i> SYSTEM SENTINEL</span>
+                                <span class = "hud-rank" id = "o-rank">RANKED</span>
                             </div>
-                            <div class = "descript-text">
-                                A small program that simulates a vending machine
+                            <div class = "hud-main">
+                                <div class = "hero-ult">
+                                    <svg class = "hud-ult-ring" viewBox = "0 0 120 120" aria-hidden = "true">
+                                        <circle class = "ult-track" cx = "60" cy = "60" r = "55" pathLength = "100"/>
+                                        <circle class = "ult-fill" id = "o-ult-fill" cx = "60" cy = "60" r = "55" pathLength = "100"/>
+                                    </svg>
+                                    <div class = "hero-portrait">
+                                        <svg class = "hero-svg" viewBox = "40 24 120 120" role = "img" aria-label = "Superhero version of Elio in a purple and gold suit with a red cape">
+                                            <defs>
+                                                <filter id = "hero-glow" x = "-30%" y = "-30%" width = "160%" height = "160%"><feGaussianBlur stdDeviation = "2" result = "b"/><feMerge><feMergeNode in = "b"/><feMergeNode in = "SourceGraphic"/></feMerge></filter>
+                                            </defs>
+                                            <!-- cape -->
+                                            <path d = "M50 116 Q30 150 22 170 H178 Q170 150 150 116 Z" fill = "#c8102e" stroke = "#120d0a" stroke-width = "2.400" stroke-linejoin = "round"/>
+                                            <path d = "M62 128 Q44 154 40 170 H66 Z M138 128 Q156 154 160 170 H134 Z" fill = "#8f0c22"/>
+                                            <!-- suit -->
+                                            <path d = "M38 170 Q40 128 100 120 Q160 128 162 170 Z" fill = "#272456" stroke = "#120d0a" stroke-width = "2.400" stroke-linejoin = "round"/>
+                                            <path d = "M62 134 L56 170 M138 134 L144 170" fill = "none" stroke = "#8f86ff" stroke-width = "2.200" stroke-linecap = "round" filter = "url(#hero-glow)"/>
+                                            <path d = "M72 138 L100 158 L128 138" fill = "none" stroke = "#c8102e" stroke-width = "5" stroke-linejoin = "round" stroke-linecap = "round"/>
+                                            <path d = "M72 138 L100 158 L128 138" fill = "none" stroke = "#ffd54a" stroke-width = "1.600" stroke-linejoin = "round" stroke-linecap = "round"/>
+                                            <!-- neck + high collar -->
+                                            <path d = "M91 98 V114 Q100 120 109 114 V98 Z" fill = "#d9a273" stroke = "#120d0a" stroke-width = "1.800"/>
+                                            <path d = "M76 96 L82 120 L100 128 L118 120 L124 96 L112 106 L100 112 L88 106 Z" fill = "#5a4db0" stroke = "#120d0a" stroke-width = "2.200" stroke-linejoin = "round"/>
+                                            <path d = "M82 120 L100 128 L118 120" fill = "none" stroke = "#ffd54a" stroke-width = "1.800" stroke-linejoin = "round"/>
+                                            <!-- pauldrons -->
+                                            <path d = "M36 140 L46 120 L76 120 L80 138 L62 148 Z" fill = "#5a4db0" stroke = "#120d0a" stroke-width = "2.200" stroke-linejoin = "round"/>
+                                            <path d = "M164 140 L154 120 L124 120 L120 138 L138 148 Z" fill = "#5a4db0" stroke = "#120d0a" stroke-width = "2.200" stroke-linejoin = "round"/>
+                                            <path d = "M42 130 L74 130 M158 130 L126 130" stroke = "#ffd54a" stroke-width = "3" stroke-linecap = "round"/>
+                                            <!-- chest emblem: the Oura ring -->
+                                            <g filter = "url(#hero-glow)">
+                                                <circle cx = "100" cy = "148" r = "10" fill = "#0d0c1d" stroke = "#ffd54a" stroke-width = "2.400"/>
+                                                <image href = "images/oura/ring.png" x = "91" y = "139" width = "18" height = "18"/>
+                                            </g>
+                                            <!-- head: same face as the desk cartoon -->
+                                            <g transform = "translate(-485 -60)">
+                                                <circle cx = "551" cy = "134" r = "6.500" fill = "#d9a273" stroke = "#120d0a" stroke-width = "2"/>
+                                                <circle cx = "619" cy = "134" r = "6.500" fill = "#d9a273" stroke = "#120d0a" stroke-width = "2"/>
+                                                <ellipse cx = "585" cy = "131" rx = "33" ry = "35" fill = "#d9a273" stroke = "#120d0a" stroke-width = "2.200"/>
+                                                <path d = "M551 130 C546 100 564 89 585 89 C606 89 624 100 619 130 C616 114 604 108 585 108 C566 108 554 114 551 130 Z" fill = "#2a221d" stroke = "#0a0806" stroke-width = "1.800" stroke-linejoin = "round"/>
+                                                <g filter = "url(#hero-glow)">
+                                                    <rect x = "560" y = "126" width = "21" height = "15" rx = "4" fill = "#ffd54a" fill-opacity = "0.55" stroke = "#1b1714" stroke-width = "2.400"/>
+                                                    <rect x = "589" y = "126" width = "21" height = "15" rx = "4" fill = "#ffd54a" fill-opacity = "0.55" stroke = "#1b1714" stroke-width = "2.400"/>
+                                                </g>
+                                                <path d = "M581 131 H589 M560 130 L553 128 M610 130 L617 128" fill = "none" stroke = "#1b1714" stroke-width = "2" stroke-linecap = "round"/>
+                                                <circle cx = "571" cy = "134" r = "2" fill = "#1b1714"/><circle cx = "600" cy = "134" r = "2" fill = "#1b1714"/>
+                                                <path d = "M574 152 Q585 147 596 152" fill = "none" stroke = "#1b1714" stroke-width = "3" stroke-linecap = "round"/>
+                                                <path d = "M578 156 Q585 160 592 156" fill = "none" stroke = "#5a2f22" stroke-width = "2" stroke-linecap = "round"/>
+                                                <path d = "M577 162 Q585 174 593 162 Q585 165 577 162 Z" fill = "#1b1714" stroke = "#1b1714" stroke-width = "2" stroke-linejoin = "round"/>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                    <div class = "hud-ult-label"><b id = "o-ready">--</b><span>ULT</span></div>
+                                </div>
+                                <div class = "hud-bars">
+                                    <div class = "hud-stat hp">
+                                        <div class = "hud-bar-head"><span>HP <em>SLEEP SCORE</em></span><b id = "o-sleep-score">--</b></div>
+                                        <div class = "hud-bar-track"><div class = "hud-bar-fill" id = "o-hp-fill"></div></div>
+                                    </div>
+                                    <div class = "hud-stat en">
+                                        <div class = "hud-bar-head"><span>ENERGY <em>ACTIVITY SCORE</em></span><b id = "o-activity-score">--</b></div>
+                                        <div class = "hud-bar-track"><div class = "hud-bar-fill" id = "o-en-fill"></div></div>
+                                    </div>
+                                    <div class = "hud-status" id = "o-ult-status">Ultimate charging...</div>
+                                </div>
+                                <div class = "oura-ring-wrap" id = "oura-ring-wrap">
+                                    <img class = "oura-ring" src = "images/oura/ring.png" alt = "Oura ring" width = "300" height = "300" loading = "lazy" decoding = "async">
+                                </div>
+                            </div>
+                            <div class = "oura-chips">
+                                <div class = "oura-chip">
+                                    <div class = "oura-icon sleep"><svg viewBox = "0 0 24 24" aria-hidden = "true"><path class = "ic-moon" d = "M17.5 15.6A7.6 7.6 0 0 1 9.4 5.1a7.6 7.6 0 1 0 8.1 10.5z"/><path class = "ic-star s1" d = "M18 3.6l.8 1.9 1.9.8-1.9.8-.8 1.9-.8-1.9-1.9-.8 1.9-.8z"/><circle class = "ic-star s2" cx = "20.4" cy = "11.2" r = "1"/></svg></div>
+                                    <div class = "oura-body">
+                                        <div class = "oura-main" id = "o-sleep">--</div>
+                                        <div class = "descript-text">Slept last night</div>
+                                        <div class = "oura-sub" id = "o-sleep-sub"></div>
+                                    </div>
+                                </div>
+                                <div class = "oura-chip">
+                                    <div class = "oura-icon hr"><svg viewBox = "0 0 24 24" aria-hidden = "true"><path class = "ic-heart" d = "M12 20.6s-7.9-4.8-7.9-10.6A4.6 4.6 0 0 1 12 7.2a4.6 4.6 0 0 1 7.9 2.8c0 5.800-7.900 10.600-7.900 10.600z"/><path class = "ic-ecg" pathLength = "1" d = "M3.5 12.2h4.300l1.800-3.400 2.800 6.400 2-4.200 1.100 1.200h5"/></svg></div>
+                                    <div class = "oura-body">
+                                        <div class = "oura-main" id = "o-hr">--</div>
+                                        <div class = "descript-text">Resting heart rate</div>
+                                        <div class = "oura-sub" id = "o-hr-sub"></div>
+                                    </div>
+                                </div>
+                                <div class = "oura-chip">
+                                    <div class = "oura-icon steps"><svg viewBox = "0 0 24 24" aria-hidden = "true"><g class = "ic-foot f1"><ellipse cx = "8" cy = "18.6" rx = "2.800" ry = "3.700"/><circle cx = "6" cy = "13.200000000000001" r = "1.100"/><circle cx = "8" cy = "12.500000000000002" r = "1.200"/><circle cx = "10" cy = "13.200000000000001" r = "1.100"/></g><g class = "ic-foot f2"><ellipse cx = "16.5" cy = "10.6" rx = "2.800" ry = "3.700"/><circle cx = "14.5" cy = "5.199999999999999" r = "1.100"/><circle cx = "16.5" cy = "4.5" r = "1.200"/><circle cx = "18.5" cy = "5.199999999999999" r = "1.100"/></g></svg></div>
+                                    <div class = "oura-body">
+                                        <div class = "oura-main" id = "o-steps">--</div>
+                                        <div class = "descript-text">Steps yesterday</div>
+                                        <div class = "oura-sub" id = "o-steps-sub"></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class = "jump-headers" style = "color: white; padding-top: 14px;" id = "song">
-                    <span class = "fancy-text2">LAST PLAYED SONG</span>
-                </div>
-                <div class = "spotify">
-                    <button id="login">Login with Spotify</button>
-                    <div>
-                        <img class = "spotify-image" src = {{image}}>
-                    </div>
-                    <div class = "spotify-text">
-                        <div class = "descript-header">
-                            {{track}}
-                        </div>
-                        <div class = "descript-text">
-                            {{artist}}
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
-        <hr style="margin: 10px 0; height: 1px; background-color: rgb(73, 73, 73); border: none; margin-bottom: 10px;">
-        <div class = "ending">
-            <div class = "myname">
-                <hi class = "sweet-title">
-                    <span class = "fancy">Elio</span>
-                </hi>
-            </div>
-            <div class = "linkz">
-                <div>
-                    <a href = "#top">about</a>
-                </div>
-                <div>
-                    <a href = "#edu">education</a>
-                </div>
-                <div>
-                    <a href = "#tech">technologies</a>
-                </div>
-                <div>
-                    <a href = "#proj">projects</a>
-                </div>
-            </div>
-            <div class = 'l2' id = "bottom">
-                <div class = 'l2-text'>
-                    <p class = "fancy-text">Contact me through: </p>
-                </div>
-                <div class = "linkss2">
-                    <a href = "https://www.linkedin.com/in/elio-rocha-b7b995273/" target="_blank">
-                    <div class = "linkss-text">
-                        <div class="hover-links">
-                            <img class = "icons" src = "images/linkedin-1-svgrepo-com.svg">
-                        </div>
-                    </div>
+        <footer class = "footer" id = "bottom">
+            <div class = "ft-inner">
+                <div class = "ft-pieces">
+                    <a class = "ft-pz" style = "--c:#b9b3ec" href = "https://github.com/elio1222" target = "_blank" rel = "noopener" aria-label = "GitHub" title = "GitHub">
+                        <svg viewBox = "0 0 62 44" aria-hidden = "true"><path d = "M15,0 H47 Q53,0 53,6 V17 a5.8 5.8 0 1 1 0 10 V38 Q53,44 47,44 H15 Q9,44 9,38 V27 a5.8 5.8 0 1 0 0 -10 V6 Q9,0 15,0 Z"/></svg>
+                        <img src = "images/github-color-svgrepo-com.svg" alt = "">
                     </a>
-                    <a href = "https://x.com/callmemrfreeze" target="_blank">
-                    <div class = "linkss-text">
-                        <div class="hover-links">
-                            <img class = "icons" src = "images/twitter-color-svgrepo-com.svg">
-                        </div>
-                    </div>
+                    <a class = "ft-pz" style = "--c:#5aa0e8" href = "https://www.linkedin.com/in/elio-rocha-b7b995273/" target = "_blank" rel = "noopener" aria-label = "LinkedIn" title = "LinkedIn">
+                        <svg viewBox = "0 0 62 44" aria-hidden = "true"><path d = "M15,0 H26 a5 5 0 0 1 10 0 H47 Q53,0 53,6 V16 L61,11 V33 L53,28 V38 Q53,44 47,44 H15 Q9,44 9,38 V27 a5.8 5.8 0 1 0 0 -10 V6 Q9,0 15,0 Z"/></svg>
+                        <img src = "images/linkedin-1-svgrepo-com.svg" alt = "">
+                    </a>
+                    <a class = "ft-pz" style = "--c:#7fc8f0" href = "https://x.com/eliorochadev" target = "_blank" rel = "noopener" aria-label = "X" title = "X">
+                        <svg viewBox = "0 0 62 44" aria-hidden = "true"><path d = "M15,0 H47 Q53,0 53,6 V15 H61 V29 H53 V38 Q53,44 47,44 H36 a5 5 0 0 0 -10 0 H15 Q9,44 9,38 V28 L17,33 V11 L9,16 V6 Q9,0 15,0 Z"/></svg>
+                        <img src = "images/twitter-color-svgrepo-com.svg" alt = "">
+                    </a>
+                    <a class = "ft-pz" style = "--c:#e5584f" href = "https://www.youtube.com/@eliorochadev" target = "_blank" rel = "noopener" aria-label = "YouTube" title = "YouTube">
+                        <svg viewBox = "0 0 62 44" aria-hidden = "true"><path d = "M15,0 H39 Q53,0 53,14 V30 Q53,44 39,44 H15 Q9,44 9,38 V29 H17 V15 H9 V6 Q9,0 15,0 Z"/></svg>
+                        <img src = "images/youtube-svgrepo-com (1).svg" alt = "">
                     </a>
                 </div>
+                <p class = "ft-quote">"We are what we repeatedly do. Excellence, then, is not an act, but a habit."</p>
+                <div class = "ft-base">
+                    <a href = "resume.html">Resume</a>
+                    <a href = "photogallery.html">Gallery</a>
+                    <a href = "#top">Top &uarr;</a>
+                    <span>&copy; 2026 Elio Rocha</span>
+                </div>
             </div>
-            <div class = "quote">
-                "We are what we repeatedly do. Excellence, then, is not an act, but a habit"    
-            </div>
-        </div>
+        </footer>
+<script src = "js/space.js"></script>
+<script src = "js/activity.js"></script>
+        <script src = "js/desk.js"></script>
+        <script src = "js/projects.js"></script>
         <script src = "js/script.js">
         </script>
     </body>

@@ -1,84 +1,77 @@
-.ending {
-    padding: 2rem;
-    padding-bottom: 10rem;
+.footer {
+    margin-top: 28px;
+    padding: 0 16px 24px;
+    color: #fff;
+    font-family: "Geist", sans-serif;
 }
-.myname {
-    font-family: 'Geist';
-    color:white;
-    font-size: 32px;
-    font-weight: 600;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    text-align: center;
-    margin-bottom: 30px;
-}
-.quote {
-    margin-top: 30px;
-    font-family: 'Geist';
-    color: darkgrey;
-    font-size: 16px;
-    font-weight: 300;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    text-align: center;
-    padding-bottom: 70px;
-}
-.linkss2 {
-    color: white;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    column-gap: 8px;
-}
-
-.linkss-text2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: "Geist";
-    color: #FFFFFF;
-    font-weight: 500;
-    transition: opacity 0.7s;
-    animation: headerappear 0.7s ease-in forwards;
-    column-gap: 8px;
-}
-.linkz {
-    padding-top: 14px;
-    color: white;
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    column-gap: 16px;
-    margin-bottom: 15px;
-}
-.linkz > div:hover {
-    cursor: pointer;
-    opacity: 0.7;
-}
-.linkz > div:active {
-    cursor: pointer;
-    opacity: 0.5;
-}
-.linkz:active {
-    -webkit-tap-highlight-color: transparent;
-}
-.l2 {
-    margin-top: 24px;
+.footer a, .footer span, .footer p { font-family: "Geist", sans-serif; }
+.ft-inner {
+    max-width: 780px;
+    margin: 0 auto;
+    padding-top: 18px;
+    border-top: 1px solid rgba(255, 255, 255, 0.10);
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    gap: 10px;
     text-align: center;
-    row-gap: 0px;
 }
-.l2-text {
+/* small interlocking puzzle pieces, same as the header */
+.ft-pieces { display: flex; }
+.ft-pz {
+    position: relative;
+    display: block;
+    width: 50px;
+    height: 36px;
+    margin-left: -14px;
+    transition: transform 0.2s ease;
+}
+.ft-pz:first-child { margin-left: 0; }
+.ft-pz svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.ft-pz path {
+    fill: color-mix(in srgb, var(--c) 10%, transparent);
+    stroke: var(--c);
+    stroke-opacity: 0.65;
+    stroke-width: 1.2px;
+    stroke-linejoin: round;
+    vector-effect: non-scaling-stroke;
+    transition: fill 0.2s ease, stroke-opacity 0.2s ease;
+}
+.ft-pz img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 17px;
+    height: 17px;
+    transform: translate(-50%, -50%);
+}
+.ft-pz:hover { transform: translateY(-3px); z-index: 2; }
+.ft-pz:hover path { fill: color-mix(in srgb, var(--c) 26%, transparent); stroke-opacity: 1; }
+.ft-pz:focus-visible { outline: none; }
+.ft-pz:focus-visible path { stroke: #fff; stroke-opacity: 1; }
+.ft-quote {
+    margin: 0;
+    max-width: 440px;
+    font-size: 12.5px;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.5);
+}
+.ft-base {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
-    text-align: center;
+    gap: 4px 14px;
+    font-size: 11.5px;
+    color: rgba(255, 255, 255, 0.35);
 }
+.ft-base a { color: rgba(255, 255, 255, 0.55); text-decoration: none; }
+.ft-base a:hover { color: #fff; }
+@media (prefers-reduced-motion: reduce) {
+    .ft-pz { transition: none; }
+}
+
 .fancy-text {
     font-weight: 600;
     margin: 0;
@@ -97,3 +90,4 @@
         background-position: 100%;
     }
 }
+

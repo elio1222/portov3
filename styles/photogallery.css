@@ -1,27 +1,3 @@
-.header {
-    font-size: 24px;
-    font-family: "Geist";
-    color: #FFFFFF;
-    display: flex;
-    flex-direction: row;
-    justify-content: end;
-    align-items: center;
-    margin-top: 14px;
-    padding-left: 20px;
-    padding-right: 20px;
-    margin-bottom: 0px;
-}
-.header {
-    opacity: 0;
-    transform: translateY(-50px);
-    animation: SlideLeft 1s forwards;
-}
-@keyframes SlideLeft {
-    to {
-        opacity: 1;
-        transform: translateY(0px);
-    }
-}
 body {
     background-color: rgb(12, 11, 27);
 }
@@ -85,6 +61,33 @@ body {
     height: 100%;
     width: 100%;
     object-fit: cover;
+}
+
+/* Header text */
+.main { height: auto; padding-bottom: 32px; }
+.container { height: max(480px, calc(100vh - 250px)); }
+.page-title {
+    font-family: "Geist", sans-serif;
+    margin: 4px 0 18px 0;
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: slideRight 1s forwards;
+}
+.page-title h1 {
+    margin: 0;
+    font-size: 40px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+}
+.page-title p {
+    margin: 8px 0 0 0;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.6);
+}
+@media (max-width: 600px) {
+    .page-title h1 { font-size: 30px; }
+    .page-title p { font-size: 14px; }
 }
 
 /* Base animation state */

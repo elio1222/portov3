@@ -1,11 +1,66 @@
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Resume</title>
-    </head>
-    <body>
-        <embed src = "styles/Elio_s_Resume__Copy_.pdf" style = "height: 100vh; width: 100vw;">
-    </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/resume.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/space.css">
+    <title>Resume | Elio Rocha</title>
+    <link rel = "icon" type = "image/svg+xml" href = "images/favicon-resume.svg">
+</head>
+<body class="resume-page">
+    <div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
+    <header class = "header" id = "top">
+        <nav class = "nav" aria-label = "Main">
+            <a class = "nav-brand" href = "index.html" aria-label = "Back to home">
+                <svg class = "nav-knight" viewBox = "0 0 20 20" aria-hidden = "true"><path d = "M4 18.500h12V16H4zM5 16c0-3.500 2-5 3.200-7.200L5.600 10 4 8.800 5.200 6 8.500 3.200 9 1.200l1.600 1.300C14.400 3.300 16.200 7 16 11.500V16z"/><circle cx = "8.800" cy = "6" r = ".9" class = "eye"/></svg>
+                <span class = "nav-wordmark">ROCHA</span>
+                <span class = "nav-status"><span class = "status-dot"></span><span class = "status-text">online</span></span>
+            </a>
+            <div class = "nav-links">
+                <a class = "nav-link" href = "index.html#proj">Projects</a>
+                <a class = "nav-link" href = "index.html#git">Activity</a>
+                <a class = "nav-link" href = "photogallery.html">Gallery</a>
+                <a class = "nav-link active" href = "resume.html">Resume</a>
+                <a class = "nav-cta" href = "index.html#bottom">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="rs-main">
+        <div class="rs-head">
+            <h1 class="rs-title">Resume</h1>
+            <p class="rs-sub">My experience, education and skills</p>
+        </div>
+
+        <div class="rs-stage" id="rs-stage">
+            <div class="rs-glow"></div>
+            <a class="rs-tilt" id="rs-tilt" href="styles/Rocha's Resume.pdf" target="_blank" rel="noopener" aria-label="Open resume PDF in a new tab">
+                <div class="rs-paper" id="rs-paper">
+                    <canvas id="rs-canvas" aria-hidden="true"></canvas>
+                    <div class="rs-loading" id="rs-loading">Printing&hellip;</div>
+                    <div class="rs-beam" id="rs-beam"></div>
+                    <div class="rs-glare"></div>
+                </div>
+            </a>
+        </div>
+
+        <div class="rs-actions" id="rs-actions">
+            <a href="styles/Rocha's Resume.pdf" download="Elio Rocha - Resume.pdf">Download</a>
+            <a href="styles/Rocha's Resume.pdf" target="_blank" rel="noopener">Open full size</a>
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script src="js/space.js"></script>
+    <script src="js/resume.js"></script>
+</body>
 </html>
