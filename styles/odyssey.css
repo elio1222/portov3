@@ -61,15 +61,20 @@
 .od-text {
     flex: 1;
     min-width: 0;
+    position: relative;
+    overflow: hidden;
+    padding: 18px 22px 22px;
+    border: 1px solid rgba(182, 87, 209, 0.3);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.03);
     opacity: 0;
     animation: appear2 2s ease forwards;
 }
 .od-meander {
     height: 10px;
-    width: min(220px, 70%);
-    margin-bottom: 18px;
+    width: 100%;
+    margin: 14px 0;
     background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='10' viewBox='0 0 20 10'%3E%3Cpath d='M0 9.500H20M12 9.500V1.500H4V6.500H8V4.500' fill='none' stroke='%23c9a66b' stroke-width='1.200' stroke-opacity='.7'/%3E%3C/svg%3E") repeat-x left center / 20px 10px;
-    animation: od-meander 3s linear infinite;
 }
 .od-book {
     font-family: "Cinzel", serif;
@@ -82,8 +87,14 @@
     margin: 0 4px;
     opacity: 0.6;
 }
+.od-head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 12px;
+}
 .od-role {
-    margin: 10px 0 2px;
+    margin: 0;
     font-family: "Cinzel", serif;
     font-weight: 700;
     font-size: clamp(20px, 3.4vw, 28px);
@@ -91,7 +102,8 @@
 }
 .od-company {
     display: inline-flex;
-    margin-bottom: 12px;
+    flex: none;
+    border: 1px solid var(--od-bronze);
     padding: 4px 8px;
     border-radius: 8px;
     background: #f4f1ff;
@@ -128,9 +140,6 @@
     0%, 100% { transform: scaleX(1); opacity: 1; }
     50% { transform: scaleX(0.82); opacity: 0.6; }
 }
-@keyframes od-meander {
-    to { background-position-x: 20px; }
-}
 @media (max-width: 600px) {
     .odyssey {
         padding-left: 5px;
@@ -139,9 +148,26 @@
     .od-desc {
         font-size: 13px;
     }
+    .od-text {
+        padding: 14px 14px 20px;
+    }
+    .od-head {
+        gap: 10px;
+    }
+}
+/* very narrow phones: the logo sits above the title so a long word like "Software" never gets clipped */
+@media (max-width: 380px) {
+    .od-head {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    .od-role {
+        font-size: 19px;
+        overflow-wrap: anywhere;
+    }
 }
 @media (prefers-reduced-motion: reduce) {
-    .od-bob, .od-crest, .od-eyes, .od-glint, .od-shadow, .od-meander {
+    .od-bob, .od-crest, .od-eyes, .od-glint, .od-shadow {
         animation: none;
     }
 }

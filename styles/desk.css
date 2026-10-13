@@ -24,8 +24,10 @@
 .desk-svg .wire { stroke-width: 1.6; stroke: #cfcfe0; }
 .desk-svg .pen { font-family: "Caveat", "Segoe Print", cursive; font-size: 19px; fill: currentColor; font-weight: 700; }
 .desk-svg .dk { fill: #222; }
-.desk-svg .cal-m { font-size: 17px; }
-.desk-svg .cal-d { font-size: 34px; font-weight: 700; }
+.desk-svg .cal-m, .desk-svg .cal-d, .desk-svg .cal-w { font-family: "Geist", sans-serif; }
+.desk-svg .cal-w { font-size: 7.5px; font-weight: 700; letter-spacing: 0.14em; fill: #16152d; }
+.desk-svg .cal-m { font-size: 9px; font-weight: 600; letter-spacing: 0.16em; fill: #a79fe6; }
+.desk-svg .cal-d { font-size: 28px; font-weight: 800; fill: #fff; }
 .desk-svg .sticker-tx { font-size: 13px; }
 
 /* clickable parts */

@@ -138,8 +138,8 @@
 
 /* segmented HP / energy bars */
 .hud-bars { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 11px; }
-.hud-bar { --c: var(--hud-hp); }
-.hud-bar.en { --c: var(--hud-en); }
+.hud-stat { --c: var(--hud-hp); }
+.hud-stat.en { --c: var(--hud-en); }
 .hud-bar-head {
     display: flex;
     justify-content: space-between;
@@ -217,10 +217,26 @@
     background: rgba(125, 119, 158, 0.3);
     clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
 }
-.oura-icon img { position: relative; width: 16px; height: 16px; }
-.oura-icon.beat img { animation: oura-beat 1.2s ease-in-out infinite; }
-.oura-icon.breathe img { animation: oura-breathe 4s ease-in-out infinite; }
-.oura-icon.bob img { animation: oura-bob 0.9s ease-in-out infinite; }
+.oura-icon svg { position: relative; width: 22px; height: 22px; overflow: visible; }
+.oura-icon.sleep { --ic: #8f8cff; }
+.oura-icon.hr { --ic: #ff5a74; }
+.oura-icon.steps { --ic: #3fd68f; }
+.oura-icon::before { background: color-mix(in srgb, var(--ic) 24%, transparent); transition: background 0.3s; }
+.oura-chip:hover .oura-icon::before { background: color-mix(in srgb, var(--ic) 40%, transparent); }
+
+/* sleep: moon with twinkling stars */
+.ic-moon { fill: #a9a6ff; filter: drop-shadow(0 0 3px rgba(143, 140, 255, 0.7)); transform-origin: 12px 12px; animation: ic-rock 5s ease-in-out infinite; }
+.ic-star { fill: #ffe9a8; transform-box: fill-box; transform-origin: center; animation: ic-twinkle 2.6s ease-in-out infinite; }
+.ic-star.s2 { animation-delay: 1.3s; }
+
+/* heart rate: beating heart with an ECG trace */
+.ic-heart { fill: #ff5a74; filter: drop-shadow(0 0 3px rgba(255, 90, 116, 0.7)); transform-box: fill-box; transform-origin: center; animation: ic-beat 1.2s ease-in-out infinite; }
+.ic-ecg { fill: none; stroke: #fff; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 1; animation: ic-ecg 1.2s ease-in-out infinite; }
+
+/* steps: footprints taking turns */
+.ic-foot ellipse, .ic-foot circle { fill: #3fd68f; }
+.ic-foot { filter: drop-shadow(0 0 2.500px rgba(63, 214, 143, 0.6)); animation: ic-step 1.2s ease-in-out infinite; }
+.ic-foot.f2 { animation-delay: 0.6s; }
 .oura-body { min-width: 0; }
 .oura-main { font: italic 800 20px/1.05 var(--hud-font); letter-spacing: 0.02em; white-space: nowrap; }
 .oura-chip .descript-text { font-size: 10.5px; line-height: 1.25; }
@@ -233,10 +249,15 @@
 @keyframes oura-beat { 0%, 100% { transform: scale(1); } 15% { transform: scale(1.3); } 30% { transform: scale(1); } 45% { transform: scale(1.18); } }
 @keyframes oura-breathe { 0%, 100% { transform: scale(1); opacity: 0.7; } 50% { transform: scale(1.15); opacity: 1; } }
 @keyframes oura-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-2px); } }
+@keyframes ic-rock { 0%, 100% { transform: rotate(-6deg); } 50% { transform: rotate(6deg); } }
+@keyframes ic-twinkle { 0%, 100% { transform: scale(0.5); opacity: 0.35; } 50% { transform: scale(1.15); opacity: 1; } }
+@keyframes ic-beat { 0%, 100% { transform: scale(1); } 15% { transform: scale(1.18); } 30% { transform: scale(1); } 45% { transform: scale(1.1); } }
+@keyframes ic-ecg { 0% { stroke-dashoffset: 1; opacity: 1; } 55% { stroke-dashoffset: 0; opacity: 1; } 85%, 100% { stroke-dashoffset: 0; opacity: 0; } }
+@keyframes ic-step { 0%, 100% { opacity: 0.3; transform: translateY(1.5px); } 30%, 55% { opacity: 1; transform: translateY(-1px); } }
 @keyframes hud-pulse { 0%, 100% { filter: none; } 50% { filter: drop-shadow(0 0 8px rgba(255, 213, 74, 0.9)); } }
 
 @media (prefers-reduced-motion: reduce) {
-    .oura-ring, .oura-ring-wrap::before, .oura-icon img, .hud-ult-label { animation: none !important; }
+    .oura-ring, .oura-ring-wrap::before, .oura-icon svg *, .hud-ult-label { animation: none !important; }
     .oura-chip { animation-duration: 0.01s; }
     .ult-fill, .hud-bar-fill { transition: none; }
 }

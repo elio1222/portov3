@@ -1,0 +1,22 @@
+/* Site-wide space backdrop: twinkling stars */
+.space-bg {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    overflow: hidden;
+}
+.space-star {
+    position: absolute;
+    border-radius: 50%;
+    background: #fff;
+    opacity: 0.2;
+    animation: space-twinkle var(--d, 4s) ease-in-out var(--delay, 0s) infinite;
+}
+@keyframes space-twinkle {
+    0%, 100% { opacity: 0.15; transform: scale(1); }
+    50%      { opacity: 0.85; transform: scale(1.35); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .space-star { animation: none; }
+}

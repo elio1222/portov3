@@ -1,4 +1,4 @@
-/* the cartoon who leans on the centred project card, shoves it forward and gets flattened going back */
+/* the cartoon who faces us while idle, then turns and shoves the carousel the way it travels */
 .proj-wrap {
     position: relative;
 }
@@ -17,7 +17,6 @@
     height: 96px;
     z-index: 0;
     pointer-events: none;
-    transform: translateX(var(--ox));
 }
 .pj-char svg {
     width: 100%;
@@ -38,26 +37,43 @@
 .pj-arm  { transform-origin: 25px 34px; }
 .pj-leg  { transform-origin: 25px 60px; }
 
-/* leaning, back against the card */
-.pj-char.lean .pj-body  { transform: rotate(-11deg); animation: pj-breathe 3.2s ease-in-out infinite; }
-.pj-char.lean .pj-arm.f { transform: rotate(16deg); }
-.pj-char.lean .pj-arm.b { transform: rotate(-8deg); }
-.pj-char.lean .pj-leg.f { transform: rotate(-8deg); }
-.pj-char.lean .pj-leg.b { transform: rotate(6deg); }
+/* idle: front-on, facing us. the side-on figure is squashed flat, then swaps in when he turns to shove */
+.pj-front {
+    transform-box: view-box;
+    transform-origin: 25px 96px;
+    transition: transform 0.1s ease-in 0.1s;
+}
+.pj-fbody { transform-box: view-box; transform-origin: 25px 96px; animation: pj-breathe 3.2s ease-in-out infinite; }
+.pj-eyes { transform-box: fill-box; transform-origin: center; animation: pj-blink 4.5s infinite; }
+.pj-flip { transition: transform 0.1s ease-out 0.1s; }
+.pj-char.idle .pj-flip { transform: scale(0, var(--sy)); transition-delay: 0s; }
+.pj-char:not(.idle) .pj-front { transform: scaleX(0); transition-delay: 0s; }
 
-/* turned around, shoving the card */
-.pj-char.push .pj-body  { transform: rotate(17deg); animation: pj-strain 0.16s ease-in-out infinite alternate; }
-.pj-char.push .pj-arm   { transform: rotate(-86deg); }
-.pj-char.push .pj-leg.b { transform: rotate(22deg); }
-.pj-char.push .pj-leg.f { transform: rotate(-12deg); }
+/* turned side-on: wind up, then lunge into the shove and hold it with a little strain */
+.pj-char.push .pj-body  { animation: pj-lunge 0.3s cubic-bezier(.3, 1.4, .5, 1) 0.14s both, pj-strain 0.3s ease-in-out 0.5s infinite alternate; }
+.pj-char.push .pj-arm   { animation: pj-thrust 0.3s cubic-bezier(.3, 1.4, .5, 1) 0.14s both; }
+.pj-char.push .pj-leg.f { transform: rotate(-26deg); }
+.pj-char.push .pj-leg.b { transform: rotate(20deg); }
 
 @keyframes pj-breathe {
-    0%, 100% { transform: rotate(-11deg) scaleY(1); }
-    50%      { transform: rotate(-11deg) scaleY(1.015); }
+    0%, 100% { transform: scaleY(1); }
+    50%      { transform: scaleY(1.015); }
+}
+@keyframes pj-blink {
+    0%, 94%, 100% { transform: scaleY(1); }
+    97%           { transform: scaleY(0.1); }
+}
+@keyframes pj-lunge {
+    from { transform: rotate(-4deg) translateX(-1px); }
+    to   { transform: rotate(16deg) translateX(4px); }
 }
 @keyframes pj-strain {
-    from { transform: rotate(15deg); }
-    to   { transform: rotate(20deg); }
+    from { transform: rotate(16deg) translateX(4px); }
+    to   { transform: rotate(19deg) translateX(5px); }
+}
+@keyframes pj-thrust {
+    from { transform: rotate(28deg); }
+    to   { transform: rotate(-84deg); }
 }
 
 @media (max-width: 450px) {
@@ -67,5 +83,5 @@
     }
 }
 @media (prefers-reduced-motion: reduce) {
-    .pj-char .pj-body { animation: none !important; }
+    .pj-char *, .pj-fbody, .pj-eyes { animation: none !important; }
 }

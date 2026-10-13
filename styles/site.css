@@ -44,7 +44,7 @@ html {
     width: 100%;
 }
 .projects {
-    --gap: 16px;
+    --gap: 40px;
     --card-w: min(540px, calc(100cqw - 72px));
     position: relative;
     padding: 14px calc((100cqw - var(--card-w)) / 2) 18px;
@@ -88,7 +88,8 @@ html {
     color: #fff;
     transition: transform 0.45s ease, opacity 0.45s ease, border-color 0.35s ease, box-shadow 0.35s ease;
 }
-.project:not(.is-active) a {
+.project:not(.is-active) a,
+.project:not(.is-active) button {
     pointer-events: none;
 }
 .project.is-active {
@@ -273,6 +274,7 @@ html {
 }
 @media (max-width: 450px) {
     .projects {
+        --gap: 28px;
         --card-w: calc(100cqw - 64px);
     }
     .project {
@@ -451,10 +453,7 @@ body {
     margin: auto;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     overflow: auto;
-    background: linear-gradient(315deg, rgb(12, 11, 27) 3%, rgb(12, 11, 27) 38%, rgb(80, 80, 90) 68%, rgb(12, 11, 27) 98%);
-    animation: gradient 5s linear forwards;
-    background-size: 400% 400%;
-    background-attachment: fixed;
+    background: rgb(12, 11, 27); /* static: the old fixed, animated gradient settled on this color and repainted on every scroll */
 }
 
 @keyframes gradient {
@@ -497,7 +496,7 @@ body {
 
 @keyframes wave {
     2% {
-        transform: translateX(1);
+        transform: translateX(0);
     }
 
     25% {
@@ -513,6 +512,6 @@ body {
     }
 
     100% {
-        transform: translateX(1);
+        transform: translateX(0);
     }
 }

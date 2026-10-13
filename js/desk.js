@@ -20,6 +20,7 @@
     const now = new Date();
     $('cal-mon').textContent = MONTHS[now.getMonth()];
     $('cal-day').textContent = now.getDate();
+    $('cal-wd').textContent = now.toLocaleDateString('en-US', { weekday: 'short' }).toUpperCase();
 
     const night = skyMode === 'auto' ? !isDaytime(now) : skyMode === 'night';
     $('sky').setAttribute('fill', night ? '#1d2650' : '#cfe6fb');

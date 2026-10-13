@@ -49,7 +49,7 @@
     track.scrollTo({ left: centerLeft(idx), behavior: 'smooth' });
   }
 
-  // Elio leans on the centred card: forward he shoves it along, backward it topples onto him
+  // Elio stands facing us; on a click he turns side-on and shoves the carousel the way it travels
   const hero = document.getElementById('pj-char');
   const wrap = track.parentElement;
   const calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -58,18 +58,21 @@
   const frame = (f) => (document.hidden ? setTimeout(() => f(performance.now()), 50) : requestAnimationFrame(f));
   let busy = false, pending = null;
 
-  function pose(name, face) {
+  function pose(name, face = 1) {
     hero.className = 'pj-char ' + name;
-    hero.style.setProperty('--fx', face === undefined ? 1 : face);
+    hero.style.setProperty('--fx', face);
   }
-  // he stays put at the card's right edge: forward he shoves the card left, back he shoves the neighbour right
+  // he stays put at the card's right edge, facing us; the carousel moves, he doesn't
   function place() {
     if (!hero) return;
     const c = cards[0];
-    hero.style.left = (track.offsetLeft + track.clientWidth / 2 + c.offsetWidth / 2 + 12) + 'px';
+    // dead centre of the gap between the centred card and its (shrunken) right neighbour
+    const gap = parseFloat(getComputedStyle(track).columnGap) || 16;
+    const mid = track.offsetLeft + track.clientWidth / 2 + c.offsetWidth / 2 + (gap + 0.05 * c.offsetWidth) / 2;
+    hero.style.left = (mid - hero.offsetWidth / 2) + 'px';
     hero.style.top = (track.offsetTop + c.offsetTop + c.offsetHeight - hero.offsetHeight + 8) + 'px';
   }
-  const rest = () => pose('lean', 1);
+  const rest = () => pose('idle');
   const settled = (idx) => new Promise((res) => {
     const t0 = performance.now();
     (function chk() {
@@ -81,14 +84,15 @@
     busy = false;
     if (pending !== null) { const p = pending; pending = null; goTo(p); }
   }
-  // a quick shove in the direction of travel while the carousel slides, then back to leaning
+  // turn side-on towards the way the carousel travels, wind up and shove while it slides, then face us again
   async function pushTo(idx, dir) {
     busy = true;
     pose('push', -dir);
-    await sleep(110);
+    await sleep(240);
     scrollToIndex(idx);
     await settled(idx);
     rest();
+    await sleep(160);
     finish();
   }
 
@@ -156,6 +160,7 @@
   setInterval(load, 15 * 60 * 1000);
 })();
 
+
 // education: upgrade timer counting down to graduation
 (function () {
   const box = document.getElementById('edu-upgrade');
@@ -163,6 +168,7 @@
   const fill = document.getElementById('edu-fill');
   const pct = document.getElementById('edu-pct');
   const bar = document.getElementById('edu-bar');
+  const elixir = document.getElementById('hud-elixir');
   if (!box || !timeEl || !fill || !pct) return;
   const start = new Date(box.dataset.start + 'T00:00:00').getTime();
   const end = new Date(box.dataset.end + 'T00:00:00').getTime();
@@ -177,8 +183,15 @@
     timeEl.textContent = left ? d + 'd ' + h + 'h ' + m + 'm ' + s + 's' : 'Complete';
     fill.style.width = p.toFixed(2) + '%';
     pct.textContent = Math.floor(p) + '%';
+    if (elixir) elixir.style.width = p.toFixed(2) + '%';
     if (bar) bar.setAttribute('aria-valuenow', Math.floor(p));
   }
   tick();
   setInterval(tick, 1000);
 })();
+
+// clicking the ROCHA brand scrolls all the way to the very top (the sticky header sits below the page's top edge)
+document.querySelector(".nav-brand")?.addEventListener("click", function (e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+});

@@ -350,3 +350,73 @@
 .edu-sub.gold {
     color: #f3cd66;
 }
+
+/* clash cues: builder tag + collector / mine with storage bars */
+.edu-sub { display: flex; align-items: center; gap: 8px; }
+.edu-builder-tag { margin-left: auto; padding-top: 1px; padding-bottom: 1px; }
+.edu-store {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 12px;
+    font-family: "Lilita One", "Geist", sans-serif;
+    font-size: 13px;
+    color: #fff;
+}
+.edu-store svg { width: 24px; height: 24px; flex: none; }
+.edu-store-name {
+    paint-order: stroke fill;
+    -webkit-text-stroke: 3px #140f2a;
+}
+.edu-store .hud-bar { width: 90px; box-shadow: 0 0 0 1.500px #4b4375; }
+.hud-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 10px 3px 5px;
+    font-family: "Lilita One", "Geist", sans-serif;
+    font-size: 13px;
+    color: #fff;
+    background: rgba(13, 12, 29, 0.7);
+    border: 2px solid #140f2a;
+    box-shadow: 0 0 0 1.500px #4b4375;
+    border-radius: 999px;
+}
+.hud-pill svg {
+    width: 22px;
+    height: 22px;
+    flex: none;
+}
+.hud-pill b, .hud-pill em {
+    font-weight: 400;
+    font-style: normal;
+    paint-order: stroke fill;
+    -webkit-text-stroke: 3px #140f2a;
+}
+.hud-pill em { color: #ffe38a; }
+.hud-bar {
+    width: 64px;
+    height: 10px;
+    border-radius: 999px;
+    overflow: hidden;
+    background: #140f2a;
+}
+.hud-bar span {
+    display: block;
+    height: 100%;
+    width: 0;
+    border-radius: 999px;
+    transition: width 1.2s ease;
+}
+.hud-bar.elixir span { background: linear-gradient(180deg, #e27cf0, #a24be0); }
+.hud-bar.gold span { background: linear-gradient(180deg, #ffe38a, #d9a02a); }
+.edu-builder-tag svg { animation: hud-bob 1s ease-in-out infinite; }
+@keyframes hud-bob {
+    50% { transform: translateY(-2px); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .edu-builder-tag svg { animation: none; }
+}
+@media (max-width: 600px) {
+    .hud-bar { width: 48px; }
+}

@@ -40,21 +40,27 @@ html { scroll-behavior: smooth; }
     -webkit-tap-highlight-color: transparent;
 }
 .nav-wordmark {
-    padding-left: 10px;
     font-family: "Geist", sans-serif;
     font-size: 20px;
     font-weight: 800;
     line-height: 1;
     letter-spacing: 0.12em;
-    background: linear-gradient(100deg, #ffffff 30%, #8b85ff 65%, #22d3ee);
-    background-size: 200% 100%;
-    background-position: 0 0;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    transition: background-position 0.6s ease;
+    color: #fff;
 }
-.nav-brand:hover .nav-wordmark { background-position: 100% 0; }
+/* a brown chess knight (horse) that hops on hover */
+.nav-knight {
+    width: 22px;
+    height: 22px;
+    margin-left: 8px;
+    fill: #8a5633;
+    stroke: #c99468;
+    stroke-width: 0.9;
+    stroke-linejoin: round;
+    transition: transform 0.25s ease;
+}
+.nav-knight .eye { fill: #f3e7d8; stroke: none; }
+.nav-brand:hover .nav-knight { transform: translateY(-3px); }
+@media (prefers-reduced-motion: reduce) { .nav-knight { transition: none; } }
 
 /* "online" status pill */
 .nav-status {

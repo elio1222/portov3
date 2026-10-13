@@ -4,12 +4,13 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>photos</title>
-        <link rel = 'icon' href = "images/photo-camera-svgrepo-com.svg">
+        <link rel = "icon" type = "image/svg+xml" href = "images/favicon-gallery.svg">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
         <link rel = 'stylesheet' href = "styles/photogallery.css">
         <link rel = 'stylesheet' href = "styles/header.css">
+        <link rel = 'stylesheet' href = "styles/space.css">
     </head>
     <body>
         <div>
@@ -20,6 +21,7 @@
         <header class = "header" id = "top">
         <nav class = "nav" aria-label = "Main">
             <a class = "nav-brand" href = "index.html" aria-label = "Back to home">
+                <svg class = "nav-knight" viewBox = "0 0 20 20" aria-hidden = "true"><path d = "M4 18.500h12V16H4zM5 16c0-3.500 2-5 3.200-7.200L5.600 10 4 8.800 5.200 6 8.500 3.200 9 1.200l1.600 1.300C14.400 3.300 16.200 7 16 11.500V16z"/><circle cx = "8.800" cy = "6" r = ".9" class = "eye"/></svg>
                 <span class = "nav-wordmark">ROCHA</span>
                 <span class = "nav-status"><span class = "status-dot"></span><span class = "status-text">online</span></span>
             </a>
@@ -78,5 +80,6 @@
                 </div>
             </div>
         </div>
+        <script src = "js/space.js"></script>
     </body>
 </html>
