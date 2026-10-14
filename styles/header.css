@@ -130,17 +130,22 @@ html { scroll-behavior: smooth; }
 
 @media (max-width: 640px) {
     .header { padding: 0 12px; }
-    .nav { height: 54px; padding: 0 8px; justify-content: center; }
-    /* brand is dropped on phones so the links have room to breathe */
-    .nav-brand { display: none; }
-    .nav-links { width: 100%; justify-content: space-between; gap: 0; }
-    .nav-link { padding: 9px 8px; font-size: 14px; }
-    .nav-cta { padding: 9px 14px; font-size: 14px; margin-left: 0; }
+    .nav { height: 54px; padding: 0 6px 0 12px; justify-content: space-between; gap: 6px; }
+    /* brand stays (horse + ROCHA, taps back to top); the status pill and Activity link make room */
+    .nav-brand { gap: 6px; flex-shrink: 0; }
+    .nav-knight { width: 20px; height: 20px; margin-left: 0; }
+    .nav-wordmark { font-size: 16px; letter-spacing: 0.1em; }
+    .nav-status { display: none; }
+    .nav-link[data-spy="git"] { display: none; }
+    .nav-links { gap: 0; }
+    .nav-link { padding: 9px 7px; font-size: 13.500px; }
+    .nav-cta { padding: 9px 13px; font-size: 13.500px; margin-left: 2px; }
 }
 @media (max-width: 380px) {
-    .nav { padding: 0 6px; }
-    .nav-link { padding: 9px 5px; font-size: 12.5px; }
-    .nav-cta { padding: 9px 11px; font-size: 12.5px; }
+    .nav { padding: 0 5px 0 10px; }
+    .nav-wordmark { font-size: 14px; }
+    .nav-link { padding: 9px 5px; font-size: 12.500px; }
+    .nav-cta { padding: 9px 10px; font-size: 12.500px; }
 }
 @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
