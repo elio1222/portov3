@@ -140,7 +140,7 @@
                                         <g id = "sky-day" transform = "translate(0 18)">
                                         <rect x = "329" y = "59" width = "22" height = "22" fill = "#ffe14d" stroke = "#e0a800" stroke-width = "1.500"/>
                                         <rect x = "334" y = "64" width = "12" height = "12" fill = "#fff3a0"/>
-                                        <g fill = "#fff" fill-opacity = "0.95">
+                                        <g class = "d-cloud" fill = "#fff" fill-opacity = "0.95">
                                             <rect x = "196" y = "68" width = "26" height = "8"/><rect x = "188" y = "74" width = "42" height = "8"/><rect x = "204" y = "62" width = "12" height = "6"/>
                                             <rect x = "276" y = "92" width = "22" height = "8"/><rect x = "270" y = "98" width = "34" height = "7"/>
                                         </g>
@@ -176,11 +176,12 @@
 <rect class = "m-leaf" x = "230" y = "90" width = "20" height = "12"/><rect class = "m-leafd" x = "238" y = "98" width = "4" height = "4"/><rect class = "m-leafd" x = "246" y = "90" width = "4" height = "4"/>
 
                                         <!-- sheep -->
+<g class = "d-sheep">
                                         <rect x = "262" y = "174" width = "4" height = "5" fill = "#d8d8d8"/><rect x = "276" y = "174" width = "4" height = "5" fill = "#d8d8d8"/>
                                         <rect x = "260" y = "165" width = "22" height = "11" fill = "#f2f2f2" stroke = "#9a9a9a" stroke-width = "0.800"/>
                                         <rect x = "254" y = "163" width = "8" height = "8" fill = "#c9b8a8" stroke = "#8a7a6a" stroke-width = "0.800"/>
-                                        <rect x = "255" y = "165" width = "2" height = "2" fill = "#222"/>
-                                        <!-- house -->
+                                        <rect x = "255" y = "165" width = "2" height = "2" fill = "#222"/></g>
+<!-- house -->
                                         <rect class = "m-plank" x = "292" y = "150" width = "50" height = "29"/>
                                         <g class = "m-plankd"><rect x = "292" y = "158" width = "50" height = "1.500"/><rect x = "292" y = "166" width = "50" height = "1.500"/></g>
                                         <rect class = "m-cobble" x = "292" y = "172" width = "50" height = "7"/>
@@ -262,107 +263,112 @@
 
                             <!-- desk -->
                             <g id = "d-desk">
-                                <rect x = "302" y = "278" width = "696" height = "10" rx = "2" fill = "#14132a" stroke = "currentColor" stroke-width = "2.4"/>
-                                <path class = "ln" d = "M334 288 V352 M962 288 V352"/>
+                                <path d = "M334 288 V352 M962 288 V352" style = "stroke:#4a3524" stroke-width = "7" stroke-linecap = "round" fill = "none"/>
+                                <rect x = "302" y = "278" width = "696" height = "10" rx = "3" fill = "#9a6a43" stroke = "currentColor" stroke-width = "2"/>
+                                <path d = "M308 281 H992" style = "stroke:#fff;stroke-opacity:.22" stroke-width = "1.600" stroke-linecap = "round"/>
                             </g>
                             <!-- trash can overflowing with empty water bottles -->
                             <g transform = "translate(-14 0)">
                             <g class = "hot" id = "d-trash" tabindex = "0" role = "button">
                                 <title>Trash can</title>
+                                <ellipse cx = "249" cy = "351" rx = "40" ry = "3.500" fill = "#000" fill-opacity = "0.35"/>
                                 <path d = "M217 298 H281 L276 349 H222 Z" fill = "#07061a" fill-opacity = "0.85"/>
                                 <g clip-path = "url(#trash-clip)">
                                     <g transform = "translate(232 326) rotate(100)">
                                         <rect x = "-5.500" y = "-30" width = "11" height = "6" rx = "1.500" fill = "#2f7dea" stroke = "currentColor" stroke-width = "1.200"/>
-                                        <path d = "M-4 -24 H4 L7 -18 V0 Q7 4 3 4 H-3 Q-7 4 -7 0 V-18 Z" fill = "#8fd3ff" fill-opacity = "0.28" stroke = "currentColor" stroke-width = "1.400" stroke-linejoin = "round"/>
+                                        <path d = "M-4 -24 H4 L7 -18 V0 Q7 4 3 4 H-3 Q-7 4 -7 0 V-18 Z" fill = "#8fd3ff" fill-opacity = "0.6" stroke = "currentColor" stroke-width = "1.400" stroke-linejoin = "round"/>
                                         <path d = "M-7 -12 H7 M-7 -6 H7" class = "ln" stroke-width = "0.900"/>
                                     </g>
                                     <g transform = "translate(246 320) rotate(72)">
                                         <rect x = "-5.500" y = "-30" width = "11" height = "6" rx = "1.500" fill = "#2f7dea" stroke = "currentColor" stroke-width = "1.200"/>
-                                        <path d = "M-4 -24 H4 L7 -18 V0 Q7 4 3 4 H-3 Q-7 4 -7 0 V-18 Z" fill = "#8fd3ff" fill-opacity = "0.28" stroke = "currentColor" stroke-width = "1.400" stroke-linejoin = "round"/>
+                                        <path d = "M-4 -24 H4 L7 -18 V0 Q7 4 3 4 H-3 Q-7 4 -7 0 V-18 Z" fill = "#8fd3ff" fill-opacity = "0.6" stroke = "currentColor" stroke-width = "1.400" stroke-linejoin = "round"/>
                                         <path d = "M-7 -12 H7 M-7 -6 H7" class = "ln" stroke-width = "0.900"/>
                                     </g>
                                     <g transform = "translate(262 328) rotate(115)">
                                         <rect x = "-5.500" y = "-30" width = "11" height = "6" rx = "1.500" fill = "#2f7dea" stroke = "currentColor" stroke-width = "1.200"/>
-                                        <path d = "M-4 -24 H4 L7 -18 V0 Q7 4 3 4 H-3 Q-7 4 -7 0 V-18 Z" fill = "#8fd3ff" fill-opacity = "0.28" stroke = "currentColor" stroke-width = "1.400" stroke-linejoin = "round"/>
+                                        <path d = "M-4 -24 H4 L7 -18 V0 Q7 4 3 4 H-3 Q-7 4 -7 0 V-18 Z" fill = "#8fd3ff" fill-opacity = "0.6" stroke = "currentColor" stroke-width = "1.400" stroke-linejoin = "round"/>
                                         <path d = "M-7 -12 H7 M-7 -6 H7" class = "ln" stroke-width = "0.900"/>
                                     </g>
                                     <g transform = "translate(240 338) rotate(80)">
                                         <rect x = "-5.500" y = "-30" width = "11" height = "6" rx = "1.500" fill = "#2f7dea" stroke = "currentColor" stroke-width = "1.200"/>
-                                        <path d = "M-4 -24 H4 L7 -18 V0 Q7 4 3 4 H-3 Q-7 4 -7 0 V-18 Z" fill = "#8fd3ff" fill-opacity = "0.28" stroke = "currentColor" stroke-width = "1.400" stroke-linejoin = "round"/>
+                                        <path d = "M-4 -24 H4 L7 -18 V0 Q7 4 3 4 H-3 Q-7 4 -7 0 V-18 Z" fill = "#8fd3ff" fill-opacity = "0.6" stroke = "currentColor" stroke-width = "1.400" stroke-linejoin = "round"/>
                                         <path d = "M-7 -12 H7 M-7 -6 H7" class = "ln" stroke-width = "0.900"/>
                                     </g>
                                     <g transform = "translate(256 340) rotate(98)">
                                         <rect x = "-5.500" y = "-30" width = "11" height = "6" rx = "1.500" fill = "#2f7dea" stroke = "currentColor" stroke-width = "1.200"/>
-                                        <path d = "M-4 -24 H4 L7 -18 V0 Q7 4 3 4 H-3 Q-7 4 -7 0 V-18 Z" fill = "#8fd3ff" fill-opacity = "0.28" stroke = "currentColor" stroke-width = "1.400" stroke-linejoin = "round"/>
+                                        <path d = "M-4 -24 H4 L7 -18 V0 Q7 4 3 4 H-3 Q-7 4 -7 0 V-18 Z" fill = "#8fd3ff" fill-opacity = "0.6" stroke = "currentColor" stroke-width = "1.400" stroke-linejoin = "round"/>
                                         <path d = "M-7 -12 H7 M-7 -6 H7" class = "ln" stroke-width = "0.900"/>
                                     </g>
                                     <g transform = "translate(228 342) rotate(70)">
                                         <rect x = "-5.500" y = "-30" width = "11" height = "6" rx = "1.500" fill = "#2f7dea" stroke = "currentColor" stroke-width = "1.200"/>
-                                        <path d = "M-4 -24 H4 L7 -18 V0 Q7 4 3 4 H-3 Q-7 4 -7 0 V-18 Z" fill = "#8fd3ff" fill-opacity = "0.28" stroke = "currentColor" stroke-width = "1.400" stroke-linejoin = "round"/>
+                                        <path d = "M-4 -24 H4 L7 -18 V0 Q7 4 3 4 H-3 Q-7 4 -7 0 V-18 Z" fill = "#8fd3ff" fill-opacity = "0.6" stroke = "currentColor" stroke-width = "1.400" stroke-linejoin = "round"/>
                                         <path d = "M-7 -12 H7 M-7 -6 H7" class = "ln" stroke-width = "0.900"/>
                                     </g>
                                     <g transform = "translate(270 340) rotate(84)">
                                         <rect x = "-5.500" y = "-30" width = "11" height = "6" rx = "1.500" fill = "#2f7dea" stroke = "currentColor" stroke-width = "1.200"/>
-                                        <path d = "M-4 -24 H4 L7 -18 V0 Q7 4 3 4 H-3 Q-7 4 -7 0 V-18 Z" fill = "#8fd3ff" fill-opacity = "0.28" stroke = "currentColor" stroke-width = "1.400" stroke-linejoin = "round"/>
+                                        <path d = "M-4 -24 H4 L7 -18 V0 Q7 4 3 4 H-3 Q-7 4 -7 0 V-18 Z" fill = "#8fd3ff" fill-opacity = "0.6" stroke = "currentColor" stroke-width = "1.400" stroke-linejoin = "round"/>
                                         <path d = "M-7 -12 H7 M-7 -6 H7" class = "ln" stroke-width = "0.900"/>
                                     </g>
                                     <g transform = "translate(250 310) rotate(130)">
                                         <rect x = "-5.500" y = "-30" width = "11" height = "6" rx = "1.500" fill = "#2f7dea" stroke = "currentColor" stroke-width = "1.200"/>
-                                        <path d = "M-4 -24 H4 L7 -18 V0 Q7 4 3 4 H-3 Q-7 4 -7 0 V-18 Z" fill = "#8fd3ff" fill-opacity = "0.28" stroke = "currentColor" stroke-width = "1.400" stroke-linejoin = "round"/>
+                                        <path d = "M-4 -24 H4 L7 -18 V0 Q7 4 3 4 H-3 Q-7 4 -7 0 V-18 Z" fill = "#8fd3ff" fill-opacity = "0.6" stroke = "currentColor" stroke-width = "1.400" stroke-linejoin = "round"/>
                                         <path d = "M-7 -12 H7 M-7 -6 H7" class = "ln" stroke-width = "0.900"/>
                                     </g>
                                     <g transform = "translate(236 312) rotate(50)">
                                         <rect x = "-5.500" y = "-30" width = "11" height = "6" rx = "1.500" fill = "#2f7dea" stroke = "currentColor" stroke-width = "1.200"/>
-                                        <path d = "M-4 -24 H4 L7 -18 V0 Q7 4 3 4 H-3 Q-7 4 -7 0 V-18 Z" fill = "#8fd3ff" fill-opacity = "0.28" stroke = "currentColor" stroke-width = "1.400" stroke-linejoin = "round"/>
+                                        <path d = "M-4 -24 H4 L7 -18 V0 Q7 4 3 4 H-3 Q-7 4 -7 0 V-18 Z" fill = "#8fd3ff" fill-opacity = "0.6" stroke = "currentColor" stroke-width = "1.400" stroke-linejoin = "round"/>
                                         <path d = "M-7 -12 H7 M-7 -6 H7" class = "ln" stroke-width = "0.900"/>
                                     </g>
                                     </g>
                                 
                                 <g transform = "translate(236 282) rotate(-28)">
                                     <rect x = "-5.500" y = "-30" width = "11" height = "6" rx = "1.500" fill = "#2f7dea" stroke = "currentColor" stroke-width = "1.200"/>
-                                    <path d = "M-4 -24 H4 L7 -18 V0 Q7 4 3 4 H-3 Q-7 4 -7 0 V-18 Z" fill = "#8fd3ff" fill-opacity = "0.22" stroke = "currentColor" stroke-width = "1.500" stroke-linejoin = "round"/>
+                                    <path d = "M-4 -24 H4 L7 -18 V0 Q7 4 3 4 H-3 Q-7 4 -7 0 V-18 Z" fill = "#8fd3ff" fill-opacity = "0.5" stroke = "currentColor" stroke-width = "1.500" stroke-linejoin = "round"/>
                                     <path d = "M-7 -12 H7 M-7 -6 H7" class = "ln" stroke-width = "0.900"/>
                                 </g>
                                 <g transform = "translate(250 276) rotate(-8)">
                                     <rect x = "-5.500" y = "-30" width = "11" height = "6" rx = "1.500" fill = "#2f7dea" stroke = "currentColor" stroke-width = "1.200"/>
-                                    <path d = "M-4 -24 H4 L7 -18 V0 Q7 4 3 4 H-3 Q-7 4 -7 0 V-18 Z" fill = "#8fd3ff" fill-opacity = "0.22" stroke = "currentColor" stroke-width = "1.500" stroke-linejoin = "round"/>
+                                    <path d = "M-4 -24 H4 L7 -18 V0 Q7 4 3 4 H-3 Q-7 4 -7 0 V-18 Z" fill = "#8fd3ff" fill-opacity = "0.5" stroke = "currentColor" stroke-width = "1.500" stroke-linejoin = "round"/>
                                     <path d = "M-7 -12 H7 M-7 -6 H7" class = "ln" stroke-width = "0.900"/>
                                 </g>
                                 <g transform = "translate(264 280) rotate(14)">
                                     <rect x = "-5.500" y = "-30" width = "11" height = "6" rx = "1.500" fill = "#2f7dea" stroke = "currentColor" stroke-width = "1.200"/>
-                                    <path d = "M-4 -24 H4 L7 -18 V0 Q7 4 3 4 H-3 Q-7 4 -7 0 V-18 Z" fill = "#8fd3ff" fill-opacity = "0.22" stroke = "currentColor" stroke-width = "1.500" stroke-linejoin = "round"/>
+                                    <path d = "M-4 -24 H4 L7 -18 V0 Q7 4 3 4 H-3 Q-7 4 -7 0 V-18 Z" fill = "#8fd3ff" fill-opacity = "0.5" stroke = "currentColor" stroke-width = "1.500" stroke-linejoin = "round"/>
                                     <path d = "M-7 -12 H7 M-7 -6 H7" class = "ln" stroke-width = "0.900"/>
                                 </g>
                                 <g transform = "translate(244 288) rotate(-48)">
                                     <rect x = "-5.500" y = "-30" width = "11" height = "6" rx = "1.500" fill = "#2f7dea" stroke = "currentColor" stroke-width = "1.200"/>
-                                    <path d = "M-4 -24 H4 L7 -18 V0 Q7 4 3 4 H-3 Q-7 4 -7 0 V-18 Z" fill = "#8fd3ff" fill-opacity = "0.22" stroke = "currentColor" stroke-width = "1.500" stroke-linejoin = "round"/>
+                                    <path d = "M-4 -24 H4 L7 -18 V0 Q7 4 3 4 H-3 Q-7 4 -7 0 V-18 Z" fill = "#8fd3ff" fill-opacity = "0.5" stroke = "currentColor" stroke-width = "1.500" stroke-linejoin = "round"/>
                                     <path d = "M-7 -12 H7 M-7 -6 H7" class = "ln" stroke-width = "0.900"/>
                                 </g>
                                 <g transform = "translate(258 288) rotate(34)">
                                     <rect x = "-5.500" y = "-30" width = "11" height = "6" rx = "1.500" fill = "#2f7dea" stroke = "currentColor" stroke-width = "1.200"/>
-                                    <path d = "M-4 -24 H4 L7 -18 V0 Q7 4 3 4 H-3 Q-7 4 -7 0 V-18 Z" fill = "#8fd3ff" fill-opacity = "0.22" stroke = "currentColor" stroke-width = "1.500" stroke-linejoin = "round"/>
+                                    <path d = "M-4 -24 H4 L7 -18 V0 Q7 4 3 4 H-3 Q-7 4 -7 0 V-18 Z" fill = "#8fd3ff" fill-opacity = "0.5" stroke = "currentColor" stroke-width = "1.500" stroke-linejoin = "round"/>
                                     <path d = "M-7 -12 H7 M-7 -6 H7" class = "ln" stroke-width = "0.900"/>
                                 </g>
                                 <g transform = "translate(228 296) rotate(-70)">
                                     <rect x = "-5.500" y = "-30" width = "11" height = "6" rx = "1.500" fill = "#2f7dea" stroke = "currentColor" stroke-width = "1.200"/>
-                                    <path d = "M-4 -24 H4 L7 -18 V0 Q7 4 3 4 H-3 Q-7 4 -7 0 V-18 Z" fill = "#8fd3ff" fill-opacity = "0.22" stroke = "currentColor" stroke-width = "1.500" stroke-linejoin = "round"/>
+                                    <path d = "M-4 -24 H4 L7 -18 V0 Q7 4 3 4 H-3 Q-7 4 -7 0 V-18 Z" fill = "#8fd3ff" fill-opacity = "0.5" stroke = "currentColor" stroke-width = "1.500" stroke-linejoin = "round"/>
                                     <path d = "M-7 -12 H7 M-7 -6 H7" class = "ln" stroke-width = "0.900"/>
                                 </g>
                                 <g transform = "translate(272 292) rotate(58)">
                                     <rect x = "-5.500" y = "-30" width = "11" height = "6" rx = "1.500" fill = "#2f7dea" stroke = "currentColor" stroke-width = "1.200"/>
-                                    <path d = "M-4 -24 H4 L7 -18 V0 Q7 4 3 4 H-3 Q-7 4 -7 0 V-18 Z" fill = "#8fd3ff" fill-opacity = "0.22" stroke = "currentColor" stroke-width = "1.500" stroke-linejoin = "round"/>
+                                    <path d = "M-4 -24 H4 L7 -18 V0 Q7 4 3 4 H-3 Q-7 4 -7 0 V-18 Z" fill = "#8fd3ff" fill-opacity = "0.5" stroke = "currentColor" stroke-width = "1.500" stroke-linejoin = "round"/>
                                     <path d = "M-7 -12 H7 M-7 -6 H7" class = "ln" stroke-width = "0.900"/>
                                 </g>
                                 <!-- fallen bottles -->
                                 <g transform = "translate(298 346) rotate(84)">
                                     <rect x = "-5.500" y = "-30" width = "11" height = "6" rx = "1.500" fill = "#2f7dea" stroke = "currentColor" stroke-width = "1.200"/>
-                                    <path d = "M-4 -24 H4 L7 -18 V0 Q7 4 3 4 H-3 Q-7 4 -7 0 V-18 Z" fill = "#8fd3ff" fill-opacity = "0.22" stroke = "currentColor" stroke-width = "1.500" stroke-linejoin = "round"/>
+                                    <path d = "M-4 -24 H4 L7 -18 V0 Q7 4 3 4 H-3 Q-7 4 -7 0 V-18 Z" fill = "#8fd3ff" fill-opacity = "0.5" stroke = "currentColor" stroke-width = "1.500" stroke-linejoin = "round"/>
                                 </g>
-                                <path d = "M214 296 H284 L278 350 H220 Z" fill = "url(#mesh)" stroke = "currentColor" stroke-width = "2.400" stroke-linejoin = "round"/>
-                                <path class = "ln" d = "M221 297 L225 349 M247 297 V349 M273 297 L270 349" stroke-width = "1.800"/>
-                                <path class = "ln" d = "M220 349 H278" stroke-width = "3.200"/>
-                                <rect x = "210" y = "291" width = "78" height = "7" rx = "3" fill = "none" stroke = "currentColor" stroke-width = "2.400"/>
-                            </g>
+                                <path d = "M214 296 H284 L278 350 H220 Z" fill = "url(#mesh)" style = "stroke:#6c6aa8" stroke-width = "2.400" stroke-linejoin = "round"/>
+                                <path class = "ln" style = "stroke:#6c6aa8" d = "M221 297 L225 349 M247 297 V349 M273 297 L270 349" stroke-width = "1.800"/>
+                                <path d = "M223 302 L226 344" fill = "none" stroke = "#fff" stroke-opacity = "0.22" stroke-width = "3" stroke-linecap = "round"/>
+                                <rect x = "216" y = "346" width = "62" height = "6" rx = "2.500" fill = "#5d5b96" stroke = "currentColor" stroke-width = "2.200"/>
+                                <path d = "M212 303 q-7 0 -7 6 q0 5 7 5 M286 303 q7 0 7 6 q0 5 -7 5" fill = "none" style = "stroke:#6c6aa8" stroke-width = "2.200" stroke-linecap = "round"/>
+                                <rect x = "210" y = "290" width = "78" height = "8" rx = "4" fill = "#6c6aa8" stroke = "currentColor" stroke-width = "2.400"/>
+                                <path d = "M216 293.500 H250" fill = "none" stroke = "#fff" stroke-opacity = "0.35" stroke-width = "1.600" stroke-linecap = "round"/>
+                                </g>
                             </g>
 
                             <!-- desk clock -->
@@ -381,25 +387,38 @@
                             <g class = "hot" id = "d-snacks" tabindex = "0" role = "button">
                                 <title>Snacks</title>
                                 <!-- chip bag -->
-                                <path d = "M400 278 L404 232 L398 226 L416 222 L434 226 L428 232 L432 278 Z" fill = "#e8453c" stroke = "currentColor" stroke-width = "2" stroke-linejoin = "round"/>
-                                <path class = "ln" d = "M399 228 l3 -3 l3 3 l3 -3 l3 3 l3 -3 l3 3 l3 -3 l3 3 l2 -2" stroke-width = "1.4"/>
-                                <ellipse cx = "416" cy = "254" rx = "10" ry = "11" fill = "#ffd166" stroke = "currentColor" stroke-width = "1.6"/>
-                                <path d = "M410 254 q6 -8 12 0" class = "ln dk" stroke = "#a4410a" stroke-width = "1.8"/>
-                                <!-- cookies -->
-                                <ellipse cx = "466" cy = "273" rx = "20" ry = "5" fill = "#e9d9c3" stroke = "currentColor" stroke-width = "1.8"/>
-                                <circle cx = "460" cy = "266" r = "9" fill = "#c98a4b" stroke = "currentColor" stroke-width = "1.8"/>
-                                <circle cx = "474" cy = "267" r = "8" fill = "#c98a4b" stroke = "currentColor" stroke-width = "1.8"/>
-                                <circle cx = "457" cy = "264" r = "1.4" fill = "#3a2417"/><circle cx = "463" cy = "269" r = "1.4" fill = "#3a2417"/>
-                                <circle cx = "472" cy = "264" r = "1.4" fill = "#3a2417"/><circle cx = "477" cy = "270" r = "1.4" fill = "#3a2417"/>
+                                <path d = "M399 278 Q396 250 401 232 L399 224 L404 226 L409 222 L414 226 L419 222 L424 226 L429 222 L433 226 L435 224 L431 232 Q436 252 433 278 Z" fill = "#e8453c" stroke = "#14101f" stroke-width = "2" stroke-linejoin = "round"/>
+                                <path d = "M402 232 Q404 252 402 276" fill = "none" stroke = "#fff" stroke-opacity = "0.28" stroke-width = "2" stroke-linecap = "round"/>
+                                <path d = "M400 270 H432" fill = "none" stroke = "#000" stroke-opacity = "0.18" stroke-width = "5"/>
+                                <ellipse cx = "416" cy = "252" rx = "11" ry = "12" fill = "#fff3cf" stroke = "#14101f" stroke-width = "1.600"/>
+                                <g transform = "translate(416 252) scale(1.100)"><path d = "M0 -8 Q3 -10 6 -7 Q10 -6 9 -2 Q11 2 8 5 Q6 9 2 8 Q-2 10 -5 7 Q-9 6 -8 2 Q-10 -2 -7 -5 Q-6 -9 0 -8 Z" fill = "#f5b83d" stroke = "#14101f" stroke-width = "1.400" stroke-linejoin = "round"/><path d = "M-5 -3 Q-1 -6 3 -3 M-6 2 Q-1 -1 5 2 M-3 5.500 Q1 3 5 5" fill = "none" stroke = "#d98e1c" stroke-width = "1" stroke-linecap = "round"/><path d = "M-5 -6 Q-2 -8 1 -7" fill = "none" stroke = "#fff" stroke-opacity = "0.5" stroke-width = "1" stroke-linecap = "round"/></g>
+                                <!-- spilled chips -->
+                                <g transform = "translate(444 273) rotate(-10) scale(0.850 0.600)"><path d = "M0 -8 Q3 -10 6 -7 Q10 -6 9 -2 Q11 2 8 5 Q6 9 2 8 Q-2 10 -5 7 Q-9 6 -8 2 Q-10 -2 -7 -5 Q-6 -9 0 -8 Z" fill = "#f5b83d" stroke = "#14101f" stroke-width = "1.400" stroke-linejoin = "round"/><path d = "M-5 -3 Q-1 -6 3 -3 M-6 2 Q-1 -1 5 2 M-3 5.500 Q1 3 5 5" fill = "none" stroke = "#d98e1c" stroke-width = "1" stroke-linecap = "round"/><path d = "M-5 -6 Q-2 -8 1 -7" fill = "none" stroke = "#fff" stroke-opacity = "0.5" stroke-width = "1" stroke-linecap = "round"/></g>
+                                <g transform = "translate(453 271) rotate(15) scale(0.850 0.700)"><path d = "M0 -8 Q3 -10 6 -7 Q10 -6 9 -2 Q11 2 8 5 Q6 9 2 8 Q-2 10 -5 7 Q-9 6 -8 2 Q-10 -2 -7 -5 Q-6 -9 0 -8 Z" fill = "#f5b83d" stroke = "#14101f" stroke-width = "1.400" stroke-linejoin = "round"/><path d = "M-5 -3 Q-1 -6 3 -3 M-6 2 Q-1 -1 5 2 M-3 5.500 Q1 3 5 5" fill = "none" stroke = "#d98e1c" stroke-width = "1" stroke-linecap = "round"/><path d = "M-5 -6 Q-2 -8 1 -7" fill = "none" stroke = "#fff" stroke-opacity = "0.5" stroke-width = "1" stroke-linecap = "round"/></g>
+                                <!-- cookies on a plate -->
+                                <ellipse cx = "472" cy = "276" rx = "22" ry = "4" fill = "#e9e2f2" stroke = "#14101f" stroke-width = "1.600"/>
+                                <g stroke = "#14101f" stroke-width = "1.600">
+                                    <circle cx = "463" cy = "267" r = "9.500" fill = "#d9a05b"/>
+                                    <path d = "M473 262 A9.500 9.500 0 1 1 468 258 Q473 258 471 261 Q475 261 473 265 Z" fill = "#d9a05b"/>
+                                </g>
+                                <path d = "M455 271 Q463 277 471 271" fill = "none" stroke = "#a8692d" stroke-width = "1.800" stroke-linecap = "round" opacity = "0.7"/>
+                                <g fill = "#4a2a17"><rect x = "458" y = "262" width = "3.400" height = "3" rx = "1"/><rect x = "464" y = "268" width = "3.400" height = "3" rx = "1"/><rect x = "460" y = "270" width = "3" height = "2.600" rx = "1"/><rect x = "468" y = "263" width = "3" height = "2.600" rx = "1"/></g>
+                                <circle cx = "479" cy = "272.500" r = "9" fill = "#d9a05b" stroke = "#14101f" stroke-width = "1.600"/>
+                                <g fill = "#4a2a17"><rect x = "475" y = "269" width = "3.400" height = "3" rx = "1"/><rect x = "480" y = "274" width = "3.400" height = "3" rx = "1"/><rect x = "483" y = "269" width = "3" height = "2.600" rx = "1"/></g>
+                                <circle cx = "487" cy = "277" r = "1" fill = "#a8692d"/><circle cx = "491" cy = "278" r = "0.8" fill = "#a8692d"/>
                                 <!-- candy bar -->
-                                <rect x = "486" y = "266" width = "28" height = "11" rx = "2" fill = "#7a4b2c" stroke = "currentColor" stroke-width = "1.8" transform = "rotate(-6 500 271)"/>
-                                <path d = "M492 267 v10 M500 266 v10 M508 265 v10" class = "ln" stroke-width = "1" transform = "rotate(-6 500 271)"/>
+                                <g transform = "rotate(-6 500 271)">
+                                    <rect x = "490" y = "266" width = "22" height = "10" rx = "2.500" fill = "#7a4b2c" stroke = "#14101f" stroke-width = "1.600"/>
+                                    <path d = "M502 267 v8 M507 267 v8" fill = "none" stroke = "#000" stroke-opacity = "0.3" stroke-width = "1"/>
+                                    <path d = "M490 266 H500 V276 H490 Z" fill = "#2f6fcf" stroke = "#14101f" stroke-width = "1.600" stroke-linejoin = "round"/>
+                                    <path d = "M500 266 l2 2.500 l-2 2.500 l2 2.500 l-2 2.500" fill = "none" stroke = "#14101f" stroke-width = "1.200" stroke-linejoin = "round"/>
+                                </g>
                             </g>
 
                             <!-- person -->
                             <g class = "hot" id = "d-me" data-say = "Hey, I am Elio. Thanks for stopping by!" tabindex = "0" role = "button">
                                 <title>Elio</title>
-                                <g transform = "translate(0 -10)">
+                                <g transform = "translate(0 -10)"><g class = "d-breathe">
                                     <!-- hoodie -->
                                     <path d = "M530 218 Q528 172 566 166 H604 Q642 172 640 218 Z" fill = "#7b4a2c" stroke = "#120d0a" stroke-width = "2.2" stroke-linejoin = "round"/>
                                     <path d = "M531 205 Q516 230 512 272 L528 278 Q532 240 544 214 Z" fill = "#7b4a2c" stroke = "#120d0a" stroke-width = "2" stroke-linejoin = "round"/>
@@ -427,7 +446,7 @@
                                     <rect x = "560" y = "126" width = "21" height = "15" rx = "4" fill = "#fff" fill-opacity = "0.18" stroke = "#1b1714" stroke-width = "2.4"/>
                                     <rect x = "589" y = "126" width = "21" height = "15" rx = "4" fill = "#fff" fill-opacity = "0.18" stroke = "#1b1714" stroke-width = "2.4"/>
                                     <path class = "ln" style = "stroke:#1b1714" d = "M581 131 H589 M560 130 L553 128 M610 130 L617 128" stroke-width = "2"/>
-                                    <circle cx = "571" cy = "134" r = "2" fill = "#1b1714"/><circle cx = "600" cy = "134" r = "2" fill = "#1b1714"/>
+                                    <g class = "d-eyes"><circle cx = "571" cy = "134" r = "2" fill = "#1b1714"/><circle cx = "600" cy = "134" r = "2" fill = "#1b1714"/></g>
                                     <!-- mustache, smile, goatee -->
                                     <path d = "M574 152 Q585 147 596 152" fill = "none" stroke = "#1b1714" stroke-width = "3" stroke-linecap = "round"/>
                                     <path class = "ln" style = "stroke:#5a2f22" d = "M578 156 Q585 160 592 156" stroke-width = "2"/>
@@ -435,7 +454,7 @@
                                     <!-- earbuds -->
                                     <ellipse cx = "552" cy = "136" rx = "3.400" ry = "4.400" fill = "#fff" stroke = "currentColor" stroke-width = "1.600"/>
                                     <ellipse cx = "618" cy = "136" rx = "3.400" ry = "4.400" fill = "#fff" stroke = "currentColor" stroke-width = "1.600"/>
-                                </g>
+                                </g></g>
                             </g>
 
                             <!-- laptop (back of lid faces the viewer) -->
@@ -468,7 +487,7 @@
                                         <rect x = "536" y = "236" width = "3" height = "5"/><rect x = "541" y = "236" width = "3" height = "5"/>
                                         <rect x = "547" y = "236" width = "3" height = "5"/><rect x = "552" y = "236" width = "3" height = "5"/>
                                     </g>
-                                    <rect x = "538" y = "227" width = "3" height = "5" fill = "#1d1b2e"/><rect x = "549" y = "227" width = "3" height = "5" fill = "#1d1b2e"/>
+                                    <g class = "d-cl-eyes"><rect x = "538" y = "227" width = "3" height = "5" fill = "#1d1b2e"/><rect x = "549" y = "227" width = "3" height = "5" fill = "#1d1b2e"/></g>
                                 </g>
                             </g>
                             <!-- hands -->
@@ -478,53 +497,70 @@
                             <!-- water bottle -->
                             <g class = "hot" id = "d-bottle" tabindex = "0" role = "button">
                                 <title>Water bottle: take a sip</title>
-                                <rect x = "703" y = "208" width = "12" height = "9" rx = "2" fill = "#2f7dea" stroke = "currentColor" stroke-width = "1.800"/>
-                                <rect x = "701" y = "216" width = "16" height = "10" rx = "2" fill = "#14132a" stroke = "currentColor" stroke-width = "1.800"/>
+                                <defs><linearGradient id = "water-g" x1 = "0" y1 = "0" x2 = "0" y2 = "1"><stop offset = "0" stop-color = "#9be6ff"/><stop offset = "1" stop-color = "#3aa8f0"/></linearGradient></defs>
+                                <ellipse cx = "709" cy = "277" rx = "17" ry = "3" fill = "#000" fill-opacity = "0.3"/>
+                                <rect x = "706" y = "202" width = "6" height = "6" rx = "2" fill = "#e8e6f5" stroke = "currentColor" stroke-width = "1.600"/>
+                                <rect x = "701" y = "207" width = "16" height = "10" rx = "3" fill = "#2f7dea" stroke = "currentColor" stroke-width = "2"/>
+                                <path d = "M705 210 V215 M709 210 V215 M713 210 V215" class = "ln" stroke = "#fff" stroke-opacity = "0.35" stroke-width = "1"/>
+                                <rect x = "703" y = "216" width = "12" height = "9" rx = "2" fill = "#14132a" stroke = "currentColor" stroke-width = "1.800"/>
                                 <rect x = "697" y = "224" width = "24" height = "52" rx = "9" fill = "#14132a"/>
-                                <g clip-path = "url(#bottle-clip)"><rect id = "water" x = "697" y = "232" width = "24" height = "44" fill = "#5cc8ff" opacity = "0.85"/></g>
+                                <g clip-path = "url(#bottle-clip)"><rect id = "water" x = "697" y = "232" width = "24" height = "44" fill = "url(#water-g)" opacity = "0.9"/></g>
                                 <rect x = "697" y = "224" width = "24" height = "52" rx = "9" fill = "none" stroke = "currentColor" stroke-width = "2.200"/>
-                                <path class = "ln" d = "M702 240 v10" stroke = "#fff" stroke-width = "2" opacity = "0.7"/>
-                                <rect x = "697" y = "252" width = "24" height = "9" fill = "#2f7dea" opacity = "0.9"/>
-                                <circle cx = "718" cy = "236" r = "1.200" fill = "#fff"/><circle cx = "716" cy = "242" r = "1" fill = "#fff"/>
+                                <rect x = "697" y = "249" width = "24" height = "13" fill = "#2f7dea"/>
+                                <path d = "M709 251 Q712.500 256 709 259.500 Q705.500 256 709 251 Z" fill = "#fff" fill-opacity = "0.9"/>
+                                <path d = "M701.500 232 Q700.500 245 701.500 268" class = "ln" stroke = "#fff" stroke-width = "2.400" opacity = "0.55"/>
+                                <circle cx = "716" cy = "234" r = "1.200" fill = "#fff" opacity = "0.7"/>
                             </g>
 
                             <!-- lamp -->
                             <g class = "hot" id = "d-lamp" tabindex = "0" role = "button">
                                 <title>Desk lamp: click to toggle</title>
                                 <path id = "lamp-beam" d = "M746 201 L712 277 L796 277 L760 201 Z" fill = "#ffe9a3" opacity = "0" pointer-events = "none"/>
-                                <ellipse cx = "768" cy = "275" rx = "24" ry = "5" fill = "#14132a" stroke = "currentColor" stroke-width = "2.200"/>
-                                <path class = "ln" d = "M768 271 V208 Q768 182 752 174"/>
-                                <path d = "M742 164 H764 L778 196 H728 Z" fill = "#14132a" stroke = "currentColor" stroke-width = "2.200" stroke-linejoin = "round" transform = "rotate(-10 752 180)"/>
-                                <circle id = "lamp-bulb" cx = "751" cy = "200" r = "5" fill = "#aeb1c4" stroke = "currentColor" stroke-width = "1.600"/>
+                                <ellipse cx = "768" cy = "275" rx = "25" ry = "5.500" fill = "#5d5b96" stroke = "currentColor" stroke-width = "2.200"/>
+                                <ellipse cx = "768" cy = "272.500" rx = "14" ry = "3" fill = "#7a78b8"/>
+                                <path d = "M768 270 L782 226" class = "ln" style = "stroke:#8d8bb8" stroke-width = "3.400"/>
+                                <path d = "M782 226 L760 184" class = "ln" style = "stroke:#8d8bb8" stroke-width = "3.400"/>
+                                <circle cx = "782" cy = "226" r = "4.200" fill = "#4a4880" stroke = "currentColor" stroke-width = "1.800"/>
+                                <circle cx = "768" cy = "270" r = "3.200" fill = "#4a4880" stroke = "currentColor" stroke-width = "1.600"/>
+                                <g transform = "rotate(-10 752 180)">
+                                    <path d = "M742 164 H764 L778 196 H728 Z" fill = "#3d3b6b" stroke = "currentColor" stroke-width = "2.200" stroke-linejoin = "round"/>
+                                    <path d = "M746 168 L737 192" class = "ln" stroke = "#fff" stroke-opacity = "0.3" stroke-width = "2.400"/>
+                                    <ellipse class = "lamp-rim" cx = "753" cy = "196" rx = "25" ry = "4" fill = "#14132a" stroke = "currentColor" stroke-width = "1.800"/>
+                                    <circle cx = "753" cy = "163" r = "3.200" fill = "#4a4880" stroke = "currentColor" stroke-width = "1.600"/>
+                                </g>
+                                <circle id = "lamp-bulb" cx = "751" cy = "201" r = "5" fill = "#aeb1c4" stroke = "currentColor" stroke-width = "1.600"/>
                             </g>
 
                             <!-- books -->
                             <g class = "hot" id = "d-books" data-say = "On the stack: The Odyssey, System Design Interview, Graph Theory, The Psychology of Money." tabindex = "0" role = "button">
                                 <title>Reading list</title>
                                 <ellipse cx = "913" cy = "278" rx = "68" ry = "3.500" fill = "#000" fill-opacity = "0.35"/>
-                                <rect x = "848" y = "261" width = "130" height = "17" rx = "2" fill = "#e4b242" stroke = "currentColor" stroke-width = "2"/>
-                                    <path d = "M850 264 H976" class = "ln" stroke = "#fff" stroke-opacity = "0.28" stroke-width = "1.400"/>
-                                    <path d = "M855 262.5 V276.5 M971 262.5 V276.5" class = "ln" stroke = "#000" stroke-opacity = "0.35" stroke-width = "1.400"/>
-                                    <path d = "M858 274 H968" class = "ln" stroke = "#000" stroke-opacity = "0.18" stroke-width = "1"/>
-                                    <text x = "913.0" y = "272.6" text-anchor = "middle" class = "spine" style = "font-size:9.5px" fill = "#2a2110">The Psychology of Money</text>
-                                <rect x = "854" y = "245" width = "118" height = "16" rx = "2" fill = "#3aa6a0" stroke = "currentColor" stroke-width = "2"/>
-                                    <path d = "M856 248 H970" class = "ln" stroke = "#fff" stroke-opacity = "0.28" stroke-width = "1.400"/>
-                                    <path d = "M861 246.5 V259.5 M965 246.5 V259.5" class = "ln" stroke = "#000" stroke-opacity = "0.35" stroke-width = "1.400"/>
-                                    <path d = "M864 257 H962" class = "ln" stroke = "#000" stroke-opacity = "0.18" stroke-width = "1"/>
-                                    <text x = "913.0" y = "255.9" text-anchor = "middle" class = "spine" style = "font-size:10.5px" fill = "#06201f">Graph Theory</text>
-                                <rect x = "846" y = "228" width = "126" height = "17" rx = "2" fill = "#7b5fd1" stroke = "currentColor" stroke-width = "2"/>
-                                    <path d = "M848 231 H970" class = "ln" stroke = "#fff" stroke-opacity = "0.28" stroke-width = "1.400"/>
-                                    <path d = "M853 229.5 V243.5 M965 229.5 V243.5" class = "ln" stroke = "#000" stroke-opacity = "0.35" stroke-width = "1.400"/>
-                                    <path d = "M856 241 H962" class = "ln" stroke = "#000" stroke-opacity = "0.18" stroke-width = "1"/>
-                                    <text x = "909.0" y = "239.6" text-anchor = "middle" class = "spine" style = "font-size:9px" fill = "#fff">System Design Interview</text>
-                                <!-- bookmark ribbon -->
-                                <path d = "M958 243 v15 l3 -3.500 l3 3.500 v-15 z" fill = "#d23b3b" stroke = "currentColor" stroke-width = "1.200" stroke-linejoin = "round"/>
+                                <g class = "bk bk1">
+                                <rect x = "848" y = "261" width = "130" height = "17" rx = "3" fill = "#f2e3b8" stroke = "#14101f" stroke-width = "2"/>
+                                <rect x = "969" y = "263.5" width = "6" height = "12" rx = "1" fill = "#f6ecce"/>
+                                <rect x = "854" y = "263" width = "3" height = "13" rx = "1" fill = "#e8742a"/>
+                                <text x = "912" y = "273.4" text-anchor = "middle" class = "spine" style = "font-size:9.5px" fill = "#1c1608">The Psychology of Money</text>
+                                </g>
+                                <g class = "bk bk2">
+                                <rect x = "854" y = "245" width = "118" height = "16" rx = "3" fill = "#2f8a85" stroke = "#14101f" stroke-width = "2"/>
+                                <rect x = "963" y = "247.5" width = "6" height = "11" rx = "1" fill = "#f6ecce"/>
+                                <rect x = "860" y = "247" width = "3" height = "12" rx = "1" fill = "#f3e6b0"/>
+                                <text x = "912" y = "256.9" text-anchor = "middle" class = "spine" style = "font-size:10.5px" fill = "#f3e6b0">Graph Theory</text>
+                                </g>
+                                <g class = "bk bk3">
+                                <rect x = "846" y = "228" width = "126" height = "17" rx = "3" fill = "#f4efe2" stroke = "#14101f" stroke-width = "2"/>
+                                <rect x = "963" y = "230.5" width = "6" height = "12" rx = "1" fill = "#f6ecce"/>
+                                <rect x = "852" y = "230" width = "3" height = "13" rx = "1" fill = "#2f6fcf"/>
+                                <text x = "908" y = "240.4" text-anchor = "middle" class = "spine" style = "font-size:9px" fill = "#14213d">System Design Interview</text>
+                                </g>
+                                <g class = "bk-ribbon"><path d = "M960 244 v14 l3 -3.500 l3 3.500 v-14 z" fill = "#c0392b" stroke = "#14101f" stroke-width = "1.100" stroke-linejoin = "round"/></g>
+                                <g class = "bk bk4">
                                 <g transform = "rotate(-3 914.0 220.0)">
-                                    <rect x = "860" y = "212" width = "108" height = "16" rx = "2" fill = "#c95f3b" stroke = "currentColor" stroke-width = "2"/>
-                                    <path d = "M862 215 H966" class = "ln" stroke = "#fff" stroke-opacity = "0.28" stroke-width = "1.400"/>
-                                    <path d = "M867 213.5 V226.5 M961 213.5 V226.5" class = "ln" stroke = "#000" stroke-opacity = "0.35" stroke-width = "1.400"/>
-                                    <path d = "M870 224 H958" class = "ln" stroke = "#000" stroke-opacity = "0.18" stroke-width = "1"/>
-                                    <text x = "914.0" y = "222.9" text-anchor = "middle" class = "spine" style = "font-size:10.5px" fill = "#fff">The Odyssey</text>
+                                <rect x = "860" y = "212" width = "108" height = "16" rx = "3" fill = "#b5502f" stroke = "#14101f" stroke-width = "2"/>
+                                <rect x = "959" y = "214.5" width = "6" height = "11" rx = "1" fill = "#f6ecce"/>
+                                <rect x = "866" y = "214" width = "3" height = "12" rx = "1" fill = "#f1d9a0"/>
+                                <text x = "914" y = "223.9" text-anchor = "middle" class = "spine" style = "font-size:10.5px" fill = "#f6e6c0">The Odyssey</text>
+                                </g>
                                 </g>
                             </g>
                         </g>
@@ -537,7 +573,7 @@
                         <span class = "bio-full">I am a <span class = "fancy-text2">Software Engineer</span> and <span class = 'fancy-text2'>Computer Science Undergraduate</span> at The Catholic University of America with a strong interest in backend systems, cloud computing, and developer tooling. I enjoy creating projects that are both meaningful and practical.</span><span class = "bio-short">I am a <span class = "fancy-text2">Software Engineer</span> and <span class = "fancy-text2">CS undergrad</span> at The Catholic University of America, into backend systems, cloud computing, and developer tooling.</span>
                     </p>
                 </div>
-                <div class = "jump-headers" id = "edu" style = "color: white; margin-top: 28px">
+                <div class = "jump-headers" id = "edu" style = "color: white; margin-top: 48px">
                     <span class = "fancy-text2">EXPERIENCE</span>
                 </div>
                 <section class = "odyssey" aria-label = "Experience">
@@ -618,7 +654,7 @@
                         <p class = "od-desc">Designing and building software prototypes, APIs, and microservices across front-end and back-end systems. Writing clean, tested code, collaborating to solve problems, and exploring new technologies.</p>
                     </div>
                 </section>
-                <div class = "jump-headers" id = "edu" style = "color: white; margin-top: 28px">
+                <div class = "jump-headers" id = "edu" style = "color: white; margin-top: 48px">
                     <span class = "fancy-text2">EDUCATION</span>
                 </div>
                 <svg width = "0" height = "0" style = "position:absolute" aria-hidden = "true" focusable = "false">
@@ -744,7 +780,7 @@
                         </div>
                     </article>
                 </div>
-                <div class = "jump-headers" id = "tech" style = "color: white; padding-top: 14px;">
+                <div class = "jump-headers" id = "tech" style = "color: white; margin-top: 48px;">
                     <span class = "fancy-text2">TECHNOLOGIES</span>
                 </div>
                 <div class = "tech-map" role = "group" aria-label = "Technologies by group">
@@ -890,19 +926,30 @@
                         </ul>
                     </section>
                 </div>
-                <div class = "jump-headers" id = "proj" style = "color: white; padding-top: 14px;">
+                <div class = "jump-headers" id = "proj" style = "color: white; margin-top: 48px;">
                     <span class = "fancy-text2">PROJECTS</span>
                 </div>
+                <div class = "fc-arena">
+                    <div class = "ad-panel l" aria-hidden = "true"><span class = "g">Chess Gambit Gym</span></div>
+                    <div class = "ad-panel r" aria-hidden = "true"><span class = "k">Space Cadet Coffee</span></div>
+                    <div class = "ad-panel bl" aria-hidden = "true"><span class = "r">Sudo Sushi</span></div>
+                    <div class = "ad-panel br" aria-hidden = "true"><span class = "w">Jiu-Jitsu Hub</span></div>
+                    <div class = "ad-panel bm" aria-hidden = "true"><span class = "g">Python Protein</span></div>
+                    <span class = "fc-post red" aria-hidden = "true"></span><span class = "fc-post blue" aria-hidden = "true"></span>
+                    <div class = "fc-banner">
+                        <div class = "fc-title"><span class = "fc-ufc">MMA</span><span class = "fc-night">Fight Night</span></div>
+                        <div class = "fc-vs"><b>Elio Rocha</b><em>vs</em><b>Projects</b></div>
+                    </div>
                 <div class = "proj-wrap">
                     <svg width = "0" height = "0" style = "position:absolute" aria-hidden = "true" focusable = "false">
                         <defs>
+                            <pattern id = "ref-stripes" width = "4.600" height = "4" patternUnits = "userSpaceOnUse"><rect width = "4.600" height = "4" fill = "#f7f7fa"/><rect width = "2.300" height = "4" fill = "#141416"/></pattern>
                             <symbol id = "pj-head" viewBox = "12 0 36 37">
-                                <!-- face in profile, facing right -->
-                                <path d = "M34 7 C41 6 43 10.500 43.500 14 L46 19.500 L43.500 21 L43.800 24.500 C43.300 27.500 41.500 29.500 39 29.500 L34 31 Z" fill = "#d9a273" stroke = "#1b1714" stroke-width = "1.300" stroke-linejoin = "round"/>
-                                <!-- hood up: only the face opening shows -->
-                                <path d = "M17 23 C13.500 8 24 0 33 1 C41 1.500 45 6 43.500 11 C38.500 9 35.200 12 34.800 18 C34.600 23 35.500 27.500 37 32 L36.500 37 L20 37 C18 32 17 28 17 23 Z" fill = "#7b4a2c" stroke = "#120d0a" stroke-width = "1.300" stroke-linejoin = "round"/>
-                                <path d = "M43 10.500 C38.500 9 35.200 12 34.800 18 C34.600 23 35.500 27.500 37 32" fill = "none" stroke = "#4a2b18" stroke-width = "1.800" stroke-linecap = "round"/>
-                                <path d = "M24 8 C28 4 34 4 39 6" fill = "none" stroke = "#9a6339" stroke-width = "1.500" stroke-linecap = "round" opacity = ".8"/>
+                                <!-- one-piece head in profile, facing right: skull, buzz cut, ear, neck -->
+                                <path d = "M35 6 C41 5.500 43 10.500 43.500 14 L46 19.500 L43.500 21 L43.800 24.500 C43.300 27.500 41.500 29.500 39 29.500 L38 34 L28 34 L28 30 C21.500 27 18.300 21 18.600 14.500 C19 5.500 28 2 35 6 Z" fill = "#d9a273" stroke = "#1b1714" stroke-width = "1.300" stroke-linejoin = "round"/>
+                                <path d = "M18.700 14 C19.200 5.600 28 2.300 35 6.200 C39 5.400 42 7.800 42.700 10.400 C38 9.300 34 9.900 30 10.100 C25.500 9.800 21 11.200 18.700 14 Z" fill = "#2b1c13" stroke = "#120d0a" stroke-width = ".8" stroke-linejoin = "round"/>
+                                <ellipse cx = "26" cy = "19.500" rx = "1.500" ry = "2.300" fill = "#c78f5f" stroke = "#1b1714" stroke-width = ".8"/>
+                                <path d = "M37 15.700 L27.500 17" fill = "none" stroke = "#1b1714" stroke-width = "1" stroke-linecap = "round"/>
                                 <!-- glasses -->
                                 <rect x = "37" y = "13.500" width = "8" height = "6.500" rx = "2" fill = "#fff" fill-opacity = "0.2" stroke = "#1b1714" stroke-width = "1.600"/>
                                 <path d = "M37 15.500 L33.500 15.800" fill = "none" stroke = "#1b1714" stroke-width = "1.300" stroke-linecap = "round"/>
@@ -922,16 +969,15 @@
                                 <rect x = "16" y = "90" width = "10" height = "6.500" rx = "3.200" fill = "#f1e9d6" stroke = "#120d0a" stroke-width = "1.200"/>
                                 <rect x = "24" y = "90" width = "10" height = "6.500" rx = "3.200" fill = "#f1e9d6" stroke = "#120d0a" stroke-width = "1.200"/>
                                 <g class = "pj-fbody">
-                                    <rect x = "10.500" y = "34" width = "6" height = "21" rx = "3" fill = "#5f381f" stroke = "#120d0a" stroke-width = "1.200"/>
-                                    <rect x = "33.500" y = "34" width = "6" height = "21" rx = "3" fill = "#5f381f" stroke = "#120d0a" stroke-width = "1.200"/>
+                                    <rect x = "10.500" y = "34" width = "6" height = "21" rx = "3" fill = "url(#ref-stripes)" stroke = "#120d0a" stroke-width = "1.200"/>
+                                    <rect x = "33.500" y = "34" width = "6" height = "21" rx = "3" fill = "url(#ref-stripes)" stroke = "#120d0a" stroke-width = "1.200"/>
                                     <circle cx = "13.500" cy = "56" r = "3.200" fill = "#d9a273" stroke = "#1b1714" stroke-width = "1"/>
                                     <circle cx = "36.500" cy = "56" r = "3.200" fill = "#d9a273" stroke = "#1b1714" stroke-width = "1"/>
-                                    <path d = "M14.500 34 Q25 30 35.500 34 L34.500 62 H15.500 Z" fill = "#7b4a2c" stroke = "#120d0a" stroke-width = "1.300" stroke-linejoin = "round"/>
-                                    <text x = "25" y = "41" text-anchor = "middle" font-family = "Inter, Arial, sans-serif" font-weight = "700" font-size = "2.9" textLength = "18" lengthAdjust = "spacingAndGlyphs" fill = "#f3e6cf">eliorocha.dev</text>
-                                    <path d = "M23.500 33 V37 M26.500 33 V37" fill = "none" stroke = "#d8c3a8" stroke-width = ".9" stroke-linecap = "round"/>
-                                    <path d = "M13 24 C10 8 18 2 25 2 C32 2 40 8 37 24 C37 29 33 32 25 32 C17 32 13 29 13 24 Z" fill = "#7b4a2c" stroke = "#120d0a" stroke-width = "1.300" stroke-linejoin = "round"/>
+                                    <path d = "M14.500 34 Q25 30 35.500 34 L34.500 62 H15.500 Z" fill = "url(#ref-stripes)" stroke = "#120d0a" stroke-width = "1.300" stroke-linejoin = "round"/>
+                                    <path d = "M20 32.500 L25 37 L30 32.500" fill = "none" stroke = "#b9b9c6" stroke-width = ".9" stroke-linejoin = "round"/>
+                                    <path d = "M25 36 L20.500 33.300 V38.700 Z M25 36 L29.500 33.300 V38.700 Z" fill = "#111" stroke = "#000" stroke-width = ".5" stroke-linejoin = "round"/><rect x = "23.900" y = "34.800" width = "2.200" height = "2.400" rx = ".7" fill = "#111"/>
                                     <ellipse cx = "25" cy = "17.500" rx = "9" ry = "10.500" fill = "#d9a273" stroke = "#1b1714" stroke-width = "1.200"/>
-                                    <path d = "M16.500 11.500 C19 6.500 31 6.500 33.500 11.500" fill = "none" stroke = "#4a2b18" stroke-width = "1.800" stroke-linecap = "round"/>
+                                    <path d = "M16.300 13 C15.600 4.500 34.400 4.500 33.700 13 C31 9.500 19 9.500 16.300 13 Z" fill = "#2b1c13" stroke = "#120d0a" stroke-width = "1" stroke-linejoin = "round"/>
                                     <rect x = "16.500" y = "13" width = "7" height = "6.500" rx = "2" fill = "#fff" fill-opacity = "0.2" stroke = "#1b1714" stroke-width = "1.400"/>
                                     <rect x = "26.500" y = "13" width = "7" height = "6.500" rx = "2" fill = "#fff" fill-opacity = "0.2" stroke = "#1b1714" stroke-width = "1.400"/>
                                     <path d = "M23.500 15.500 H26.500" fill = "none" stroke = "#1b1714" stroke-width = "1.200" stroke-linecap = "round"/>
@@ -945,35 +991,24 @@
                                 <g class = "pj-body">
                                     <g class = "pj-leg b"><rect x = "21.500" y = "58" width = "7" height = "34" rx = "3" fill = "#121214" stroke = "#120d0a" stroke-width = "1.200"/><rect x = "20" y = "90" width = "15" height = "6.500" rx = "3.200" fill = "#f1e9d6" stroke = "#120d0a" stroke-width = "1.200"/></g>
                                     <g class = "pj-leg f"><rect x = "21.500" y = "58" width = "7" height = "34" rx = "3" fill = "#1e1e22" stroke = "#120d0a" stroke-width = "1.200"/><rect x = "20" y = "90" width = "15" height = "6.500" rx = "3.200" fill = "#f1e9d6" stroke = "#120d0a" stroke-width = "1.200"/></g>
-                                    <g class = "pj-arm b"><rect x = "22" y = "32" width = "6.500" height = "21" rx = "3.200" fill = "#5f381f" stroke = "#120d0a" stroke-width = "1.200"/><circle cx = "25.200" cy = "55" r = "3.200" fill = "#d9a273" stroke = "#1b1714" stroke-width = "1"/></g>
-                                    <path d = "M17 33 Q25 30 33 33 L32.500 62 H17.500 Z" fill = "#7b4a2c" stroke = "#120d0a" stroke-width = "1.300" stroke-linejoin = "round"/>
-                                    <g class = "pj-arm f"><rect x = "22" y = "32" width = "6.500" height = "21" rx = "3.200" fill = "#7b4a2c" stroke = "#120d0a" stroke-width = "1.200"/><circle cx = "25.200" cy = "55" r = "3.200" fill = "#d9a273" stroke = "#1b1714" stroke-width = "1"/></g>
+                                    <g class = "pj-arm b"><rect x = "22" y = "32" width = "6.500" height = "21" rx = "3.200" fill = "url(#ref-stripes)" stroke = "#120d0a" stroke-width = "1.200"/><circle cx = "25.200" cy = "55" r = "3.200" fill = "#d9a273" stroke = "#1b1714" stroke-width = "1"/></g>
+                                    <path d = "M17 33 Q25 30 33 33 L32.500 62 H17.500 Z" fill = "url(#ref-stripes)" stroke = "#120d0a" stroke-width = "1.300" stroke-linejoin = "round"/>
+                                    <path d = "M30 34.600 L33.600 32.600 V37 Z M30 34.600 L26.800 32.800 V36.800 Z" fill = "#111"/><circle cx = "30" cy = "34.800" r = "1.300" fill = "#111"/>
+                                    <g class = "pj-arm f"><rect x = "22" y = "32" width = "6.500" height = "21" rx = "3.200" fill = "url(#ref-stripes)" stroke = "#120d0a" stroke-width = "1.200"/><circle cx = "25.200" cy = "55" r = "3.200" fill = "#d9a273" stroke = "#1b1714" stroke-width = "1"/></g>
                                     <use class = "pj-head" href = "#pj-head" x = "12.500" y = "4" width = "25" height = "25.700"/>
                                 </g>
                             </g>
                         </svg>
                     </div>
                 <div class = "projects">
-                    <div class = "project">
-                        <div class = "proj-img"><img src = "images/cards/product-owner.svg" alt = "" loading = "lazy" decoding = "async"></div>
-                        <button class = "proj-open" type = "button" data-repo = "product-owner" aria-label = "Expand Product Owner"><svg viewBox = "0 0 24 24" fill = "none" stroke = "currentColor" stroke-width = "2.2" stroke-linecap = "round" stroke-linejoin = "round"><path d = "M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg></button>
-                        <div class = "proj-top">
-                            <div class = "proj-eyebrow">2026</div>
-                            <div class = "proj-name">Product Owner</div>
-                            <p class = "proj-desc">A local-first CLI issue tracker with dependency graphs</p>
-                            <div class = "proj-langs"><span style = "--c: #4a8bd1"><i></i>Python</span><span style = "--c: #89e051"><i></i>Shell</span></div>
-                            <div class = "proj-bar"><span title = "Python 81%" style = "--c: #4a8bd1; flex: 44921"></span><span title = "Shell 19%" style = "--c: #89e051; flex: 10459"></span></div>
-                        </div>
-                        <div class = "proj-bottom">
-                            <div class = "proj-tools"><img src = "images/python-svgrepo-com.svg" alt = ""><span>Tech stack</span></div>
-                            <a class = "proj-gh" href = "https://github.com/elio1222/product-owner" target = "_blank" rel = "noopener">View on GitHub</a>
-                        </div>
-                    </div>
-                    <div class = "project">
+                    <div class = "project" data-round = "2" data-clock = "3:44">
                         <div class = "proj-img"><img src = "images/cards/oura-health-analytics.svg" alt = "" loading = "lazy" decoding = "async"></div>
                         <button class = "proj-open" type = "button" data-repo = "oura-health-analytics" aria-label = "Expand Oura Health Analytics"><svg viewBox = "0 0 24 24" fill = "none" stroke = "currentColor" stroke-width = "2.2" stroke-linecap = "round" stroke-linejoin = "round"><path d = "M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg></button>
                         <div class = "proj-top">
-                            <div class = "proj-eyebrow">2026</div>
+                            <div class = "fc-head">
+                                <span class = "fc-tier main-event">Main Event</span>
+                                <div class = "proj-eyebrow">2026</div>
+                            </div>
                             <div class = "proj-name">Oura Health Analytics</div>
                             <p class = "proj-desc">ETL pipeline and API for your Oura health data</p>
                             <div class = "proj-langs"><span style = "--c: #4a8bd1"><i></i>Python</span></div>
@@ -984,56 +1019,32 @@
                             <a class = "proj-gh" href = "https://github.com/elio1222/oura-health-analytics" target = "_blank" rel = "noopener">View on GitHub</a>
                         </div>
                     </div>
-                    <div class = "project">
-                        <div class = "proj-img"><img src = "images/cards/vllm-ec2-chat-app.svg" alt = "" loading = "lazy" decoding = "async"></div>
-                        <button class = "proj-open" type = "button" data-repo = "vllm-ec2-chat-app" aria-label = "Expand LLM Chat App"><svg viewBox = "0 0 24 24" fill = "none" stroke = "currentColor" stroke-width = "2.2" stroke-linecap = "round" stroke-linejoin = "round"><path d = "M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg></button>
+                    <div class = "project" data-round = "2" data-clock = "2:30">
+                        <div class = "proj-img"><img src = "images/cards/product-owner.svg" alt = "" loading = "lazy" decoding = "async"></div>
+                        <button class = "proj-open" type = "button" data-repo = "product-owner" aria-label = "Expand Product Owner"><svg viewBox = "0 0 24 24" fill = "none" stroke = "currentColor" stroke-width = "2.2" stroke-linecap = "round" stroke-linejoin = "round"><path d = "M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg></button>
                         <div class = "proj-top">
-                            <div class = "proj-eyebrow">2026</div>
-                            <div class = "proj-name">LLM Chat App</div>
-                            <p class = "proj-desc">A secure AWS-hosted LLM chat app with API auth</p>
-                            <div class = "proj-langs"><span style = "--c: #4a8bd1"><i></i>Python</span><span style = "--c: #f1e05a"><i></i>JavaScript</span><span style = "--c: #9b7bd8"><i></i>CSS</span><span style = "--c: #e8553a"><i></i>HTML</span></div>
-                            <div class = "proj-bar"><span title = "Python 36%" style = "--c: #4a8bd1; flex: 13419"></span><span title = "JavaScript 25%" style = "--c: #f1e05a; flex: 9144"></span><span title = "CSS 24%" style = "--c: #9b7bd8; flex: 8683"></span><span title = "HTML 14%" style = "--c: #e8553a; flex: 4999"></span></div>
+                            <div class = "fc-head">
+                                <span class = "fc-tier main-card">Main Card</span>
+                                <div class = "proj-eyebrow">2026</div>
+                            </div>
+                            <div class = "proj-name">Product Owner</div>
+                            <p class = "proj-desc">A local-first CLI issue tracker with dependency graphs</p>
+                            <div class = "proj-langs"><span style = "--c: #4a8bd1"><i></i>Python</span><span style = "--c: #89e051"><i></i>Shell</span></div>
+                            <div class = "proj-bar"><span title = "Python 81%" style = "--c: #4a8bd1; flex: 44921"></span><span title = "Shell 19%" style = "--c: #89e051; flex: 10459"></span></div>
                         </div>
                         <div class = "proj-bottom">
-                            <div class = "proj-tools"><img src = "images/python-svgrepo-com.svg" alt = ""><img src = "images/FastAPI.svg" alt = ""><img src = "images/html-5-svgrepo-com.svg" alt = ""><img src = "images/css-3-svgrepo-com.svg" alt = ""><img src = "images/javascript-svgrepo-com.svg" alt = ""><img src = "images/AWS.svg" alt = ""><span>Tech stack</span></div>
-                            <a class = "proj-gh" href = "https://github.com/elio1222/vllm-ec2-chat-app" target = "_blank" rel = "noopener">View on GitHub</a>
+                            <div class = "proj-tools"><img src = "images/python-svgrepo-com.svg" alt = ""><span>Tech stack</span></div>
+                            <a class = "proj-gh" href = "https://github.com/elio1222/product-owner" target = "_blank" rel = "noopener">View on GitHub</a>
                         </div>
                     </div>
-                    <div class = "project">
-                        <div class = "proj-img"><img src = "images/cards/aws-gitea-deployment.svg" alt = "" loading = "lazy" decoding = "async"></div>
-                        <button class = "proj-open" type = "button" data-repo = "aws-gitea-deployment" aria-label = "Expand Gitea on AWS"><svg viewBox = "0 0 24 24" fill = "none" stroke = "currentColor" stroke-width = "2.2" stroke-linecap = "round" stroke-linejoin = "round"><path d = "M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg></button>
-                        <div class = "proj-top">
-                            <div class = "proj-eyebrow">2026</div>
-                            <div class = "proj-name">Gitea on AWS</div>
-                            <p class = "proj-desc">Self-hosted Gitea on EC2 with EBS and S3 backups</p>
-                            <div class = "proj-langs"><span style = "--c: #89e051"><i></i>Shell</span><span style = "--c: #5aa0c8"><i></i>Dockerfile</span></div>
-                            <div class = "proj-bar"><span title = "Shell 78%" style = "--c: #89e051; flex: 198"></span><span title = "Dockerfile 22%" style = "--c: #5aa0c8; flex: 56"></span></div>
-                        </div>
-                        <div class = "proj-bottom">
-                            <div class = "proj-tools"><img src = "images/AWS.svg" alt = ""><img src = "images/Docker.svg" alt = ""><img src = "images/Linux.svg" alt = ""><span>Tech stack</span></div>
-                            <a class = "proj-gh" href = "https://github.com/elio1222/aws-gitea-deployment" target = "_blank" rel = "noopener">View on GitHub</a>
-                        </div>
-                    </div>
-                    <div class = "project">
-                        <div class = "proj-img"><img src = "images/cards/keynotes.svg" alt = "" loading = "lazy" decoding = "async"></div>
-                        <button class = "proj-open" type = "button" data-repo = "keynotes" aria-label = "Expand KeyNotes"><svg viewBox = "0 0 24 24" fill = "none" stroke = "currentColor" stroke-width = "2.2" stroke-linecap = "round" stroke-linejoin = "round"><path d = "M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg></button>
-                        <div class = "proj-top">
-                            <div class = "proj-eyebrow">2026</div>
-                            <div class = "proj-name">KeyNotes</div>
-                            <p class = "proj-desc">Turn handwritten notes into AI study notes</p>
-                            <div class = "proj-langs"><span style = "--c: #4a8bd1"><i></i>Python</span><span style = "--c: #e8553a"><i></i>HTML</span><span style = "--c: #9b7bd8"><i></i>CSS</span><span style = "--c: #f1e05a"><i></i>JavaScript</span></div>
-                            <div class = "proj-bar"><span title = "Python 30%" style = "--c: #4a8bd1; flex: 11652"></span><span title = "HTML 30%" style = "--c: #e8553a; flex: 11646"></span><span title = "CSS 24%" style = "--c: #9b7bd8; flex: 9219"></span><span title = "JavaScript 15%" style = "--c: #f1e05a; flex: 5862"></span></div>
-                        </div>
-                        <div class = "proj-bottom">
-                            <div class = "proj-tools"><img src = "images/html-5-svgrepo-com.svg" alt = ""><img src = "images/css-3-svgrepo-com.svg" alt = ""><img src = "images/javascript-svgrepo-com.svg" alt = ""><img src = "images/python-svgrepo-com.svg" alt = ""><img src = "images/django-svgrepo-com.svg" alt = ""><img src = "images/postgresql-svgrepo-com.svg" alt = ""><span>Tech stack</span></div>
-                            <a class = "proj-gh" href = "https://github.com/elio1222/keynotes" target = "_blank" rel = "noopener">View on GitHub</a>
-                        </div>
-                    </div>
-                    <div class = "project">
+                    <div class = "project" data-round = "1" data-clock = "3:51">
                         <div class = "proj-img"><img src = "images/cards/ourafy.svg" alt = "" loading = "lazy" decoding = "async"></div>
                         <button class = "proj-open" type = "button" data-repo = "ourafy" aria-label = "Expand Ourafy"><svg viewBox = "0 0 24 24" fill = "none" stroke = "currentColor" stroke-width = "2.2" stroke-linecap = "round" stroke-linejoin = "round"><path d = "M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg></button>
                         <div class = "proj-top">
-                            <div class = "proj-eyebrow">2026</div>
+                            <div class = "fc-head">
+                                <span class = "fc-tier main-card">Main Card</span>
+                                <div class = "proj-eyebrow">2026</div>
+                            </div>
                             <div class = "proj-name">Ourafy</div>
                             <p class = "proj-desc">Turn your Oura Ring data into adaptive study sessions</p>
                             <div class = "proj-langs"><span style = "--c: #4a9eff"><i></i>TypeScript</span><span style = "--c: #4a8bd1"><i></i>Python</span><span style = "--c: #9b7bd8"><i></i>CSS</span></div>
@@ -1044,11 +1055,68 @@
                             <a class = "proj-gh" href = "https://github.com/elio1222/ourafy" target = "_blank" rel = "noopener">View on GitHub</a>
                         </div>
                     </div>
-                    <div class = "project">
+                    <div class = "project" data-round = "3" data-clock = "1:32">
+                        <div class = "proj-img"><img src = "images/cards/vllm-ec2-chat-app.svg" alt = "" loading = "lazy" decoding = "async"></div>
+                        <button class = "proj-open" type = "button" data-repo = "vllm-ec2-chat-app" aria-label = "Expand LLM Chat App"><svg viewBox = "0 0 24 24" fill = "none" stroke = "currentColor" stroke-width = "2.2" stroke-linecap = "round" stroke-linejoin = "round"><path d = "M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg></button>
+                        <div class = "proj-top">
+                            <div class = "fc-head">
+                                <span class = "fc-tier main-card">Main Card</span>
+                                <div class = "proj-eyebrow">2026</div>
+                            </div>
+                            <div class = "proj-name">LLM Chat App</div>
+                            <p class = "proj-desc">A secure AWS-hosted LLM chat app with API auth</p>
+                            <div class = "proj-langs"><span style = "--c: #4a8bd1"><i></i>Python</span><span style = "--c: #f1e05a"><i></i>JavaScript</span><span style = "--c: #9b7bd8"><i></i>CSS</span><span style = "--c: #e8553a"><i></i>HTML</span></div>
+                            <div class = "proj-bar"><span title = "Python 36%" style = "--c: #4a8bd1; flex: 13419"></span><span title = "JavaScript 25%" style = "--c: #f1e05a; flex: 9144"></span><span title = "CSS 24%" style = "--c: #9b7bd8; flex: 8683"></span><span title = "HTML 14%" style = "--c: #e8553a; flex: 4999"></span></div>
+                        </div>
+                        <div class = "proj-bottom">
+                            <div class = "proj-tools"><img src = "images/python-svgrepo-com.svg" alt = ""><img src = "images/FastAPI.svg" alt = ""><img src = "images/html-5-svgrepo-com.svg" alt = ""><img src = "images/css-3-svgrepo-com.svg" alt = ""><img src = "images/javascript-svgrepo-com.svg" alt = ""><img src = "images/AWS.svg" alt = ""><span>Tech stack</span></div>
+                            <a class = "proj-gh" href = "https://github.com/elio1222/vllm-ec2-chat-app" target = "_blank" rel = "noopener">View on GitHub</a>
+                        </div>
+                    </div>
+                    <div class = "project" data-round = "3" data-clock = "1:50">
+                        <div class = "proj-img"><img src = "images/cards/aws-gitea-deployment.svg" alt = "" loading = "lazy" decoding = "async"></div>
+                        <button class = "proj-open" type = "button" data-repo = "aws-gitea-deployment" aria-label = "Expand Gitea on AWS"><svg viewBox = "0 0 24 24" fill = "none" stroke = "currentColor" stroke-width = "2.2" stroke-linecap = "round" stroke-linejoin = "round"><path d = "M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg></button>
+                        <div class = "proj-top">
+                            <div class = "fc-head">
+                                <span class = "fc-tier main-card">Main Card</span>
+                                <div class = "proj-eyebrow">2026</div>
+                            </div>
+                            <div class = "proj-name">Gitea on AWS</div>
+                            <p class = "proj-desc">Self-hosted Gitea on EC2 with EBS and S3 backups</p>
+                            <div class = "proj-langs"><span style = "--c: #89e051"><i></i>Shell</span><span style = "--c: #5aa0c8"><i></i>Dockerfile</span></div>
+                            <div class = "proj-bar"><span title = "Shell 78%" style = "--c: #89e051; flex: 198"></span><span title = "Dockerfile 22%" style = "--c: #5aa0c8; flex: 56"></span></div>
+                        </div>
+                        <div class = "proj-bottom">
+                            <div class = "proj-tools"><img src = "images/AWS.svg" alt = ""><img src = "images/Docker.svg" alt = ""><img src = "images/Linux.svg" alt = ""><span>Tech stack</span></div>
+                            <a class = "proj-gh" href = "https://github.com/elio1222/aws-gitea-deployment" target = "_blank" rel = "noopener">View on GitHub</a>
+                        </div>
+                    </div>
+                    <div class = "project" data-round = "1" data-clock = "0:23">
+                        <div class = "proj-img"><img src = "images/cards/keynotes.svg" alt = "" loading = "lazy" decoding = "async"></div>
+                        <button class = "proj-open" type = "button" data-repo = "keynotes" aria-label = "Expand KeyNotes"><svg viewBox = "0 0 24 24" fill = "none" stroke = "currentColor" stroke-width = "2.2" stroke-linecap = "round" stroke-linejoin = "round"><path d = "M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg></button>
+                        <div class = "proj-top">
+                            <div class = "fc-head">
+                                <span class = "fc-tier main-card">Main Card</span>
+                                <div class = "proj-eyebrow">2026</div>
+                            </div>
+                            <div class = "proj-name">KeyNotes</div>
+                            <p class = "proj-desc">Turn handwritten notes into AI study notes</p>
+                            <div class = "proj-langs"><span style = "--c: #4a8bd1"><i></i>Python</span><span style = "--c: #e8553a"><i></i>HTML</span><span style = "--c: #9b7bd8"><i></i>CSS</span><span style = "--c: #f1e05a"><i></i>JavaScript</span></div>
+                            <div class = "proj-bar"><span title = "Python 30%" style = "--c: #4a8bd1; flex: 11652"></span><span title = "HTML 30%" style = "--c: #e8553a; flex: 11646"></span><span title = "CSS 24%" style = "--c: #9b7bd8; flex: 9219"></span><span title = "JavaScript 15%" style = "--c: #f1e05a; flex: 5862"></span></div>
+                        </div>
+                        <div class = "proj-bottom">
+                            <div class = "proj-tools"><img src = "images/html-5-svgrepo-com.svg" alt = ""><img src = "images/css-3-svgrepo-com.svg" alt = ""><img src = "images/javascript-svgrepo-com.svg" alt = ""><img src = "images/python-svgrepo-com.svg" alt = ""><img src = "images/django-svgrepo-com.svg" alt = ""><img src = "images/postgresql-svgrepo-com.svg" alt = ""><span>Tech stack</span></div>
+                            <a class = "proj-gh" href = "https://github.com/elio1222/keynotes" target = "_blank" rel = "noopener">View on GitHub</a>
+                        </div>
+                    </div>
+                    <div class = "project" data-round = "3" data-clock = "3:04">
                         <div class = "proj-img"><img src = "images/cards/oura-dashboard.jpg" alt = "" loading = "lazy" decoding = "async"></div>
                         <button class = "proj-open" type = "button" data-repo = "oura-dashboard" aria-label = "Expand Oura Dashboard"><svg viewBox = "0 0 24 24" fill = "none" stroke = "currentColor" stroke-width = "2.2" stroke-linecap = "round" stroke-linejoin = "round"><path d = "M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg></button>
                         <div class = "proj-top">
-                            <div class = "proj-eyebrow">2025</div>
+                            <div class = "fc-head">
+                                <span class = "fc-tier prelims">Prelims</span>
+                                <div class = "proj-eyebrow">2025</div>
+                            </div>
                             <div class = "proj-name">Oura Dashboard</div>
                             <p class = "proj-desc">Visualize your sleep metrics using your Oura ring</p>
                             <div class = "proj-langs"><span style = "--c: #4a8bd1"><i></i>Python</span><span style = "--c: #f1e05a"><i></i>JavaScript</span><span style = "--c: #e8553a"><i></i>HTML</span><span style = "--c: #9b7bd8"><i></i>CSS</span></div>
@@ -1059,11 +1127,14 @@
                             <a class = "proj-gh" href = "https://github.com/elio1222/oura-dashboard" target = "_blank" rel = "noopener">View on GitHub</a>
                         </div>
                     </div>
-                    <div class = "project">
+                    <div class = "project" data-round = "1" data-clock = "1:58">
                         <div class = "proj-img"><img src = "images/cards/flowgo.jpg" alt = "" loading = "lazy" decoding = "async"></div>
                         <button class = "proj-open" type = "button" data-repo = "FlowGoAI" aria-label = "Expand FlowGo.AI"><svg viewBox = "0 0 24 24" fill = "none" stroke = "currentColor" stroke-width = "2.2" stroke-linecap = "round" stroke-linejoin = "round"><path d = "M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg></button>
                         <div class = "proj-top">
-                            <div class = "proj-eyebrow">2025</div>
+                            <div class = "fc-head">
+                                <span class = "fc-tier prelims">Prelims</span>
+                                <div class = "proj-eyebrow">2025</div>
+                            </div>
                             <div class = "proj-name">FlowGo.AI</div>
                             <p class = "proj-desc">Transcribe your thoughts and summarize with AI</p>
                             <div class = "proj-langs"><span style = "--c: #4a8bd1"><i></i>Python</span><span style = "--c: #4a9eff"><i></i>TypeScript</span><span style = "--c: #9b7bd8"><i></i>CSS</span></div>
@@ -1074,41 +1145,14 @@
                             <a class = "proj-gh" href = "https://github.com/elio1222/FlowGoAI" target = "_blank" rel = "noopener">View on GitHub</a>
                         </div>
                     </div>
-                    <div class = "project">
-                        <div class = "proj-img"><img src = "images/cards/weather-app.jpg" alt = "" loading = "lazy" decoding = "async"></div>
-                        <button class = "proj-open" type = "button" data-repo = "weather-app" aria-label = "Expand Weather App"><svg viewBox = "0 0 24 24" fill = "none" stroke = "currentColor" stroke-width = "2.2" stroke-linecap = "round" stroke-linejoin = "round"><path d = "M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg></button>
-                        <div class = "proj-top">
-                            <div class = "proj-eyebrow">2025</div>
-                            <div class = "proj-name">Weather App</div>
-                            <p class = "proj-desc">Check real-time weather data for any city</p>
-                            <div class = "proj-langs"><span style = "--c: #4a8bd1"><i></i>Python</span><span style = "--c: #e8553a"><i></i>HTML</span><span style = "--c: #9b7bd8"><i></i>CSS</span><span style = "--c: #f1e05a"><i></i>JavaScript</span></div>
-                            <div class = "proj-bar"><span title = "Python 46%" style = "--c: #4a8bd1; flex: 16508"></span><span title = "HTML 25%" style = "--c: #e8553a; flex: 9038"></span><span title = "CSS 22%" style = "--c: #9b7bd8; flex: 7940"></span><span title = "JavaScript 7%" style = "--c: #f1e05a; flex: 2626"></span></div>
-                        </div>
-                        <div class = "proj-bottom">
-                            <div class = "proj-tools"><img src = "images/html-5-svgrepo-com.svg" alt = ""><img src = "images/css-3-svgrepo-com.svg" alt = ""><img src = "images/javascript-svgrepo-com.svg" alt = ""><img src = "images/python-svgrepo-com.svg" alt = ""><img src = "images/django-svgrepo-com.svg" alt = ""><span>Tech stack</span></div>
-                            <a class = "proj-gh" href = "https://github.com/elio1222/weather-app" target = "_blank" rel = "noopener">View on GitHub</a>
-                        </div>
-                    </div>
-                    <div class = "project">
-                        <div class = "proj-img"><img src = "images/cards/ticker-tracker.jpg" alt = "" loading = "lazy" decoding = "async"></div>
-                        <button class = "proj-open" type = "button" data-repo = "ticker-tracker" aria-label = "Expand Ticker Tracker"><svg viewBox = "0 0 24 24" fill = "none" stroke = "currentColor" stroke-width = "2.2" stroke-linecap = "round" stroke-linejoin = "round"><path d = "M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg></button>
-                        <div class = "proj-top">
-                            <div class = "proj-eyebrow">2025</div>
-                            <div class = "proj-name">Ticker Tracker</div>
-                            <p class = "proj-desc">Track your favorite stocks</p>
-                            <div class = "proj-langs"><span style = "--c: #e8553a"><i></i>HTML</span><span style = "--c: #9b7bd8"><i></i>CSS</span><span style = "--c: #f1e05a"><i></i>JavaScript</span><span style = "--c: #4a8bd1"><i></i>Python</span></div>
-                            <div class = "proj-bar"><span title = "HTML 46%" style = "--c: #e8553a; flex: 9197"></span><span title = "CSS 36%" style = "--c: #9b7bd8; flex: 7121"></span><span title = "JavaScript 11%" style = "--c: #f1e05a; flex: 2196"></span><span title = "Python 7%" style = "--c: #4a8bd1; flex: 1464"></span></div>
-                        </div>
-                        <div class = "proj-bottom">
-                            <div class = "proj-tools"><img src = "images/html-5-svgrepo-com.svg" alt = ""><img src = "images/css-3-svgrepo-com.svg" alt = ""><img src = "images/javascript-svgrepo-com.svg" alt = ""><img src = "images/python-svgrepo-com.svg" alt = ""><img class = "tm-dark" src = "images/flask-svgrepo-com.svg" alt = ""><span>Tech stack</span></div>
-                            <a class = "proj-gh" href = "https://github.com/elio1222/ticker-tracker" target = "_blank" rel = "noopener">View on GitHub</a>
-                        </div>
-                    </div>
-                    <div class = "project">
+                    <div class = "project" data-round = "1" data-clock = "0:27">
                         <div class = "proj-img"><img src = "images/cards/compiler-project.jpg" alt = "" loading = "lazy" decoding = "async"></div>
                         <button class = "proj-open" type = "button" data-repo = "compiler-project" aria-label = "Expand Compiler Project"><svg viewBox = "0 0 24 24" fill = "none" stroke = "currentColor" stroke-width = "2.2" stroke-linecap = "round" stroke-linejoin = "round"><path d = "M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg></button>
                         <div class = "proj-top">
-                            <div class = "proj-eyebrow">2024</div>
+                            <div class = "fc-head">
+                                <span class = "fc-tier prelims">Prelims</span>
+                                <div class = "proj-eyebrow">2024</div>
+                            </div>
                             <div class = "proj-name">Compiler Project</div>
                             <p class = "proj-desc">A mini compiler for a custom language</p>
                             <div class = "proj-langs"><span style = "--c: #e8903a"><i></i>Java</span></div>
@@ -1119,11 +1163,50 @@
                             <a class = "proj-gh" href = "https://github.com/elio1222/compiler-project" target = "_blank" rel = "noopener">View on GitHub</a>
                         </div>
                     </div>
-                    <div class = "project">
+                    <div class = "project" data-round = "3" data-clock = "3:39">
+                        <div class = "proj-img"><img src = "images/cards/ticker-tracker.jpg" alt = "" loading = "lazy" decoding = "async"></div>
+                        <button class = "proj-open" type = "button" data-repo = "ticker-tracker" aria-label = "Expand Ticker Tracker"><svg viewBox = "0 0 24 24" fill = "none" stroke = "currentColor" stroke-width = "2.2" stroke-linecap = "round" stroke-linejoin = "round"><path d = "M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg></button>
+                        <div class = "proj-top">
+                            <div class = "fc-head">
+                                <span class = "fc-tier prelims">Prelims</span>
+                                <div class = "proj-eyebrow">2025</div>
+                            </div>
+                            <div class = "proj-name">Ticker Tracker</div>
+                            <p class = "proj-desc">Track your favorite stocks</p>
+                            <div class = "proj-langs"><span style = "--c: #e8553a"><i></i>HTML</span><span style = "--c: #9b7bd8"><i></i>CSS</span><span style = "--c: #f1e05a"><i></i>JavaScript</span><span style = "--c: #4a8bd1"><i></i>Python</span></div>
+                            <div class = "proj-bar"><span title = "HTML 46%" style = "--c: #e8553a; flex: 9197"></span><span title = "CSS 36%" style = "--c: #9b7bd8; flex: 7121"></span><span title = "JavaScript 11%" style = "--c: #f1e05a; flex: 2196"></span><span title = "Python 7%" style = "--c: #4a8bd1; flex: 1464"></span></div>
+                        </div>
+                        <div class = "proj-bottom">
+                            <div class = "proj-tools"><img src = "images/html-5-svgrepo-com.svg" alt = ""><img src = "images/css-3-svgrepo-com.svg" alt = ""><img src = "images/javascript-svgrepo-com.svg" alt = ""><img src = "images/python-svgrepo-com.svg" alt = ""><img class = "tm-dark" src = "images/flask-svgrepo-com.svg" alt = ""><span>Tech stack</span></div>
+                            <a class = "proj-gh" href = "https://github.com/elio1222/ticker-tracker" target = "_blank" rel = "noopener">View on GitHub</a>
+                        </div>
+                    </div>
+                    <div class = "project" data-round = "2" data-clock = "0:21">
+                        <div class = "proj-img"><img src = "images/cards/weather-app.jpg" alt = "" loading = "lazy" decoding = "async"></div>
+                        <button class = "proj-open" type = "button" data-repo = "weather-app" aria-label = "Expand Weather App"><svg viewBox = "0 0 24 24" fill = "none" stroke = "currentColor" stroke-width = "2.2" stroke-linecap = "round" stroke-linejoin = "round"><path d = "M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg></button>
+                        <div class = "proj-top">
+                            <div class = "fc-head">
+                                <span class = "fc-tier prelims">Prelims</span>
+                                <div class = "proj-eyebrow">2025</div>
+                            </div>
+                            <div class = "proj-name">Weather App</div>
+                            <p class = "proj-desc">Check real-time weather data for any city</p>
+                            <div class = "proj-langs"><span style = "--c: #4a8bd1"><i></i>Python</span><span style = "--c: #e8553a"><i></i>HTML</span><span style = "--c: #9b7bd8"><i></i>CSS</span><span style = "--c: #f1e05a"><i></i>JavaScript</span></div>
+                            <div class = "proj-bar"><span title = "Python 46%" style = "--c: #4a8bd1; flex: 16508"></span><span title = "HTML 25%" style = "--c: #e8553a; flex: 9038"></span><span title = "CSS 22%" style = "--c: #9b7bd8; flex: 7940"></span><span title = "JavaScript 7%" style = "--c: #f1e05a; flex: 2626"></span></div>
+                        </div>
+                        <div class = "proj-bottom">
+                            <div class = "proj-tools"><img src = "images/html-5-svgrepo-com.svg" alt = ""><img src = "images/css-3-svgrepo-com.svg" alt = ""><img src = "images/javascript-svgrepo-com.svg" alt = ""><img src = "images/python-svgrepo-com.svg" alt = ""><img src = "images/django-svgrepo-com.svg" alt = ""><span>Tech stack</span></div>
+                            <a class = "proj-gh" href = "https://github.com/elio1222/weather-app" target = "_blank" rel = "noopener">View on GitHub</a>
+                        </div>
+                    </div>
+                    <div class = "project" data-round = "3" data-clock = "3:44">
                         <div class = "proj-img"><img src = "images/cards/vendingmachine.jpg" alt = "" loading = "lazy" decoding = "async"></div>
                         <button class = "proj-open" type = "button" data-repo = "vendingmachine" aria-label = "Expand Vending Machine"><svg viewBox = "0 0 24 24" fill = "none" stroke = "currentColor" stroke-width = "2.2" stroke-linecap = "round" stroke-linejoin = "round"><path d = "M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg></button>
                         <div class = "proj-top">
-                            <div class = "proj-eyebrow">2024</div>
+                            <div class = "fc-head">
+                                <span class = "fc-tier prelims">Prelims</span>
+                                <div class = "proj-eyebrow">2024</div>
+                            </div>
                             <div class = "proj-name">Vending Machine</div>
                             <p class = "proj-desc">A small program that simulates a vending machine</p>
                             <div class = "proj-langs"><span style = "--c: #e8903a"><i></i>Java</span></div>
@@ -1136,13 +1219,23 @@
                     </div>
                 </div>
                 </div>
+                    <div class = "fc-chyron" id = "fc-chyron" aria-hidden = "true">
+                        <div class = "fcy-tab" id = "fcy-class">Python-weight Main Event</div>
+                        <div class = "fcy-bar">
+                            <div class = "fcy-side l"><i class = "champ">C</i><b id = "fcy-l">Rocha</b></div>
+                            <div class = "fcy-mid"><em>MMA</em><span id = "fcy-clock">5:00</span></div>
+                            <div class = "fcy-side r"><b id = "fcy-r">Product Owner</b><i id = "fcy-rank">2</i></div>
+                        </div>
+                        <div class = "fcy-rounds" id = "fcy-rounds"></div>
+                    </div>
                 <div class = "proj-nav">
                     <button class = "proj-btn" id = "proj-prev" type = "button" aria-label = "Previous projects"><svg viewBox = "0 0 24 24" fill = "none" stroke = "currentColor" stroke-width = "2.5" stroke-linecap = "round" stroke-linejoin = "round"><path d = "M15 5l-7 7 7 7"/></svg></button>
                     <div class = "proj-dots" id = "proj-dots"></div>
                     <button class = "proj-btn" id = "proj-next" type = "button" aria-label = "Next projects"><svg viewBox = "0 0 24 24" fill = "none" stroke = "currentColor" stroke-width = "2.5" stroke-linecap = "round" stroke-linejoin = "round"><path d = "M9 5l7 7-7 7"/></svg></button>
                 </div>
-                <div class = "proj-all-row"><button class = "proj-all-btn" id = "proj-all" type = "button" aria-haspopup = "dialog">View all projects</button></div>
-                <div class = "jump-headers" id = "git" style = "color: white; padding-top: 14px;">
+                <div class = "proj-all-row"><button class = "proj-all-btn" id = "proj-all" type = "button" aria-haspopup = "dialog">View all projects &rarr;</button></div>
+                </div>
+                <div class = "jump-headers" id = "git" style = "color: white; margin-top: 48px;">
                     <span class = "fancy-text2">GITHUB ACTIVITY</span>
                 </div>
                 <div class = "activity-card" id = "github-card">
@@ -1196,7 +1289,7 @@
                         </div>
                     </div>
                 </div>
-                <div class = "jump-headers" id = "oura" style = "color: white; margin-top: 28px">
+                <div class = "jump-headers" id = "oura" style = "color: white; margin-top: 48px">
                     <span class = "fancy-text2">OURA RING HEALTH STATS</span><span class = "oura-day" id = "oura-day"></span>
                 </div>
                 <div id = "oura-wrap">
@@ -1255,7 +1348,7 @@
                                                     <rect x = "589" y = "126" width = "21" height = "15" rx = "4" fill = "#ffd54a" fill-opacity = "0.55" stroke = "#1b1714" stroke-width = "2.400"/>
                                                 </g>
                                                 <path d = "M581 131 H589 M560 130 L553 128 M610 130 L617 128" fill = "none" stroke = "#1b1714" stroke-width = "2" stroke-linecap = "round"/>
-                                                <circle cx = "571" cy = "134" r = "2" fill = "#1b1714"/><circle cx = "600" cy = "134" r = "2" fill = "#1b1714"/>
+                                                <g class = "d-eyes"><circle cx = "571" cy = "134" r = "2" fill = "#1b1714"/><circle cx = "600" cy = "134" r = "2" fill = "#1b1714"/></g>
                                                 <path d = "M574 152 Q585 147 596 152" fill = "none" stroke = "#1b1714" stroke-width = "3" stroke-linecap = "round"/>
                                                 <path d = "M578 156 Q585 160 592 156" fill = "none" stroke = "#5a2f22" stroke-width = "2" stroke-linecap = "round"/>
                                                 <path d = "M577 162 Q585 174 593 162 Q585 165 577 162 Z" fill = "#1b1714" stroke = "#1b1714" stroke-width = "2" stroke-linejoin = "round"/>

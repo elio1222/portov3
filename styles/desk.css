@@ -6,7 +6,7 @@
     container-type: inline-size;
 }
 .desk-svg {
-    --ink: #e8e6f5;
+    --ink: #14101f;
     --bfill: #ffffff;
     --bstroke: #2a2a3a;
     color: var(--ink);
@@ -86,6 +86,8 @@
 
 /* lamp: bulb flickers while lit */
 .desk-svg #lamp-bulb { transition: fill 0.3s; }
+.desk-svg .lamp-rim { transition: fill 0.3s; }
+.desk-svg #d-lamp.lit .lamp-rim { fill: #ffe9a3; }
 .desk-svg #d-lamp.lit #lamp-bulb { fill: #fff3b0; animation: filament 1.8s ease-in-out infinite; }
 .desk-svg #lamp-beam { transition: opacity 0.4s; }
 
@@ -134,3 +136,38 @@
 @media (prefers-reduced-motion: reduce) {
     .desk-svg * { animation: none !important; }
 }
+
+/* books: gentle idle bob, fan-out on hover */
+.desk-svg .bk { transform-box: fill-box; transform-origin: 50% 100%; animation: bk-bob 5s ease-in-out infinite; transition: transform 0.35s cubic-bezier(.3,1.6,.5,1); }
+.desk-svg .bk2 { animation-delay: -1.2s; } .desk-svg .bk3 { animation-delay: -2.4s; } .desk-svg .bk4 { animation-delay: -3.6s; animation-duration: 6s; }
+.desk-svg .bk-ribbon { transform-box: fill-box; transform-origin: 50% 0; animation: sway 3.2s ease-in-out infinite; }
+@keyframes bk-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-1px) rotate(-0.4deg); } }
+@media (hover: hover) {
+    .desk-svg #d-books:hover .bk1 { transform: translateX(5px); }
+    .desk-svg #d-books:hover .bk2 { transform: translateX(-4px); }
+    .desk-svg #d-books:hover .bk3 { transform: translateX(6px); }
+    .desk-svg #d-books:hover .bk4 { transform: translate(-3px, -2px) rotate(-2deg); }
+}
+.desk-svg #d-books.pop .bk4 { animation: bk-pop 0.6s ease; }
+@keyframes bk-pop { 40% { transform: translateY(-9px) rotate(-5deg); } }
+@media (prefers-reduced-motion: reduce) { .desk-svg .bk, .desk-svg .bk-ribbon { animation: none; } }
+
+/* blink: pupils squash to a line once every 4 seconds */
+.d-eyes { transform-box: fill-box; transform-origin: 50% 50%; animation: d-blink 4s infinite; }
+@keyframes d-blink {
+    0%, 94%, 100% { transform: scaleY(1); }
+    97%           { transform: scaleY(0.1); }
+}
+@media (prefers-reduced-motion: reduce) { .d-eyes { animation: none; } }
+
+/* small idle touches: breathing, drifting clouds, a grazing sheep, a blinking Claude sticker, a pulsing desk clock */
+.d-breathe { transform-box: fill-box; transform-origin: 50% 100%; animation: d-breathe 4s ease-in-out infinite; }
+@keyframes d-breathe { 0%, 100% { transform: scaleY(1); } 50% { transform: scaleY(1.012); } }
+.d-cloud { animation: d-cloud 14s ease-in-out infinite alternate; }
+@keyframes d-cloud { from { transform: translateX(-5px); } to { transform: translateX(6px); } }
+.d-sheep { transform-box: fill-box; transform-origin: 50% 100%; animation: d-graze 3.6s ease-in-out infinite; }
+@keyframes d-graze { 0%, 55%, 100% { transform: translateY(0); } 65%, 80% { transform: translateY(1.5px) rotate(-2deg); } }
+.d-cl-eyes { transform-box: fill-box; transform-origin: 50% 50%; animation: d-blink 6s 1.5s infinite; }
+.desk-svg #clock-time { animation: d-glow 3s ease-in-out infinite; }
+@keyframes d-glow { 0%, 100% { filter: drop-shadow(0 0 2px rgba(255, 179, 71, 0.8)); } 50% { filter: drop-shadow(0 0 4px rgba(255, 179, 71, 0.45)); } }
+@media (prefers-reduced-motion: reduce) { .d-breathe, .d-cloud, .d-sheep, .d-cl-eyes, .desk-svg #clock-time { animation: none; } }

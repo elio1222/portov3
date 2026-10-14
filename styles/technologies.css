@@ -4,7 +4,7 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     margin-top: 14px;
-    padding: 14px 8px 30px;
+    padding: 14px 8px 62px;
     overflow: hidden;
     border: 1px solid rgba(150, 142, 205, 0.2);
     border-radius: 18px;
@@ -66,7 +66,172 @@
     transform-origin: var(--cx) var(--cy);
     animation: tm-roll 0.45s linear infinite;
 }
+/* soft details: drifting clouds, a twinkling star, piranha plants peeking from the pipes */
+.tm-cloud {
+    position: absolute;
+    left: 0;
+    width: 44px;
+    height: auto;
+    fill: #fff;
+    opacity: 0.08;
+    animation: tm-cloud var(--d) linear var(--o) infinite;
+}
+.tm-star {
+    position: absolute;
+    width: 11px;
+    height: auto;
+    opacity: 0.35;
+    animation: tm-twinkle 3.5s ease-in-out infinite;
+}
+.tm-plant {
+    position: absolute;
+    bottom: calc(13px + var(--ph) - 2px);
+    width: 16px;
+    height: auto;
+    margin-left: -8px;
+    opacity: 0.7;
+    animation: tm-peek 5s ease-in-out infinite;
+}
+@keyframes tm-cloud {
+    from { transform: translateX(-60px); }
+    to   { transform: translateX(calc(100vw)); }
+}
+@keyframes tm-twinkle {
+    0%, 100% { opacity: 0.15; transform: scale(0.85); }
+    50% { opacity: 0.45; transform: scale(1); }
+}
+@keyframes tm-peek {
+    0%, 30% { transform: translateY(24px); }
+    50%, 75% { transform: translateY(0); }
+    100% { transform: translateY(24px); }
+}
+/* a faint Bullet Bill, a Goomba out for a stroll, and coins popping out of the ? blocks */
+.tm-bullet {
+    position: absolute;
+    left: 0;
+    width: 26px;
+    height: auto;
+    opacity: 0.16;
+    animation: tm-bullet 45s linear -12s infinite;
+}
+.tm-goomba {
+    position: absolute;
+    bottom: 12px;
+    width: 15px;
+    height: auto;
+    opacity: 0.6;
+    animation: tm-stroll 38s linear -8s infinite, tm-bump 0.4s ease-in-out infinite alternate;
+}
+.tm-pop {
+    position: absolute;
+    width: 8px;
+    height: auto;
+    opacity: 0;
+    animation: tm-coinpop 7s ease-out infinite;
+}
+.tm-pillar::before,
+.tm-pillar::after {
+    content: "";
+    position: absolute;
+    top: 22%;
+    width: 2px;
+    height: 5px;
+    border-radius: 1px;
+    background: rgba(13, 12, 29, 0.45);
+}
+.tm-pillar::before { left: 36%; }
+.tm-pillar::after  { right: 36%; }
+@keyframes tm-bullet {
+    from { transform: translateX(calc(100vw)); }
+    to   { transform: translateX(-60px); }
+}
+@keyframes tm-stroll {
+    from { left: 100%; }
+    to   { left: -20px; }
+}
+@keyframes tm-coinpop {
+    0%, 93% { opacity: 0; transform: translateY(2px); }
+    95% { opacity: 0.8; }
+    100% { opacity: 0; transform: translateY(-20px); }
+}
+/* more small stuff: Boos, item boxes, a sliding shell, fire flowers, a checkered road line and kart dust */
+.tm-boo {
+    position: absolute;
+    width: 18px;
+    height: auto;
+    opacity: 0.14;
+    animation: tm-float 9s ease-in-out infinite;
+}
+.tm-item {
+    position: absolute;
+    bottom: 34px;
+    width: 15px;
+    height: auto;
+    opacity: 0.55;
+    animation: tm-hover 3s ease-in-out infinite alternate;
+}
+.tm-flower {
+    position: absolute;
+    bottom: 13px;
+    width: 11px;
+    height: auto;
+    opacity: 0.6;
+    transform-origin: 50% 100%;
+    animation: tm-sway 4s ease-in-out infinite alternate;
+}
+.tm-shell {
+    position: absolute;
+    bottom: 12px;
+    width: 14px;
+    height: auto;
+    opacity: 0;
+    animation: tm-slide 26s linear -3s infinite;
+}
+.tm-finish {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 14px;
+    height: 6px;
+    opacity: 0.14;
+    background: repeating-conic-gradient(#fff 0 25%, transparent 0 50%) 0 0 / 12px 12px;
+}
+.tm-dust {
+    position: absolute;
+    left: -2px;
+    bottom: 6px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: rgba(220, 216, 245, 0.35);
+    animation: tm-puff 0.9s ease-out infinite;
+}
+.tm-dust:nth-of-type(2) { animation-delay: -0.3s; }
+.tm-dust:nth-of-type(3) { animation-delay: -0.6s; }
+@keyframes tm-float {
+    0%, 100% { transform: translate(0, 0); opacity: 0.08; }
+    50% { transform: translate(14px, -4px); opacity: 0.2; }
+}
+@keyframes tm-hover {
+    from { transform: translateY(0) rotate(-6deg); }
+    to   { transform: translateY(-5px) rotate(6deg); }
+}
+@keyframes tm-sway {
+    from { transform: rotate(-4deg); }
+    to   { transform: rotate(4deg); }
+}
+@keyframes tm-slide {
+    0%, 70% { left: -20px; opacity: 0; }
+    72% { left: -20px; opacity: 0.6; }
+    98% { left: 100%; opacity: 0.6; }
+    100% { left: 100%; opacity: 0; }
+}
+@keyframes tm-puff {
+    from { transform: translate(0, 0) scale(0.6); opacity: 1; }
+    to   { transform: translate(-14px, -6px) scale(1.6); opacity: 0; }
+}
 .tm-block {
+    animation: tm-hit 7s ease-in-out infinite;
     position: absolute;
     width: 16px;
     height: 16px;
@@ -77,6 +242,10 @@
     width: 8px;
     height: auto;
     animation: tm-spin 2.4s ease-in-out infinite;
+}
+@keyframes tm-hit {
+    0%, 92%, 100% { transform: translateY(0); }
+    96% { transform: translateY(-4px); }
 }
 @keyframes tm-drive {
     from { left: -60px; }
@@ -94,7 +263,7 @@
     50% { transform: scaleX(0.35); }
 }
 @media (prefers-reduced-motion: reduce) {
-    .tm-coin, .tm-kart, .tm-kart svg, .tm-wheel { animation: none; }
+    .tm-boo, .tm-item, .tm-flower, .tm-shell, .tm-dust, .tm-bullet, .tm-goomba, .tm-pop, .tm-cloud, .tm-star, .tm-plant, .tm-block, .tm-coin, .tm-kart, .tm-kart svg, .tm-wheel { animation: none; }
     .tm-kart { left: 45%; }
 }
 .tm-mini {
@@ -112,7 +281,11 @@
     bottom: 0;
     height: 14px;
     border-top: 2px solid #5a4aa8;
-    background: repeating-linear-gradient(90deg, #2a2152 0 28px, #231b47 28px 56px);
+    background:
+        repeating-linear-gradient(90deg, transparent 0 27px, rgba(0, 0, 0, 0.35) 27px 28px),
+        linear-gradient(180deg, transparent 6px, rgba(0, 0, 0, 0.35) 6px 7px, transparent 7px),
+        #8a4b2a;
+    border-top-color: #b8692f;
 }
 .tm-trail {
     z-index: 1;
@@ -205,17 +378,23 @@
     }
     .tech-map {
         grid-template-columns: repeat(2, 1fr);
-        row-gap: 18px;
+        row-gap: 26px;
+        padding: 34px 8px 62px;
     }
     .tm-trail {
         display: none;
     }
     .tm-group,
     .tm-group:nth-of-type(n) {
-        padding-top: 22px;
+        padding-top: 38px;
     }
     .tm-group:nth-of-type(n) .tm-node {
-        top: 0;
+        top: 2px;
+    }
+    /* keep the phone scene calm: just the road, kart, clouds and pipes */
+    .tm-boo, .tm-bullet, .tm-item, .tm-goomba, .tm-shell, .tm-flower,
+    .tm-finish, .tm-pop, .tm-star, .tm-pillar, .tm-dust {
+        display: none;
     }
 }
 

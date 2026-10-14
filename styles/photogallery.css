@@ -1,3 +1,7 @@
+html {
+    background-color: rgb(12, 11, 27);
+    min-height: 100%;
+}
 body {
     background-color: rgb(12, 11, 27);
 }
@@ -149,6 +153,8 @@ body {
     margin: auto;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     overflow: auto;
+    min-height: 100vh;
+    min-height: 100dvh;
     background: linear-gradient(315deg, rgb(12, 11, 27) 3%, rgb(12, 11, 27) 38%, rgb(80, 80, 90) 68%, rgb(12, 11, 27) 98%);
     animation: gradient 5s linear forwards;
     background-size: 400% 400%;

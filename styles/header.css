@@ -136,7 +136,7 @@ html { scroll-behavior: smooth; }
     .nav-knight { width: 20px; height: 20px; margin-left: 0; }
     .nav-wordmark { font-size: 16px; letter-spacing: 0.1em; }
     .nav-status { display: none; }
-    .nav-link[data-spy="git"] { display: none; }
+    .nav-link[data-spy="git"], .nav-link[href$="#git"] { display: none; }
     .nav-links { gap: 0; }
     .nav-link { padding: 9px 7px; font-size: 13.500px; }
     .nav-cta { padding: 9px 13px; font-size: 13.500px; margin-left: 2px; }
@@ -146,6 +146,12 @@ html { scroll-behavior: smooth; }
     .nav-wordmark { font-size: 14px; }
     .nav-link { padding: 9px 5px; font-size: 12.500px; }
     .nav-cta { padding: 9px 10px; font-size: 12.500px; }
+}
+@media (max-width: 340px) {
+    .nav-wordmark { font-size: 12px; letter-spacing: 0.06em; }
+    .nav-knight { width: 16px; height: 16px; }
+    .nav-link { padding: 9px 4px; font-size: 12px; }
+    .nav-cta { padding: 8px 8px; font-size: 12px; }
 }
 @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }

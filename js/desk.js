@@ -70,6 +70,7 @@
       const now = new Date();
       say('It is ' + now.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' }) + ', ' + (isDaytime(now) ? 'daytime' : 'night') + ' in Bowie.');
     },
+    'd-books': () => { const b = $('d-books'); b.classList.remove('pop'); void b.getBBox(); b.classList.add('pop'); },
     'd-trash': () => { say('A bunch empty water bottles. Recycling is on the to-do list.'); },
     'd-snacks': () => { say('Snack break: ' + SNACKS[snacks++ % SNACKS.length] + '.'); },
     'd-cal': () => {
@@ -100,7 +101,7 @@
 
   // phones: crop the scene to you and the desk so it fits the screen with no scrolling
   const FULL_VIEW = svg.getAttribute('viewBox');
-  const PHONE_VIEW = '316 30 580 272';
+  const PHONE_VIEW = '305 30 560 272';
   const mq = window.matchMedia('(max-width: 700px)');
   const applyView = () => {
     svg.setAttribute('viewBox', mq.matches ? PHONE_VIEW : FULL_VIEW);

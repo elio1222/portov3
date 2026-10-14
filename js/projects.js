@@ -129,6 +129,7 @@
       repo,
       img: q('.proj-img img').getAttribute('src'),
       year: q('.proj-eyebrow').textContent,
+      tier: q('.fc-tier') ? q('.fc-tier').textContent : '',
       name: q('.proj-name').textContent,
       desc: q('.proj-desc').textContent,
       langs: q('.proj-langs').outerHTML,
@@ -159,7 +160,7 @@
         '<button class="pm-x" type="button" data-act="close" aria-label="Close">' + X_ICON + '</button>' +
         '<div class="pm-hero"><img src="' + esc(p.img) + '" alt=""></div>' +
         '<div class="pm-body">' +
-          '<div class="pm-eyebrow">' + esc(p.year) + '</div>' +
+          '<div class="pm-eyebrow">' + (p.tier ? esc(p.tier) + ' &middot; ' : '') + esc(p.year) + '</div>' +
           '<h2 class="pm-title">' + esc(p.name) + '</h2>' +
           '<p class="pm-tagline">' + esc(p.desc) + '</p>' +
           '<div class="pm-sec"><h3>Overview</h3><p>' + esc(d.overview) + '</p></div>' +
@@ -251,4 +252,50 @@
 
   const allBtn = document.getElementById('proj-all');
   if (allBtn) allBtn.addEventListener('click', showAll);
+})();
+
+
+// broadcast chyron under the carousel: follows the active card
+(function () {
+  const track = document.querySelector('.projects');
+  const bar = document.getElementById('fc-chyron');
+  if (!track || !bar) return;
+  const cls = document.getElementById('fcy-class');
+  const right = document.getElementById('fcy-r');
+  const rounds = document.getElementById('fcy-rounds');
+  const clock = document.getElementById('fcy-clock');
+  const rank = document.getElementById('fcy-rank');
+  const SHORT = { 'Oura Dashboard': 'Oura Dash', 'Oura Health Analytics': 'Oura Health', 'Compiler Project': 'Compiler', 'Vending Machine': 'Vending' };
+  let shown = null;
+
+  function show(card) {
+    if (!card || card === shown) return;
+    shown = card;
+    const lang = card.querySelector('.proj-langs span');
+    const tier = card.querySelector('.fc-tier');
+    const main = tier && tier.classList.contains('main-event');
+    cls.textContent = (lang ? lang.textContent.trim() + '-weight ' : '') + (tier ? tier.textContent : '');
+    // the bar keeps both names the same width, so the longer project names get a short form
+    const full = card.querySelector('.proj-name').textContent.trim();
+    const words = (SHORT[full] || full).split(/\s+/);
+    while (words.length > 1 && words.join(' ').length > 13) words.pop();
+    right.textContent = words.join(' ');
+    // main events go five rounds, everything else three; each fight has its own clock and round
+    const cur = +card.dataset.round || 1;
+    rounds.innerHTML = Array.from({ length: main ? 5 : 3 }, (_, k) => '<i' + (k + 1 === cur ? ' class="on"' : '') + '></i>').join('');
+    clock.textContent = card.dataset.clock || '5:00';
+    rank.textContent = Array.from(track.querySelectorAll('.project')).indexOf(card) + 1;
+  }
+  // nearest card to the middle of the track (script.js flags is-active after this listener runs)
+  const pick = () => {
+    const mid = track.scrollLeft + track.clientWidth / 2;
+    let best = null, d = Infinity;
+    track.querySelectorAll('.project').forEach((c) => {
+      const k = Math.abs(c.offsetLeft + c.offsetWidth / 2 - mid);
+      if (k < d) { d = k; best = c; }
+    });
+    show(best);
+  };
+  track.addEventListener('scroll', pick, { passive: true });
+  pick();
 })();
