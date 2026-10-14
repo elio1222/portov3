@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="640" height="640" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+<defs>
+<radialGradient id="g1" cx="0.8" cy="0.15" r="0.7"><stop offset="0" stop-color="#2dd4bf" stop-opacity="0.5"/><stop offset="1" stop-color="#2dd4bf" stop-opacity="0"/></radialGradient>
+<radialGradient id="g2" cx="0.1" cy="0.95" r="0.7"><stop offset="0" stop-color="#818cf8" stop-opacity="0.45"/><stop offset="1" stop-color="#818cf8" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="640" height="640" fill="#0d0c1d"/><rect width="640" height="640" fill="url(#g1)"/><rect width="640" height="640" fill="url(#g2)"/>
+<g transform="translate(320 320)">
+<circle r="170" fill="none" stroke="#ffffff" stroke-opacity="0.1" stroke-width="30"/>
+<circle r="170" fill="none" stroke="#2dd4bf" stroke-width="30" stroke-linecap="round" stroke-dasharray="780 1068" transform="rotate(-90)"/>
+<circle r="118" fill="none" stroke="#ffffff" stroke-opacity="0.1" stroke-width="22"/>
+<circle r="118" fill="none" stroke="#818cf8" stroke-width="22" stroke-linecap="round" stroke-dasharray="520 742" transform="rotate(-90)"/>
+<text y="22" text-anchor="middle" font-size="64" font-weight="700" fill="#ffffff">25:00</text>
+<text y="62" text-anchor="middle" font-size="22" letter-spacing="4" fill="#ffffff" fill-opacity="0.6">LOCK IN</text>
+</g>
+</svg>

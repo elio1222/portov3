@@ -13,6 +13,7 @@ My portfolio (https://eliorocha.dev) is a static HTML/CSS/JS site hosted on Netl
   cool when they are simple. 
 - The website should also be mobile responsive, making it easy for mobile users to navigate
   the portfolio
+- I also like Drake's music and Kanye West's music, UFC, Jiu-Jitsu, Charles Olivera
 
 ### Personal Interests
 - Somethings I like include: Mario, Minecraft, Marvel Rivals, The Odyssey, Clash of Clans,

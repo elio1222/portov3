@@ -195,3 +195,58 @@ document.querySelectorAll('a[href="#top"]').forEach((a) => a.addEventListener("c
     e.preventDefault();
     window.scrollTo({ top: 0, behavior: "smooth" });
 }));
+
+// footer name: generative 3D parallax. Stacked copies of the name drift by depth with the pointer; at rest it holds a fixed 3D angle
+(function () {
+    const h = document.querySelector(".ft-name");
+    if (!h) return;
+    const text = h.textContent.trim();
+    const N = 9;
+    const still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const layers = [];
+    h.textContent = "";
+    for (let i = 0; i < N; i++) {
+        const front = i === N - 1;
+        const l = document.createElement("span");
+        l.className = "pl" + (front ? "" : " back");
+        l.setAttribute("aria-hidden", "true");
+        if (!front) {
+            const t = i / (N - 1);
+            l.style.setProperty("--s", i === N - 2 ? "#ffd54a" : "hsl(250 " + Math.round(25 + 35 * t) + "% " + Math.round(28 + 38 * t) + "%)");
+        }
+        l.style.zIndex = i;
+        const letters = [];
+        for (const ch of text) {
+            const s = document.createElement("span");
+            s.textContent = ch;
+            l.appendChild(s);
+    
+        }
+        h.appendChild(l);
+        layers.push({ el: l, letters: letters, d: (i - (N - 1)) / (N - 1) });
+    }
+    let tx = 0.45, ty = 0.5, cx = 0.45, cy = 0.5, active = false, raf = 0, pointer = false;
+    function frame(now) {
+        if (!pointer) { tx = 0.45; ty = 0.5; }
+        cx += (tx - cx) * 0.08;
+        cy += (ty - cy) * 0.08;
+        for (const L of layers) {
+            L.el.style.transform = "translate(" + (cx * L.d * 26).toFixed(2) + "px," + (cy * L.d * 16).toFixed(2) + "px)";
+        }
+        raf = active && !still && (Math.abs(tx - cx) > 0.001 || Math.abs(ty - cy) > 0.001) ? requestAnimationFrame(frame) : 0;
+    }
+    function aim(e) {
+        const r = h.getBoundingClientRect();
+        tx = Math.max(-1, Math.min(1, (e.clientX - (r.left + r.width / 2)) / (window.innerWidth / 2)));
+        ty = Math.max(-1, Math.min(1, (e.clientY - (r.top + r.height / 2)) / (window.innerHeight / 2)));
+        pointer = true;
+    }
+    function wake() { if (!raf && active) raf = requestAnimationFrame(frame); }
+    window.addEventListener("pointermove", function (e) { aim(e); wake(); }, { passive: true });
+    document.addEventListener("pointerleave", function () { pointer = false; wake(); });
+    new IntersectionObserver(function (en) {
+        active = en[0].isIntersecting;
+        if (active && !raf) raf = requestAnimationFrame(frame);
+    }).observe(h);
+    frame(performance.now());
+})();

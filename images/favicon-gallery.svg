@@ -7,9 +7,9 @@
   <path d="M23.5 15.5 H26.5" fill="none" stroke="#1b1714" stroke-width="1.2" stroke-linecap="round"/>
   <circle cx="20" cy="16.5" r="1.1" fill="#1b1714"/>
   <circle cx="30" cy="16.5" r="1.1" fill="#1b1714"/>
-  <path d="M19.5 23 Q25 20.2 30.5 23" fill="none" stroke="#1b1714" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M20.5 23 Q25 21.4 29.5 23" fill="none" stroke="#3a2c24" stroke-width="0.9" stroke-linecap="round"/>
   <path d="M23 25.2 Q25 26.2 27 25.2" fill="none" stroke="#5a2f22" stroke-width="1" stroke-linecap="round"/>
-  <path d="M22 26.8 Q25 32.5 28 26.8 Q25 28.3 22 26.8 Z" fill="#1b1714" stroke="#1b1714" stroke-width="1.2" stroke-linejoin="round"/>
+  <path d="M23 27.2 Q25 30.2 27 27.2 Q25 28 23 27.2 Z" fill="#1b1714" stroke="#1b1714" stroke-width="1.2" stroke-linejoin="round"/>
   <rect x="12" y="23.500" width="26" height="12" rx="2.500" fill="#2b2d3a" stroke="#120d0a" stroke-width="1.300"/>
   <rect x="16" y="20.500" width="7" height="4" rx="1" fill="#2b2d3a" stroke="#120d0a" stroke-width="1.200"/>
   <rect x="29" y="21.500" width="6" height="3" rx="1" fill="#f1e9d6" stroke="#120d0a" stroke-width="1"/>

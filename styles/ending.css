@@ -58,23 +58,51 @@
     letter-spacing: 0.02em;
     color: rgba(255, 255, 255, 0.6);
 }
-/* angled HUD-style buttons, matching the Oura match-report panel */
-.ft-btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
-.ft-btn {
-    padding: 9px 22px 9px 18px;
-    background: rgba(167, 159, 230, 0.12);
-    border-left: 3px solid #a79fe6;
-    clip-path: polygon(0 0, 100% 0, calc(100% - 12px) 100%, 0 100%);
-    color: #fff;
-    font-size: 13.5px;
-    font-weight: 500;
-    letter-spacing: 0.03em;
+/* blackjack hand: A + K + Q = 21 */
+.ft-btns { display: flex; justify-content: center; padding: 6px 0 4px; }
+.ft-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 76px;
+    height: 104px;
+    margin-left: -12px;
+    background: #14131f;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+    color: #e9e7f5;
     text-decoration: none;
-    transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+    transform: rotate(var(--r, 0deg));
+    transform-origin: 50% 120%;
+    transition: transform 0.3s cubic-bezier(.3, 1.6, .5, 1), border-color 0.25s ease, box-shadow 0.25s ease;
 }
-.ft-btn.primary { background: rgba(255, 213, 74, 0.14); border-left-color: #ffd54a; }
-.ft-btn:hover, .ft-btn:focus-visible { background: rgba(255, 213, 74, 0.22); border-left-color: #ffd54a; color: #ffd54a; transform: translateY(-2px); outline: none; }
-.ft-name { margin: 4px 0 0; font-size: 28px; font-weight: 800; letter-spacing: -0.01em; }
+.ft-card:first-child { margin-left: 0; --r: -8deg; }
+.ft-card:nth-child(2) { --r: 0deg; z-index: 1; }
+.ft-card:nth-child(3) { --r: 8deg; }
+.ft-card.red { color: #ff7a7a; }
+.ft-cr { position: absolute; top: 5px; left: 7px; display: flex; flex-direction: column; align-items: center; font-size: 13px; font-weight: 700; line-height: 1; }
+.ft-cr i { font-style: normal; font-size: 11px; margin-top: 1px; }
+.ft-cr.bot { top: auto; left: auto; bottom: 5px; right: 7px; transform: rotate(180deg); }
+.ft-cs { font-size: 30px; line-height: 1; opacity: 0.9; transition: transform 0.3s ease; }
+.ft-cl { position: relative; font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: currentColor; }
+.ft-card:hover, .ft-card:focus-visible {
+    transform: translateY(-10px) rotate(0deg) scale(1.06);
+    z-index: 3;
+    border-color: #ffd54a;
+    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.45);
+    outline: none;
+}
+.ft-card:hover .ft-cs, .ft-card:focus-visible .ft-cs { transform: translateY(-4px) scale(1.1); }
+/* generative 3D parallax name: stacked copies shift by depth with the pointer; flat colors only */
+.ft-name { position: relative; margin: 10px 0 0; font-size: 60px; font-weight: 800; letter-spacing: -0.02em; line-height: 1; padding: 8px 14px; cursor: default; user-select: none; }
+.ft-name .pl { position: absolute; inset: 8px 14px; display: flex; justify-content: center; white-space: pre; will-change: transform; }
+.ft-name .pl:last-child { position: relative; inset: auto; color: #fff; }
+.ft-name .pl span { display: inline-block; will-change: transform; }
+.ft-name .pl.back { color: transparent; -webkit-text-stroke: 1px var(--s); }
 .ft-copy { margin: 0; font-size: 12.5px; line-height: 1.9; color: rgba(255, 255, 255, 0.5); }
 .ft-copy a { color: rgba(255, 255, 255, 0.7); text-decoration: none; }
 .ft-copy a:hover { color: #fff; }
@@ -85,12 +113,11 @@
 .ft-inner > :nth-child(5) { animation-delay: 0.32s; }
 @keyframes ftrise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
 @media (max-width: 600px) {
-        .ft-btns { flex-direction: column; align-items: stretch; width: 100%; max-width: 280px; }
-    .ft-name { font-size: 24px; }
+    .ft-name { font-size: 40px; }
 }
 @media (prefers-reduced-motion: reduce) {
     .ft-inner > * { animation: none; }
-    .ft-pz, .ft-btn { transition: none; }
+    .ft-pz, .ft-card { transition: none; }
 }
 
 .fancy-text {

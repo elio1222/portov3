@@ -53,6 +53,16 @@
         'Next up: accounts with saved history and more export formats'
       ]
     },
+    'ourafy': {
+      overview: 'Ourafy turns your Oura Ring data into a study plan. Built at HenHacks 2026 to help students work with their body instead of against it.',
+      points: [
+        'Pulls readiness, HRV balance, resting heart rate, sleep and stress from the Oura API',
+        'Weighted formulas pick a mode: Recover, Standard, Sprint or Lock In',
+        'An AI coach builds Pomodoro intervals, with voice by ElevenLabs',
+        'Generates a Spotify playlist matched to your tempo and mood',
+        'Flask backend with a React + Vite frontend; a wake word triggers the Lock In sequence'
+      ]
+    },
     'oura-dashboard': {
       overview: 'My first full-stack project: a dashboard that fetches, stores, visualizes and analyzes my own sleep data from the Oura Ring API.',
       points: [

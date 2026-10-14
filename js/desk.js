@@ -104,8 +104,6 @@
   const mq = window.matchMedia('(max-width: 700px)');
   const applyView = () => {
     svg.setAttribute('viewBox', mq.matches ? PHONE_VIEW : FULL_VIEW);
-    // phones: the scene is a picture only, so take its parts out of the tab order too
-    svg.querySelectorAll('.hot').forEach((el) => el.setAttribute('tabindex', mq.matches ? '-1' : '0'));
   };
   applyView();
   if (mq.addEventListener) mq.addEventListener('change', applyView);
