@@ -190,8 +190,8 @@
   setInterval(tick, 1000);
 })();
 
-// clicking the ROCHA brand scrolls all the way to the very top (the sticky header sits below the page's top edge)
-document.querySelector(".nav-brand")?.addEventListener("click", function (e) {
+// every "#top" link (ROCHA brand, footer) scrolls all the way to the very top: #top is the sticky header, so the browser's anchor jump does nothing
+document.querySelectorAll('a[href="#top"]').forEach((a) => a.addEventListener("click", function (e) {
     e.preventDefault();
     window.scrollTo({ top: 0, behavior: "smooth" });
-});
+}));

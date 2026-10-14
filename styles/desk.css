@@ -96,25 +96,30 @@
 
 .bio-short { display: none; }
 @media (max-width: 700px) {
-    /* phones: "Hello" on top, then the scene, then location + links centered, then a shorter bio.
-       The photo is hidden. display: contents lets the pieces of .intro-head be reordered. */
-    .introduction .intro-head, .introduction .intro-id { display: contents; }
-    .introduction .photo { display: none; }
-    .introduction { gap: 14px; }
-    .introduction .p-intro { order: 0; text-align: center; }
-    .introduction .desk-hero { order: 1; }
-    .introduction .p-intro3 { order: 2; align-self: center; margin-top: 0; }
-    .introduction .socials { order: 3; width: auto; align-self: center; justify-content: center; margin: 0; }
-    .introduction .p-intro2 { order: 4; }
+    /* phones: a profile header (photo, name, location), then the bio, the connected
+       puzzle links, and finally the desk scene. display: contents on .intro-head lets
+       its children join the grid below. */
+    .introduction .intro-head { display: contents; }
+    .introduction {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        column-gap: 14px;
+        row-gap: 14px;
+        align-items: center;
+    }
+    .introduction .photo { display: block; grid-column: 1; grid-row: 1; width: 72px; height: 72px; }
+    .introduction .mypicture { border: 2px solid #a79fe6; box-shadow: 0 0 0 4px rgba(167, 159, 230, 0.18), 0 6px 16px rgba(0, 0, 0, 0.4); }
+    .introduction .intro-id { grid-column: 2; grid-row: 1; }
+    .introduction .p-intro { font-size: 21px; text-align: left; }
+    .introduction .p-intro3 { margin-top: 4px; font-size: 14px; color: rgba(255, 255, 255, 0.75); }
+    .introduction .p-intro2 { grid-column: 1 / -1; grid-row: 2; margin: 0; text-align: left; }
+    .introduction .socials { grid-column: 1 / -1; grid-row: 3; width: auto; justify-self: center; margin: 0; }
+    .introduction .desk-hero { grid-column: 1 / -1; grid-row: 4; }
     .bio-full { display: none; }
     .bio-short { display: inline; }
     /* nothing in the scene is interactive on phones: no taps, no caption */
     .desk-svg { pointer-events: none; }
     .desk-caption { display: none; }
-    /* social puzzle pieces keep their shape but sit apart instead of interlocking */
-    .introduction .socials { gap: 0; }
-    .introduction .social { margin-left: 14px; }
-    .introduction .social:first-child { margin-left: 0; }
     /* the scene is cropped to you and the desk (see js/desk.js), so it fits with no sideways scroll */
 }
 }

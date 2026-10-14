@@ -383,29 +383,205 @@
     return true;
   }
 
-  // Legend: one icon per tier with its contribution range.
-  function renderLegend(cells) {
+  // Legend: one icon per tier with its contribution range. Re-rendered for each view.
+  const ORE_TIERS = [["Stone", null], ["Coal", "#1c1c1c"], ["Iron", "#d8af93"], ["Gold", "#ffd91a"], ["Diamond", "#4ff5ff"]];
+  function tierRange(tier) {
+    if (tier === 4) return TIER_MIN[3] + "+";
+    return TIER_MIN[tier] - 1 === TIER_MIN[tier - 1] ? TIER_MIN[tier - 1] : TIER_MIN[tier - 1] + "–" + (TIER_MIN[tier] - 1);
+  }
+  function renderLegend() {
     const box = $("contrib-legend");
     if (!box) return;
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
-    const tiers = [[0, 0, "None"], [1, OAK, "Light"], [2, OAK + 1, "Medium"], [3, OAK + 2, "Heavy"], [4, OAK + 3, "Busiest"]];
     box.textContent = "";
-    tiers.forEach(([tier, sprite, label]) => {
+    [0, 1, 2, 3, 4].forEach((tier) => {
       const item = document.createElement("div");
       item.className = "lg-item";
-      const img = makeSprite(sprite, 14, dpr);
-      img.style.width = img.width / dpr + "px";
-      img.style.height = img.height / dpr + "px";
+      let img;
+      if (mode === "chart") {
+        img = document.createElement("canvas");
+        img.width = img.height = 20 * dpr;
+        img.style.width = img.style.height = "20px";
+        const g = img.getContext("2d");
+        g.scale(dpr, dpr);
+        paintBlock(g, 0, 0, 20, tier, "legend" + tier);
+      } else {
+        img = makeSprite(tier ? OAK + tier - 1 : 0, 14, dpr);
+        img.style.width = img.width / dpr + "px";
+        img.style.height = img.height / dpr + "px";
+      }
       const cap = document.createElement("span");
-      const range = tier === 4 ? TIER_MIN[3] + "+" : TIER_MIN[tier] - 1 === TIER_MIN[tier - 1] ? TIER_MIN[tier - 1] : TIER_MIN[tier - 1] + "–" + (TIER_MIN[tier] - 1);
-      cap.textContent = label + (tier ? " " + range : "");
+      const name = mode === "chart" ? ORE_TIERS[tier][0] : ["None", "Light", "Medium", "Heavy", "Busiest"][tier];
+      cap.textContent = name + (tier ? " " + tierRange(tier) : " 0");
       item.append(img, cap);
       box.appendChild(item);
     });
   }
 
+  // ---- Ore map: flat Minecraft chart. Each day is a stone block; busier days hold richer ore ----
+  const CHART = { left: 30, top: 22, bottom: 24, gap: 2 };
+  // Ore map: every day is a stone block, and the busier the day the richer the ore in it.
+  // Stone is kept dark and dull so the ores stand out.
+  const MAP_STONE = ["#5a5a5a", "#616161", "#545454"];
+  function paintBlock(g, x, y, sz, tier, seed) {
+    const n = sz < 10 ? 2 : 4, h = hash(seed), ore = ORE_TIERS[tier][1];
+    for (let i = 0; i < n; i++) for (let j = 0; j < n; j++) {
+      const k = (Math.imul(i + 1, 73856093) ^ Math.imul(j + 1, 19349663) ^ h) >>> 0;
+      g.fillStyle = ore && (k >>> 4) % 100 < (n === 2 ? 60 : 50) ? tint(ore, k % 3 === 0 ? 0.82 : 1) : MAP_STONE[k % 3];
+      const x0 = Math.round(x + (i * sz) / n), x1 = Math.round(x + ((i + 1) * sz) / n);
+      const y0 = Math.round(y + (j * sz) / n), y1 = Math.round(y + ((j + 1) * sz) / n);
+      g.fillRect(x0, y0, x1 - x0, y1 - y0);
+    }
+  }
+
+  // One long strip for the whole year, sized to fit the card; on very narrow screens it scrolls sideways.
+  function chartLayout() {
+    const avail = $("chart-scroll").clientWidth - CHART.left - 4;
+    const L = current.weeks.length;
+    const cs = Math.max(7, Math.min(22, avail / L));
+    const bandH = CHART.top + 7 * cs + CHART.bottom;
+    return { cs, bands: 1, perBand: L, bandH, W: CHART.left + cs * L + 4, H: bandH };
+  }
+  // Top-left corner of a day's tile.
+  function chartPos(c, lay) {
+    const b = Math.floor(c.w / lay.perBand);
+    return [CHART.left + (c.w - b * lay.perBand) * lay.cs, b * lay.bandH + CHART.top + c.d * lay.cs];
+  }
+
+  function drawChart() {
+    const canvas = $("chart-canvas");
+    const wrap = $("chart-scroll");
+    if (!current || !wrap.clientWidth) return;
+    $("iso-stage").classList.toggle("iso-compact", wrap.clientWidth < 620);
+    const lay = chartLayout();
+    const { cs, bands, perBand, bandH, W, H } = lay;
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    canvas.width = W * dpr;
+    canvas.height = H * dpr;
+    canvas.style.width = W + "px";
+    canvas.style.height = H + "px";
+    const g = canvas.getContext("2d");
+    g.setTransform(dpr, 0, 0, dpr, 0, 0);
+    g.clearRect(0, 0, W, H);
+    const text = (str, x, y, align) => {
+      g.textAlign = align;
+      g.fillStyle = "#1a1a1a"; // Minecraft-style drop shadow
+      g.fillText(str, x + 1, y + 1);
+      g.fillStyle = "#ffffff";
+      g.fillText(str, x, y);
+    };
+    for (let b = 0; b < bands; b++) {
+      const y0 = b * bandH;
+      g.font = "600 11px system-ui, sans-serif";
+      g.textBaseline = "middle";
+      [[1, "Mon"], [3, "Wed"], [5, "Fri"]].forEach(([d, label]) => text(label, 0, y0 + CHART.top + d * cs + cs / 2, "left"));
+      // Month labels at the first week of each month within this band.
+      g.textBaseline = "alphabetic";
+      let lastMonth = -1, lastX = -Infinity;
+      current.cells.forEach((c) => {
+        if (Math.floor(c.w / perBand) !== b) return;
+        const m = Number(c.date.slice(5, 7));
+        if (m === lastMonth) return;
+        lastMonth = m;
+        if (c.w % perBand === 0 && Number(c.date.slice(8)) > 20) return; // partial month at a band's start
+        const x = CHART.left + (c.w - b * perBand) * cs;
+        if (x - lastX < 34) return;
+        lastX = x;
+        text(MONTHS[m - 1], x, y0 + CHART.top - 8, "left");
+      });
+      // Time arrow under each band.
+      const ay = y0 + CHART.top + 7 * cs + 12;
+      const end = CHART.left + Math.min(perBand, current.weeks.length - b * perBand) * cs;
+      g.strokeStyle = "rgba(255,255,255,0.55)";
+      g.lineWidth = 1;
+      g.beginPath();
+      g.moveTo(CHART.left, ay); g.lineTo(end, ay);
+      g.moveTo(end - 4, ay - 3); g.lineTo(end + 1, ay); g.lineTo(end - 4, ay + 3);
+      g.stroke();
+      g.font = "600 10px system-ui, sans-serif";
+      if (b === 0) text("1 year ago", CHART.left, ay - 4, "left");
+      if (b === bands - 1) text("today", end, ay - 4, "right");
+      else text("continues below", end, ay - 4, "right");
+    }
+    current.cells.forEach((c) => {
+      const [x, y] = chartPos(c, lay);
+      paintBlock(g, x, y, cs - CHART.gap, c.tier, c.date);
+    });
+    const hv = current.hover;
+    if (hv) {
+      const [x, y] = chartPos(hv, lay);
+      g.strokeStyle = "#ffffff";
+      g.lineWidth = 2;
+      g.strokeRect(x + 1, y + 1, cs - CHART.gap - 2, cs - CHART.gap - 2);
+    }
+    const hint = $("iso-hint");
+    if (hint && mode === "chart") hint.hidden = wrap.scrollWidth <= wrap.clientWidth + 1;
+  }
+
+  function chartCellAt(e) {
+    const r = $("chart-canvas").getBoundingClientRect();
+    const lay = chartLayout();
+    const x = e.clientX - r.left - CHART.left, y = e.clientY - r.top;
+    const b = Math.floor(y / lay.bandH);
+    const d = Math.floor((y - b * lay.bandH - CHART.top) / lay.cs);
+    const col = Math.floor(x / lay.cs);
+    if (x < 0 || col >= lay.perBand || d < 0 || d > 6 || b < 0 || b >= lay.bands) return null;
+    const w = b * lay.perBand + col;
+    return current.cells.find((c) => c.w === w && c.d === d) || null;
+  }
+
+  function setupChart() {
+    const canvas = $("chart-canvas");
+    const tip = $("iso-tip");
+    const wrapBox = canvas.closest(".iso-wrap");
+    const show = (e) => {
+      if (!current) return;
+      const c = chartCellAt(e);
+      if (!c) { tip.style.display = "none"; if (current.hover) { current.hover = null; drawChart(); } return; }
+      if (current.hover !== c) { current.hover = c; drawChart(); }
+      const n = c.count, r = wrapBox.getBoundingClientRect();
+      tip.textContent = n + " contribution" + (n === 1 ? "" : "s") + " on " + fmtDate(c.date, true) + " · " + ORE_TIERS[c.tier][0];
+      tip.style.display = "block";
+      tip.style.left = Math.max(0, Math.min(e.clientX - r.left + 12, r.width - tip.offsetWidth - 4)) + "px";
+      tip.style.top = Math.max(e.clientY - r.top - 30, 0) + "px";
+    };
+    canvas.addEventListener("pointermove", show);
+    canvas.addEventListener("pointerdown", show); // tap on touch screens
+    canvas.addEventListener("pointerleave", () => {
+      tip.style.display = "none";
+      if (current && current.hover) { current.hover = null; drawChart(); }
+    });
+    $("chart-scroll").addEventListener("scroll", () => { tip.style.display = "none"; });
+  }
+
+  // ---- View switching ----
+  let mode = "chart";
+  const INTRO = {
+    forest: "Each tile is <b>one day</b> from the past year of my GitHub. <b>The more I commit that day, the bigger the tree grows.</b>",
+    chart: "Each block is <b>one day</b> from the past year of my GitHub, <b>The more I commit that day, the rarer the ore I dig up.</b>",
+  };
+  function setMode(next) {
+    mode = next;
+    const chart = next === "chart";
+    $("iso-stage").classList.toggle("chart-mode", chart);
+    $("contrib-canvas").hidden = chart;
+    $("chart-scroll").hidden = !chart;
+    $("iso-tip").style.display = "none";
+    $("mc-intro").innerHTML = INTRO[next];
+    const hint = $("iso-hint");
+    hint.textContent = chart ? "swipe to scroll" : "drag to rotate";
+    hint.hidden = chart;
+    [["view-forest", !chart], ["view-chart", chart]].forEach(([id, on]) => {
+      $(id).classList.toggle("on", on);
+      $(id).setAttribute("aria-pressed", on);
+    });
+    if (current) { current.hover = null; renderLegend(); draw(); }
+    if (chart) { const sc = $("chart-scroll"); sc.scrollLeft = sc.scrollWidth; } // newest days first on phones
+  }
+  function draw() { mode === "chart" && $("chart-canvas") ? drawChart() : drawIso(); }
+
   function requestDraw() {
-    if (!raf) raf = requestAnimationFrame(() => { raf = 0; drawIso(); });
+    if (!raf) raf = requestAnimationFrame(() => { raf = 0; draw(); });
   }
 
   function renderGrid(weeks, total) {
@@ -413,9 +589,9 @@
     assignTiers(cells);
     if (total === undefined) total = cells.reduce((n, c) => n + c.count, 0);
     current = { weeks, total, cells, hits: [] };
-    drawIso();
+    draw();
     renderStats(cells, total);
-    renderLegend(cells);
+    renderLegend();
   }
 
   function setupHover() {
@@ -496,6 +672,7 @@
       if (current && w !== lastW) { lastW = w; requestDraw(); }
     }).observe(canvas.parentElement);
   }
+
 
   function renderCommit(repo) {
     const c = repo.commit;
@@ -614,7 +791,17 @@
     }
   }
 
+  // The chart toggle is optional: if its markup is missing, the rest of the section must still load.
   setupHover();
+  if ($("chart-canvas") && $("chart-scroll") && $("view-chart")) {
+    setupChart();
+    // Where the ore map's blocks would come out under ~10px (too small for the ore texture to read), start on the forest instead.
+    const scrolls = document.querySelector(".iso-wrap").clientWidth - CHART.left - 4 < 10 * 53;
+    if (scrolls) $("view-chart").before($("view-forest")); // default view goes on the left
+    setMode(scrolls ? "forest" : "chart");
+    $("view-forest").addEventListener("click", () => setMode("forest"));
+    $("view-chart").addEventListener("click", () => setMode("chart"));
+  }
   loadGithub();
   loadOura();
 })();

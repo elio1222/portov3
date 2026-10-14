@@ -89,7 +89,7 @@
     align-items: flex-end;
     justify-content: center;
     gap: 6px 18px;
-    margin-top: 10px;
+    margin: 4px 0 8px;
     font-size: 11px;
     color: darkgrey;
 }
@@ -123,14 +123,59 @@
     pointer-events: none;
 }
 
-.mc-note {
-    margin: 8px 0 0;
-    text-align: center;
-    font-size: 11px;
+.mc-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 8px 14px;
+    flex-wrap: wrap;
+    margin-bottom: 6px;
+}
+.mc-intro {
+    flex: 1 1 280px;
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.45;
     color: darkgrey;
 }
+.mc-intro b { font-weight: 600; color: #fff; }
 
-.mc-note b {
-    font-weight: 700;
-    color: #fff;
+/* small, quiet two-way switch */
+.view-toggle {
+    display: inline-flex;
+    flex: none;
+    padding: 2px;
+    border-radius: 999px;
+    border: 1px solid rgba(115, 108, 157, 0.5);
 }
+.view-toggle button {
+    padding: 2px 10px;
+    border: 0;
+    border-radius: 999px;
+    background: none;
+    font: inherit;
+    font-size: 11px;
+    color: darkgrey;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+.view-toggle button:hover { color: #fff; }
+.view-toggle button.on { background: rgba(255, 255, 255, 0.14); color: #fff; }
+.view-toggle button:focus-visible { outline: 2px solid #fff; outline-offset: 1px; }
+
+#contrib-canvas[hidden], .chart-scroll[hidden], .iso-hint[hidden] { display: none; }
+.chart-scroll { overflow-x: auto; padding-bottom: 4px; scrollbar-width: thin; }
+#chart-canvas { display: block; cursor: crosshair; }
+
+/* Ore map: stats sit in a row under the chart instead of floating around the forest. */
+.chart-mode .iso-stats {
+    position: static;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px 14px;
+    margin-top: 12px;
+}
+.chart-mode .iso-stat { position: static; text-align: left; }
+.chart-mode .st-num, .chart-mode .st-total .st-num { font-size: 17px; }
+.chart-mode .st-unit { font-size: 12px; }
+.chart-mode.iso-compact .iso-stats { grid-template-columns: 1fr 1fr; }

@@ -1135,11 +1135,20 @@
                         <span id = "github-total">Loading contributions...</span>
                         <a href = "https://github.com/elio1222" target = "_blank">@elio1222</a>
                     </div>
+                    <div class = "mc-top">
+                        <p class = "mc-intro" id = "mc-intro">Each tile is <b>one day</b> from the past year of my GitHub. <b>The more I commit that day, the bigger the tree grows.</b></p>
+                        <div class = "view-toggle" role = "group" aria-label = "Chart style">
+                            <button type = "button" class = "on" id = "view-chart" aria-pressed = "true">Ore map</button>
+                            <button type = "button" id = "view-forest" aria-pressed = "false">Forest</button>
+                        </div>
+                    </div>
+                    <div class = "contrib-legend" id = "contrib-legend"></div>
                     <div class = "iso-stage" id = "iso-stage">
                         <div class = "iso-wrap">
                             <canvas id = "contrib-canvas"></canvas>
+                            <div class = "chart-scroll" id = "chart-scroll" hidden><canvas id = "chart-canvas"></canvas></div>
                             <div class = "iso-tip" id = "iso-tip"></div>
-                            <div class = "iso-hint">drag to rotate</div>
+                            <div class = "iso-hint" id = "iso-hint">drag to rotate</div>
                         </div>
                         <div class = "iso-stats">
                             <div class = "iso-stat st-total">
@@ -1160,8 +1169,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class = "contrib-legend" id = "contrib-legend"></div>
-                    <p class = "mc-note">Minecraft theme: each day is a patch of land, and <b>the more you commit the bigger the tree grows.</b></p>
                     <div class = "latest-project">
                         <div class = "commit-label">Latest commit</div>
                         <div class = "commit-line">
@@ -1310,12 +1317,13 @@
                     </a>
                 </div>
                 <p class = "ft-quote">"We are what we repeatedly do. Excellence, then, is not an act, but a habit."</p>
-                <div class = "ft-base">
-                    <a href = "resume.html">Resume</a>
-                    <a href = "photogallery.html">Gallery</a>
-                    <a href = "#top">Top &uarr;</a>
-                    <span>&copy; 2026 Elio Rocha</span>
+                <div class = "ft-btns">
+                    <a class = "ft-btn primary" href = "https://www.linkedin.com/in/elio-rocha-b7b995273/" target = "_blank" rel = "noopener">Let's connect on LinkedIn</a>
+                    <a class = "ft-btn" href = "resume.html">Resume</a>
+                    <a class = "ft-btn" href = "photogallery.html">Gallery</a>
                 </div>
+                <h2 class = "ft-name">Elio Rocha</h2>
+                <p class = "ft-copy">Copyright &copy; 2026 Elio Rocha<br>All Rights Reserved. <a href = "#top">Back to top &uarr;</a></p>
             </div>
         </footer>
 <script src = "js/space.js"></script>
